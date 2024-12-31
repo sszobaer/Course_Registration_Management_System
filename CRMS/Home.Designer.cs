@@ -1,6 +1,6 @@
 ﻿namespace CRMS
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
             this.AdministratorLbl = new System.Windows.Forms.Label();
             this.DepartmentsLbl = new System.Windows.Forms.Label();
@@ -40,7 +41,14 @@
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HeroLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,13 +57,13 @@
             this.panel1.Controls.Add(this.AdministratorLbl);
             this.panel1.Controls.Add(this.DepartmentsLbl);
             this.panel1.Controls.Add(this.ClassscheduleLbl);
+            this.panel1.Controls.Add(this.HeroLbl);
             this.panel1.Controls.Add(this.FacultyLbl);
             this.panel1.Controls.Add(this.PaymentsLbl);
             this.panel1.Controls.Add(this.RegistrationLbl);
             this.panel1.Controls.Add(this.CoursesLbl);
             this.panel1.Controls.Add(this.studentLbl);
             this.panel1.Controls.Add(this.DashboardLbl);
-            this.panel1.Controls.Add(this.HeroLbl);
             this.panel1.Controls.Add(this.HomeLbl);
             this.panel1.Location = new System.Drawing.Point(-3, -1);
             this.panel1.Name = "panel1";
@@ -177,12 +185,13 @@
             this.HeroLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HeroLbl.Font = new System.Drawing.Font("Luckiest Guy", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HeroLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.HeroLbl.Location = new System.Drawing.Point(30, 9);
+            this.HeroLbl.Location = new System.Drawing.Point(31, 10);
             this.HeroLbl.Name = "HeroLbl";
             this.HeroLbl.Size = new System.Drawing.Size(158, 98);
             this.HeroLbl.TabIndex = 3;
             this.HeroLbl.Text = "CRMS\r\nPORTAL\r\n";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HeroLbl.Click += new System.EventHandler(this.HeroLbl_Click);
             // 
             // HomeLbl
             // 
@@ -196,17 +205,74 @@
             this.HomeLbl.TabIndex = 2;
             this.HomeLbl.Text = "Home";
             // 
-            // Form1
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Location = new System.Drawing.Point(375, 256);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(434, 405);
+            this.panel2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(40, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(352, 39);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(40, 214);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(352, 39);
+            this.textBox2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(124, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 58);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Log In";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(487, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(211, 238);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1002, 702);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "Home";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,6 +291,11 @@
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HeroLbl;
         private System.Windows.Forms.Label HomeLbl;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

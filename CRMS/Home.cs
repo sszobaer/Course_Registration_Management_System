@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace CRMS
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HeroLbl_Click(object sender, EventArgs e)
         {
 
         }
