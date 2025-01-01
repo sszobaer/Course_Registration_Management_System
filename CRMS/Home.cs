@@ -12,19 +12,28 @@ namespace CRMS
 {
     public partial class Home : Form
     {
+        public static Stack<Form> stack = new Stack<Form>();
         public Home()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void registerNowBtn_Click(object sender, EventArgs e)
         {
-
+            Register register = new Register();
+            Home.stack.Push(this);
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
         }
 
-        private void HeroLbl_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            Home.stack.Push(this);
+            this.Hide();
+            login.ShowDialog();
+            this.Show();
         }
     }
 }
