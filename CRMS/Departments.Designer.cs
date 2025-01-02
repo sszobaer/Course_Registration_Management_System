@@ -258,6 +258,7 @@
             // 
             // DeptGridView
             // 
+            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DeptGridView.Location = new System.Drawing.Point(752, 292);
             this.DeptGridView.Name = "DeptGridView";
@@ -268,6 +269,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txtDeleteDeptID);
             this.panel3.Controls.Add(this.label10);
@@ -316,6 +318,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.cbDeptHead);
             this.panel2.Controls.Add(this.txtDeptPhone1);

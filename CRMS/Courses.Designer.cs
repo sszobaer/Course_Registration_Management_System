@@ -260,6 +260,7 @@
             // 
             // StudentsGridView
             // 
+            this.StudentsGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.StudentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StudentsGridView.Location = new System.Drawing.Point(746, 501);
             this.StudentsGridView.Name = "StudentsGridView";
@@ -270,6 +271,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -414,6 +416,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txtDeleteDeptID);
             this.panel3.Controls.Add(this.label10);
@@ -472,6 +475,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label3);
