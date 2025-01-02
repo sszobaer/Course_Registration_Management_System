@@ -43,22 +43,16 @@
             this.HomeLbl = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtPhoneNo = new System.Windows.Forms.TextBox();
+            this.registerBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.showPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtIdentity = new System.Windows.Forms.TextBox();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.showPassword = new System.Windows.Forms.CheckBox();
-            this.registerBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
@@ -69,7 +63,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.AdministratorLbl);
             this.panel1.Controls.Add(this.DepartmentsLbl);
             this.panel1.Controls.Add(this.ClassscheduleLbl);
@@ -98,6 +92,7 @@
             this.AdministratorLbl.Size = new System.Drawing.Size(197, 33);
             this.AdministratorLbl.TabIndex = 12;
             this.AdministratorLbl.Text = "Administrator";
+            this.AdministratorLbl.Click += new System.EventHandler(this.AdministratorLbl_Click);
             // 
             // DepartmentsLbl
             // 
@@ -111,6 +106,7 @@
             this.DepartmentsLbl.Size = new System.Drawing.Size(185, 33);
             this.DepartmentsLbl.TabIndex = 11;
             this.DepartmentsLbl.Text = "Departments";
+            this.DepartmentsLbl.Click += new System.EventHandler(this.DepartmentsLbl_Click);
             // 
             // ClassscheduleLbl
             // 
@@ -124,6 +120,7 @@
             this.ClassscheduleLbl.Size = new System.Drawing.Size(208, 33);
             this.ClassscheduleLbl.TabIndex = 10;
             this.ClassscheduleLbl.Text = "Class Schedule";
+            this.ClassscheduleLbl.Click += new System.EventHandler(this.ClassscheduleLbl_Click);
             // 
             // HeroLbl
             // 
@@ -151,6 +148,7 @@
             this.FacultyLbl.Size = new System.Drawing.Size(111, 33);
             this.FacultyLbl.TabIndex = 9;
             this.FacultyLbl.Text = "Faculty";
+            this.FacultyLbl.Click += new System.EventHandler(this.FacultyLbl_Click);
             // 
             // PaymentsLbl
             // 
@@ -164,6 +162,7 @@
             this.PaymentsLbl.Size = new System.Drawing.Size(144, 33);
             this.PaymentsLbl.TabIndex = 8;
             this.PaymentsLbl.Text = "Payments";
+            this.PaymentsLbl.Click += new System.EventHandler(this.PaymentsLbl_Click);
             // 
             // RegistrationLbl
             // 
@@ -177,6 +176,7 @@
             this.RegistrationLbl.Size = new System.Drawing.Size(175, 33);
             this.RegistrationLbl.TabIndex = 7;
             this.RegistrationLbl.Text = "Registration";
+            this.RegistrationLbl.Click += new System.EventHandler(this.RegistrationLbl_Click);
             // 
             // CoursesLbl
             // 
@@ -190,6 +190,7 @@
             this.CoursesLbl.Size = new System.Drawing.Size(118, 33);
             this.CoursesLbl.TabIndex = 6;
             this.CoursesLbl.Text = "Courses";
+            this.CoursesLbl.Click += new System.EventHandler(this.CoursesLbl_Click);
             // 
             // studentLbl
             // 
@@ -203,6 +204,7 @@
             this.studentLbl.Size = new System.Drawing.Size(132, 33);
             this.studentLbl.TabIndex = 5;
             this.studentLbl.Text = "Students";
+            this.studentLbl.Click += new System.EventHandler(this.studentLbl_Click);
             // 
             // DashboardLbl
             // 
@@ -216,6 +218,7 @@
             this.DashboardLbl.Size = new System.Drawing.Size(156, 33);
             this.DashboardLbl.TabIndex = 4;
             this.DashboardLbl.Text = "Dashboard";
+            this.DashboardLbl.Click += new System.EventHandler(this.DashboardLbl_Click);
             // 
             // HomeLbl
             // 
@@ -246,27 +249,95 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txtConfirmPassword);
-            this.panel2.Controls.Add(this.cbRole);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.showPassword);
             this.panel2.Controls.Add(this.registerBtn);
-            this.panel2.Controls.Add(this.txtPhoneNo);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtConfirmPassword);
+            this.panel2.Controls.Add(this.showPassword);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtIdentity);
-            this.panel2.Controls.Add(this.txtFname);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtId);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.loginBtn);
-            this.panel2.Location = new System.Drawing.Point(256, 95);
+            this.panel2.Location = new System.Drawing.Point(256, 90);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(966, 539);
             this.panel2.TabIndex = 8;
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.BackColor = System.Drawing.Color.Teal;
+            this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.registerBtn.Location = new System.Drawing.Point(639, 448);
+            this.registerBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(149, 53);
+            this.registerBtn.TabIndex = 40;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(633, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(175, 33);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Registration";
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConfirmPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(538, 313);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(378, 35);
+            this.txtConfirmPassword.TabIndex = 30;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
+            // 
+            // showPassword
+            // 
+            this.showPassword.AutoSize = true;
+            this.showPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showPassword.Location = new System.Drawing.Point(768, 358);
+            this.showPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Size = new System.Drawing.Size(148, 24);
+            this.showPassword.TabIndex = 28;
+            this.showPassword.Text = "Show Password";
+            this.showPassword.UseVisualStyleBackColor = true;
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(538, 214);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(378, 35);
+            this.txtPassword.TabIndex = 32;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtIdentity
+            // 
+            this.txtIdentity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdentity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentity.Location = new System.Drawing.Point(538, 118);
+            this.txtIdentity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdentity.Name = "txtIdentity";
+            this.txtIdentity.Size = new System.Drawing.Size(378, 35);
+            this.txtIdentity.TabIndex = 31;
             // 
             // pictureBox1
             // 
@@ -278,112 +349,11 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtPhoneNo
-            // 
-            this.txtPhoneNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNo.Location = new System.Drawing.Point(544, 325);
-            this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPhoneNo.MaxLength = 15;
-            this.txtPhoneNo.Name = "txtPhoneNo";
-            this.txtPhoneNo.Size = new System.Drawing.Size(378, 35);
-            this.txtPhoneNo.TabIndex = 27;
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtConfirmPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(544, 252);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(378, 35);
-            this.txtConfirmPassword.TabIndex = 30;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(544, 178);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(378, 35);
-            this.txtPassword.TabIndex = 32;
-            // 
-            // txtIdentity
-            // 
-            this.txtIdentity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdentity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentity.Location = new System.Drawing.Point(544, 103);
-            this.txtIdentity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdentity.Name = "txtIdentity";
-            this.txtIdentity.Size = new System.Drawing.Size(378, 35);
-            this.txtIdentity.TabIndex = 31;
-            // 
-            // txtFname
-            // 
-            this.txtFname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFname.Location = new System.Drawing.Point(544, 33);
-            this.txtFname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(378, 35);
-            this.txtFname.TabIndex = 26;
-            // 
-            // showPassword
-            // 
-            this.showPassword.AutoSize = true;
-            this.showPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showPassword.Location = new System.Drawing.Point(772, 291);
-            this.showPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showPassword.Name = "showPassword";
-            this.showPassword.Size = new System.Drawing.Size(148, 24);
-            this.showPassword.TabIndex = 28;
-            this.showPassword.Text = "Show Password";
-            this.showPassword.UseVisualStyleBackColor = true;
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.BackColor = System.Drawing.Color.Maroon;
-            this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.registerBtn.Location = new System.Drawing.Point(639, 467);
-            this.registerBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(159, 63);
-            this.registerBtn.TabIndex = 9;
-            this.registerBtn.Text = "Register";
-            this.registerBtn.UseVisualStyleBackColor = false;
-            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(539, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 27);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Full Name";
-            // 
-            // txtId
-            // 
-            this.txtId.AutoSize = true;
-            this.txtId.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(539, 73);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(99, 27);
-            this.txtId.TabIndex = 33;
-            this.txtId.Text = "Identity";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(539, 220);
+            this.label3.Location = new System.Drawing.Point(533, 277);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(215, 27);
             this.label3.TabIndex = 34;
@@ -393,61 +363,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(539, 145);
+            this.label4.Location = new System.Drawing.Point(533, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 27);
             this.label4.TabIndex = 35;
             this.label4.Text = "Password";
             // 
-            // label5
+            // txtId
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(539, 292);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 27);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Phone No";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(539, 367);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 27);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Role";
-            // 
-            // cbRole
-            // 
-            this.cbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Admin",
-            "Faculty member",
-            "Student"});
-            this.cbRole.Location = new System.Drawing.Point(544, 400);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(378, 37);
-            this.cbRole.TabIndex = 38;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(632, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 33);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Registration";
+            this.txtId.AutoSize = true;
+            this.txtId.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(533, 83);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(93, 27);
+            this.txtId.TabIndex = 33;
+            this.txtId.Text = "User ID";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(600, 440);
+            this.label11.Location = new System.Drawing.Point(559, 401);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(239, 25);
             this.label11.TabIndex = 10;
@@ -457,8 +393,8 @@
             // 
             this.loginBtn.AutoSize = true;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.LinkColor = System.Drawing.Color.Maroon;
-            this.loginBtn.Location = new System.Drawing.Point(860, 440);
+            this.loginBtn.LinkColor = System.Drawing.Color.Teal;
+            this.loginBtn.Location = new System.Drawing.Point(819, 401);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(60, 25);
             this.loginBtn.TabIndex = 39;
@@ -471,7 +407,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
@@ -485,7 +420,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -505,23 +439,17 @@
         private System.Windows.Forms.Label HomeLbl;
         private System.Windows.Forms.PictureBox BackBtn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtIdentity;
-        private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.CheckBox showPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label txtId;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.LinkLabel loginBtn;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button registerBtn;
     }
 }

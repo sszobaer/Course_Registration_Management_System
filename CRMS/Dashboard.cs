@@ -10,43 +10,19 @@ using System.Windows.Forms;
 
 namespace CRMS
 {
-    public partial class Login : Form
+    public partial class Dashboard : Form
     {
-        public Login()
+        public Dashboard()
         {
             InitializeComponent();
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
+        private void HomeLbl_Click(object sender, EventArgs e)
         {
-            if (Home.stack.Count > 0)
-            {
-                Form previousForm = Home.stack.Pop();
-                this.Hide();
-                previousForm.Show();
-            }
-        }
-
-        private void CreateAccBtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Register register = new Register();
+            Home home = new Home();
             Home.stack.Push(this);
             this.Hide();
-            register.ShowDialog();
-            this.Show();
-        }
-
-        private void showPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPassword.UseSystemPasswordChar = !showPassword.Checked;
-        }
-
-        private void studentLbl_Click(object sender, EventArgs e)
-        {
-            Students students = new Students(); 
-            Home.stack.Push(this);
-            this.Hide();
-            students.ShowDialog();
+            home.ShowDialog();
             this.Show();
         }
 
@@ -59,12 +35,21 @@ namespace CRMS
             this.Show();
         }
 
-        private void CoursesLbl_Click(object sender, EventArgs e)
+        private void studentLbl_Click(object sender, EventArgs e)
         {
-            Courses courses = new Courses();
+            Students students = new Students();
             Home.stack.Push(this);
             this.Hide();
-            courses.ShowDialog(); 
+            students.ShowDialog();
+            this.Show();
+        }
+
+        private void CoursesLbl_Click(object sender, EventArgs e)
+        {
+            Courses course = new Courses();
+            Home.stack.Push(this);
+            this.Hide();
+            course.ShowDialog();
             this.Show();
         }
 
@@ -106,7 +91,7 @@ namespace CRMS
 
         private void DepartmentsLbl_Click(object sender, EventArgs e)
         {
-            Departments departments = new Departments();    
+            Departments departments = new Departments();
             Home.stack.Push(this);
             this.Hide();
             departments.ShowDialog();
@@ -120,6 +105,16 @@ namespace CRMS
             this.Hide();
             administrator.ShowDialog();
             this.Show();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
         }
     }
 }
