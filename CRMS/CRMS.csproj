@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs">
+    <Compile Include="AssignCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="AssignCourse.Designer.cs">
+      <DependentUpon>AssignCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="ClassSchedule.cs">
       <SubType>Form</SubType>
@@ -120,8 +121,8 @@
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="AssignCourse.resx">
+      <DependentUpon>AssignCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClassSchedule.resx">
       <DependentUpon>ClassSchedule.cs</DependentUpon>

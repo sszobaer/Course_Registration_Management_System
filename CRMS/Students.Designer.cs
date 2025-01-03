@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Students));
             this.BackBtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AdministratorLbl = new System.Windows.Forms.Label();
+            this.AssignCourseLbl = new System.Windows.Forms.Label();
             this.DepartmentsLbl = new System.Windows.Forms.Label();
             this.ClassscheduleLbl = new System.Windows.Forms.Label();
             this.HeroLbl = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.AdministratorLbl);
+            this.panel1.Controls.Add(this.AssignCourseLbl);
             this.panel1.Controls.Add(this.DepartmentsLbl);
             this.panel1.Controls.Add(this.ClassscheduleLbl);
             this.panel1.Controls.Add(this.HeroLbl);
@@ -103,19 +103,19 @@
             this.panel1.Size = new System.Drawing.Size(220, 712);
             this.panel1.TabIndex = 14;
             // 
-            // AdministratorLbl
+            // AssignCourseLbl
             // 
-            this.AdministratorLbl.AutoSize = true;
-            this.AdministratorLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdministratorLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AdministratorLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdministratorLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AdministratorLbl.Location = new System.Drawing.Point(14, 615);
-            this.AdministratorLbl.Name = "AdministratorLbl";
-            this.AdministratorLbl.Size = new System.Drawing.Size(197, 33);
-            this.AdministratorLbl.TabIndex = 12;
-            this.AdministratorLbl.Text = "Administrator";
-            this.AdministratorLbl.Click += new System.EventHandler(this.AdministratorLbl_Click);
+            this.AssignCourseLbl.AutoSize = true;
+            this.AssignCourseLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AssignCourseLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AssignCourseLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignCourseLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AssignCourseLbl.Location = new System.Drawing.Point(14, 615);
+            this.AssignCourseLbl.Name = "AssignCourseLbl";
+            this.AssignCourseLbl.Size = new System.Drawing.Size(199, 33);
+            this.AssignCourseLbl.TabIndex = 12;
+            this.AssignCourseLbl.Text = "Assign Course";
+            this.AssignCourseLbl.Click += new System.EventHandler(this.AssignCourseLbl_Click);
             // 
             // DepartmentsLbl
             // 
@@ -472,6 +472,7 @@
             // 
             // StudentsGridView
             // 
+            this.StudentsGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.StudentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StudentsGridView.Location = new System.Drawing.Point(759, 446);
             this.StudentsGridView.Name = "StudentsGridView";
@@ -560,7 +561,7 @@
         #endregion
         private System.Windows.Forms.PictureBox BackBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AdministratorLbl;
+        private System.Windows.Forms.Label AssignCourseLbl;
         private System.Windows.Forms.Label DepartmentsLbl;
         private System.Windows.Forms.Label ClassscheduleLbl;
         private System.Windows.Forms.Label HeroLbl;

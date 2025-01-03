@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClassSchedule));
             this.BackBtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AdministratorLbl = new System.Windows.Forms.Label();
+            this.AssignCourseLbl = new System.Windows.Forms.Label();
             this.DepartmentsLbl = new System.Windows.Forms.Label();
             this.ClassscheduleLbl = new System.Windows.Forms.Label();
             this.HeroLbl = new System.Windows.Forms.Label();
@@ -42,8 +42,39 @@
             this.studentLbl = new System.Windows.Forms.Label();
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
+            this.DeptGridView = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDeleteCLId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtCLRoomNo = new System.Windows.Forms.TextBox();
+            this.txtCLDay = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.InsertBtn = new System.Windows.Forms.Button();
+            this.txtCLSemster = new System.Windows.Forms.TextBox();
+            this.txtCLTime = new System.Windows.Forms.TextBox();
+            this.txtCLid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtSearchCLId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbCourseName = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -61,7 +92,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.AdministratorLbl);
+            this.panel1.Controls.Add(this.AssignCourseLbl);
             this.panel1.Controls.Add(this.DepartmentsLbl);
             this.panel1.Controls.Add(this.ClassscheduleLbl);
             this.panel1.Controls.Add(this.HeroLbl);
@@ -77,19 +108,19 @@
             this.panel1.Size = new System.Drawing.Size(220, 712);
             this.panel1.TabIndex = 8;
             // 
-            // AdministratorLbl
+            // AssignCourseLbl
             // 
-            this.AdministratorLbl.AutoSize = true;
-            this.AdministratorLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdministratorLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AdministratorLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdministratorLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AdministratorLbl.Location = new System.Drawing.Point(14, 615);
-            this.AdministratorLbl.Name = "AdministratorLbl";
-            this.AdministratorLbl.Size = new System.Drawing.Size(197, 33);
-            this.AdministratorLbl.TabIndex = 12;
-            this.AdministratorLbl.Text = "Administrator";
-            this.AdministratorLbl.Click += new System.EventHandler(this.AdministratorLbl_Click);
+            this.AssignCourseLbl.AutoSize = true;
+            this.AssignCourseLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AssignCourseLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AssignCourseLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignCourseLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AssignCourseLbl.Location = new System.Drawing.Point(14, 615);
+            this.AssignCourseLbl.Name = "AssignCourseLbl";
+            this.AssignCourseLbl.Size = new System.Drawing.Size(199, 33);
+            this.AssignCourseLbl.TabIndex = 12;
+            this.AssignCourseLbl.Text = "Assign Course";
+            this.AssignCourseLbl.Click += new System.EventHandler(this.AssignCourseLbl_Click);
             // 
             // DepartmentsLbl
             // 
@@ -231,11 +262,333 @@
             this.HomeLbl.Text = "Home";
             this.HomeLbl.Click += new System.EventHandler(this.HomeLbl_Click);
             // 
+            // DeptGridView
+            // 
+            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeptGridView.Location = new System.Drawing.Point(756, 502);
+            this.DeptGridView.Name = "DeptGridView";
+            this.DeptGridView.RowHeadersWidth = 62;
+            this.DeptGridView.RowTemplate.Height = 28;
+            this.DeptGridView.Size = new System.Drawing.Size(456, 147);
+            this.DeptGridView.TabIndex = 22;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtDeleteCLId);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(756, 76);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(456, 191);
+            this.panel3.TabIndex = 21;
+            // 
+            // txtDeleteCLId
+            // 
+            this.txtDeleteCLId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeleteCLId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeleteCLId.Location = new System.Drawing.Point(36, 80);
+            this.txtDeleteCLId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeleteCLId.Name = "txtDeleteCLId";
+            this.txtDeleteCLId.Size = new System.Drawing.Size(378, 35);
+            this.txtDeleteCLId.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(31, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 27);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Class Id";
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteBtn.Location = new System.Drawing.Point(149, 125);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(149, 53);
+            this.DeleteBtn.TabIndex = 16;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(95, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(220, 33);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Delete Schedule";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbCourseName);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtCLRoomNo);
+            this.panel2.Controls.Add(this.txtCLDay);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.updateBtn);
+            this.panel2.Controls.Add(this.InsertBtn);
+            this.panel2.Controls.Add(this.txtCLSemster);
+            this.panel2.Controls.Add(this.txtCLTime);
+            this.panel2.Controls.Add(this.txtCLid);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(256, 76);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(456, 576);
+            this.panel2.TabIndex = 20;
+            // 
+            // txtCLRoomNo
+            // 
+            this.txtCLRoomNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCLRoomNo.Location = new System.Drawing.Point(39, 312);
+            this.txtCLRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCLRoomNo.Name = "txtCLRoomNo";
+            this.txtCLRoomNo.Size = new System.Drawing.Size(378, 35);
+            this.txtCLRoomNo.TabIndex = 27;
+            // 
+            // txtCLDay
+            // 
+            this.txtCLDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCLDay.Location = new System.Drawing.Point(39, 155);
+            this.txtCLDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCLDay.Name = "txtCLDay";
+            this.txtCLDay.Size = new System.Drawing.Size(378, 35);
+            this.txtCLDay.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(35, 349);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 27);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Semester";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(34, 279);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 27);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Room No";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 204);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 27);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Class Time";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 27);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Class Day";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(34, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 27);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Class Id";
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.Teal;
+            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateBtn.Location = new System.Drawing.Point(233, 506);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(149, 53);
+            this.updateBtn.TabIndex = 16;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            // 
+            // InsertBtn
+            // 
+            this.InsertBtn.BackColor = System.Drawing.Color.Teal;
+            this.InsertBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InsertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InsertBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.InsertBtn.Location = new System.Drawing.Point(76, 506);
+            this.InsertBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.InsertBtn.Name = "InsertBtn";
+            this.InsertBtn.Size = new System.Drawing.Size(149, 53);
+            this.InsertBtn.TabIndex = 16;
+            this.InsertBtn.Text = "Insert";
+            this.InsertBtn.UseVisualStyleBackColor = false;
+            // 
+            // txtCLSemster
+            // 
+            this.txtCLSemster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLSemster.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCLSemster.Location = new System.Drawing.Point(39, 381);
+            this.txtCLSemster.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCLSemster.Name = "txtCLSemster";
+            this.txtCLSemster.Size = new System.Drawing.Size(378, 35);
+            this.txtCLSemster.TabIndex = 27;
+            // 
+            // txtCLTime
+            // 
+            this.txtCLTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCLTime.Location = new System.Drawing.Point(40, 238);
+            this.txtCLTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCLTime.Name = "txtCLTime";
+            this.txtCLTime.Size = new System.Drawing.Size(378, 35);
+            this.txtCLTime.TabIndex = 27;
+            // 
+            // txtCLid
+            // 
+            this.txtCLid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCLid.Location = new System.Drawing.Point(39, 81);
+            this.txtCLid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCLid.Name = "txtCLid";
+            this.txtCLid.Size = new System.Drawing.Size(378, 35);
+            this.txtCLid.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(88, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add New Schedule";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.txtSearchCLId);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Location = new System.Drawing.Point(756, 290);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(456, 191);
+            this.panel4.TabIndex = 30;
+            // 
+            // txtSearchCLId
+            // 
+            this.txtSearchCLId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearchCLId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCLId.Location = new System.Drawing.Point(36, 80);
+            this.txtSearchCLId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearchCLId.Name = "txtSearchCLId";
+            this.txtSearchCLId.Size = new System.Drawing.Size(378, 35);
+            this.txtSearchCLId.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 27);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Class Id";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(149, 125);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 53);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Teal;
+            this.label11.Location = new System.Drawing.Point(95, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(224, 33);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Search Schedule";
+            // 
+            // cbCourseName
+            // 
+            this.cbCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCourseName.FormattingEnabled = true;
+            this.cbCourseName.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbCourseName.Location = new System.Drawing.Point(41, 458);
+            this.cbCourseName.Name = "cbCourseName";
+            this.cbCourseName.Size = new System.Drawing.Size(377, 37);
+            this.cbCourseName.TabIndex = 29;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 423);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 27);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Course Name";
+            // 
             // ClassSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.DeptGridView);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
             this.Name = "ClassSchedule";
@@ -244,6 +597,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -252,7 +612,7 @@
 
         private System.Windows.Forms.PictureBox BackBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AdministratorLbl;
+        private System.Windows.Forms.Label AssignCourseLbl;
         private System.Windows.Forms.Label DepartmentsLbl;
         private System.Windows.Forms.Label ClassscheduleLbl;
         private System.Windows.Forms.Label HeroLbl;
@@ -263,5 +623,32 @@
         private System.Windows.Forms.Label studentLbl;
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HomeLbl;
+        private System.Windows.Forms.DataGridView DeptGridView;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtDeleteCLId;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtCLRoomNo;
+        private System.Windows.Forms.TextBox txtCLDay;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button InsertBtn;
+        private System.Windows.Forms.TextBox txtCLSemster;
+        private System.Windows.Forms.TextBox txtCLTime;
+        private System.Windows.Forms.TextBox txtCLid;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbCourseName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtSearchCLId;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
     }
 }

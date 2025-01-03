@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace CRMS
 {
-    public partial class Administrator : Form
+    public partial class AssignCourse : Form
     {
-        public Administrator()
+        public AssignCourse()
         {
             InitializeComponent();
+        }
+
+        private void AssignCourseLbl_Click(object sender, EventArgs e)
+        {
+            AssignCourse assignCourse = new AssignCourse();
+            Home.stack.Push(this);
+            this.Hide();
+            assignCourse.ShowDialog();
+            this.Show();
         }
 
         private void HomeLbl_Click(object sender, EventArgs e)
@@ -46,10 +55,10 @@ namespace CRMS
 
         private void CoursesLbl_Click(object sender, EventArgs e)
         {
-            Courses courses = new Courses();
+            Courses course = new Courses();
             Home.stack.Push(this);
             this.Hide();
-            courses.ShowDialog();
+            course.ShowDialog();
             this.Show();
         }
 
@@ -95,15 +104,6 @@ namespace CRMS
             Home.stack.Push(this);
             this.Hide();
             departments.ShowDialog();
-            this.Show();
-        }
-
-        private void AdministratorLbl_Click(object sender, EventArgs e)
-        {
-            Administrator administrator = new Administrator();  
-            Home.stack.Push(this);
-            this.Hide();
-            administrator.ShowDialog();
             this.Show();
         }
 

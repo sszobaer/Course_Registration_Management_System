@@ -107,22 +107,21 @@ namespace CRMS
             departments.ShowDialog();
             this.Show();
         }
-
-        private void AdministratorLbl_Click(object sender, EventArgs e)
-        {
-            Administrator administrator = new Administrator();
-            Home.stack.Push(this);
-            this.Hide();
-            administrator.ShowDialog();
-            this.Show();
-        }
-
         private void DashboardLbl_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
             Home.stack.Push(this);
             this.Hide();
             dashboard.ShowDialog();
+            this.Show();
+        }
+
+        private void AssignCourseLbl_Click(object sender, EventArgs e)
+        {
+            AssignCourse assignCourse = new AssignCourse();
+            Home.stack.Push(this);
+            this.Hide();
+            assignCourse.ShowDialog();
             this.Show();
         }
     }

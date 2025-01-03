@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Departments));
             this.BackBtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AdministratorLbl = new System.Windows.Forms.Label();
+            this.AssignCourseLbl = new System.Windows.Forms.Label();
             this.DepartmentsLbl = new System.Windows.Forms.Label();
             this.ClassscheduleLbl = new System.Windows.Forms.Label();
             this.HeroLbl = new System.Windows.Forms.Label();
@@ -44,26 +44,26 @@
             this.HomeLbl = new System.Windows.Forms.Label();
             this.DeptGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbDeptHead = new System.Windows.Forms.ComboBox();
+            this.txtDeptPhone1 = new System.Windows.Forms.TextBox();
+            this.txtDeptname = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.InsertBtn = new System.Windows.Forms.Button();
             this.txtDeptPhone2 = new System.Windows.Forms.TextBox();
-            this.txtDeptPhone1 = new System.Windows.Forms.TextBox();
             this.txtDeptLocation = new System.Windows.Forms.TextBox();
-            this.txtDeptname = new System.Windows.Forms.TextBox();
             this.txtDeptid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.cbDeptHead = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
@@ -86,7 +86,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.AdministratorLbl);
+            this.panel1.Controls.Add(this.AssignCourseLbl);
             this.panel1.Controls.Add(this.DepartmentsLbl);
             this.panel1.Controls.Add(this.ClassscheduleLbl);
             this.panel1.Controls.Add(this.HeroLbl);
@@ -102,19 +102,19 @@
             this.panel1.Size = new System.Drawing.Size(220, 712);
             this.panel1.TabIndex = 8;
             // 
-            // AdministratorLbl
+            // AssignCourseLbl
             // 
-            this.AdministratorLbl.AutoSize = true;
-            this.AdministratorLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdministratorLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AdministratorLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdministratorLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AdministratorLbl.Location = new System.Drawing.Point(14, 615);
-            this.AdministratorLbl.Name = "AdministratorLbl";
-            this.AdministratorLbl.Size = new System.Drawing.Size(197, 33);
-            this.AdministratorLbl.TabIndex = 12;
-            this.AdministratorLbl.Text = "Administrator";
-            this.AdministratorLbl.Click += new System.EventHandler(this.AdministratorLbl_Click);
+            this.AssignCourseLbl.AutoSize = true;
+            this.AssignCourseLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AssignCourseLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AssignCourseLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignCourseLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AssignCourseLbl.Location = new System.Drawing.Point(14, 615);
+            this.AssignCourseLbl.Name = "AssignCourseLbl";
+            this.AssignCourseLbl.Size = new System.Drawing.Size(199, 33);
+            this.AssignCourseLbl.TabIndex = 12;
+            this.AssignCourseLbl.Text = "Assign Course";
+            this.AssignCourseLbl.Click += new System.EventHandler(this.AssignCourseLbl_Click);
             // 
             // DepartmentsLbl
             // 
@@ -280,6 +280,26 @@
             this.panel3.Size = new System.Drawing.Size(456, 191);
             this.panel3.TabIndex = 18;
             // 
+            // txtDeleteDeptID
+            // 
+            this.txtDeleteDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeleteDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeleteDeptID.Location = new System.Drawing.Point(36, 80);
+            this.txtDeleteDeptID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeleteDeptID.Name = "txtDeleteDeptID";
+            this.txtDeleteDeptID.Size = new System.Drawing.Size(378, 35);
+            this.txtDeleteDeptID.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(31, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(164, 27);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Department Id";
+            // 
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
@@ -306,16 +326,6 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Delete Department";
             // 
-            // txtDeleteDeptID
-            // 
-            this.txtDeleteDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeleteDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteDeptID.Location = new System.Drawing.Point(36, 80);
-            this.txtDeleteDeptID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeleteDeptID.Name = "txtDeleteDeptID";
-            this.txtDeleteDeptID.Size = new System.Drawing.Size(378, 35);
-            this.txtDeleteDeptID.TabIndex = 27;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -339,6 +349,110 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 561);
             this.panel2.TabIndex = 17;
+            // 
+            // cbDeptHead
+            // 
+            this.cbDeptHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDeptHead.FormattingEnabled = true;
+            this.cbDeptHead.Location = new System.Drawing.Point(40, 229);
+            this.cbDeptHead.Name = "cbDeptHead";
+            this.cbDeptHead.Size = new System.Drawing.Size(377, 37);
+            this.cbDeptHead.TabIndex = 20;
+            // 
+            // txtDeptPhone1
+            // 
+            this.txtDeptPhone1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeptPhone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeptPhone1.Location = new System.Drawing.Point(39, 377);
+            this.txtDeptPhone1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptPhone1.Name = "txtDeptPhone1";
+            this.txtDeptPhone1.Size = new System.Drawing.Size(378, 35);
+            this.txtDeptPhone1.TabIndex = 27;
+            // 
+            // txtDeptname
+            // 
+            this.txtDeptname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeptname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeptname.Location = new System.Drawing.Point(39, 155);
+            this.txtDeptname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptname.Name = "txtDeptname";
+            this.txtDeptname.Size = new System.Drawing.Size(378, 35);
+            this.txtDeptname.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(35, 414);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(316, 27);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Department Phone(Optional)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(34, 344);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(212, 27);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Department Phone";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 269);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(234, 27);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Department Location";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(35, 194);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(198, 27);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Department Head";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(205, 27);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Department Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(34, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 27);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Department Id";
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.Teal;
+            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateBtn.Location = new System.Drawing.Point(206, 491);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(149, 53);
+            this.updateBtn.TabIndex = 16;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
             // 
             // InsertBtn
             // 
@@ -365,16 +479,6 @@
             this.txtDeptPhone2.Size = new System.Drawing.Size(378, 35);
             this.txtDeptPhone2.TabIndex = 27;
             // 
-            // txtDeptPhone1
-            // 
-            this.txtDeptPhone1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeptPhone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptPhone1.Location = new System.Drawing.Point(39, 377);
-            this.txtDeptPhone1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptPhone1.Name = "txtDeptPhone1";
-            this.txtDeptPhone1.Size = new System.Drawing.Size(378, 35);
-            this.txtDeptPhone1.TabIndex = 27;
-            // 
             // txtDeptLocation
             // 
             this.txtDeptLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -384,16 +488,6 @@
             this.txtDeptLocation.Name = "txtDeptLocation";
             this.txtDeptLocation.Size = new System.Drawing.Size(378, 35);
             this.txtDeptLocation.TabIndex = 27;
-            // 
-            // txtDeptname
-            // 
-            this.txtDeptname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeptname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptname.Location = new System.Drawing.Point(39, 155);
-            this.txtDeptname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptname.Name = "txtDeptname";
-            this.txtDeptname.Size = new System.Drawing.Size(378, 35);
-            this.txtDeptname.TabIndex = 27;
             // 
             // txtDeptid
             // 
@@ -415,100 +509,6 @@
             this.label1.Size = new System.Drawing.Size(291, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add New Department";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 27);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Department Id";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(205, 27);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Department Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(35, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 27);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Department Head";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 269);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(234, 27);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Department Location";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(34, 344);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 27);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Department Phone";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(35, 414);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(212, 27);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Department Phone";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(164, 27);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Department Id";
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.Teal;
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Location = new System.Drawing.Point(206, 491);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(149, 53);
-            this.updateBtn.TabIndex = 16;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            // 
-            // cbDeptHead
-            // 
-            this.cbDeptHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDeptHead.FormattingEnabled = true;
-            this.cbDeptHead.Location = new System.Drawing.Point(40, 229);
-            this.cbDeptHead.Name = "cbDeptHead";
-            this.cbDeptHead.Size = new System.Drawing.Size(377, 37);
-            this.cbDeptHead.TabIndex = 20;
             // 
             // Departments
             // 
@@ -539,7 +539,7 @@
 
         private System.Windows.Forms.PictureBox BackBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AdministratorLbl;
+        private System.Windows.Forms.Label AssignCourseLbl;
         private System.Windows.Forms.Label DepartmentsLbl;
         private System.Windows.Forms.Label ClassscheduleLbl;
         private System.Windows.Forms.Label HeroLbl;

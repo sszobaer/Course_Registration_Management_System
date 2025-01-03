@@ -98,15 +98,6 @@ namespace CRMS
             this.Show();
         }
 
-        private void AdministratorLbl_Click(object sender, EventArgs e)
-        {
-            Administrator administrator = new Administrator();
-            Home.stack.Push(this);
-            this.Hide();
-            administrator.ShowDialog();
-            this.Show();
-        }
-
         private void BackBtn_Click(object sender, EventArgs e)
         {
             if (Home.stack.Count > 0)
@@ -115,6 +106,15 @@ namespace CRMS
                 this.Hide();
                 previousForm.Show();
             }
+        }
+
+        private void AssignCourseLbl_Click(object sender, EventArgs e)
+        {
+            AssignCourse assignCourse = new AssignCourse();
+            Home.stack.Push(this);
+            this.Hide();
+            assignCourse.ShowDialog();
+            this.Show();
         }
     }
 }
