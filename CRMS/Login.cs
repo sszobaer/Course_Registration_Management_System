@@ -121,5 +121,21 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            if(txtID.Text == "22-49415-3" && txtPassword.Text == "123")
+            {
+                Dashboard dashboard = new Dashboard();
+                Home.stack.Push(this);
+                this.Hide();
+                dashboard.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password");
+            }
+        }
     }
 }

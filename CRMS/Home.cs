@@ -124,5 +124,15 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
+        }
     }
 }

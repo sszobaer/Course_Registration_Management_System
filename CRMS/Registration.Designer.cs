@@ -71,9 +71,10 @@
             // 
             this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackBtn.Image")));
-            this.BackBtn.Location = new System.Drawing.Point(224, 2);
+            this.BackBtn.Location = new System.Drawing.Point(149, 1);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(64, 66);
+            this.BackBtn.Size = new System.Drawing.Size(43, 43);
             this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackBtn.TabIndex = 9;
             this.BackBtn.TabStop = false;
@@ -93,9 +94,10 @@
             this.panel1.Controls.Add(this.studentLbl);
             this.panel1.Controls.Add(this.DashboardLbl);
             this.panel1.Controls.Add(this.HomeLbl);
-            this.panel1.Location = new System.Drawing.Point(2, -1);
+            this.panel1.Location = new System.Drawing.Point(1, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 712);
+            this.panel1.Size = new System.Drawing.Size(147, 463);
             this.panel1.TabIndex = 8;
             // 
             // AssignCourseLbl
@@ -105,9 +107,10 @@
             this.AssignCourseLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AssignCourseLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AssignCourseLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AssignCourseLbl.Location = new System.Drawing.Point(14, 615);
+            this.AssignCourseLbl.Location = new System.Drawing.Point(9, 400);
+            this.AssignCourseLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AssignCourseLbl.Name = "AssignCourseLbl";
-            this.AssignCourseLbl.Size = new System.Drawing.Size(199, 33);
+            this.AssignCourseLbl.Size = new System.Drawing.Size(133, 22);
             this.AssignCourseLbl.TabIndex = 12;
             this.AssignCourseLbl.Text = "Assign Course";
             this.AssignCourseLbl.Click += new System.EventHandler(this.AssignCourseLbl_Click);
@@ -119,9 +122,10 @@
             this.DepartmentsLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DepartmentsLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepartmentsLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DepartmentsLbl.Location = new System.Drawing.Point(14, 559);
+            this.DepartmentsLbl.Location = new System.Drawing.Point(9, 363);
+            this.DepartmentsLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DepartmentsLbl.Name = "DepartmentsLbl";
-            this.DepartmentsLbl.Size = new System.Drawing.Size(185, 33);
+            this.DepartmentsLbl.Size = new System.Drawing.Size(122, 22);
             this.DepartmentsLbl.TabIndex = 11;
             this.DepartmentsLbl.Text = "Departments";
             this.DepartmentsLbl.Click += new System.EventHandler(this.DepartmentsLbl_Click);
@@ -133,9 +137,10 @@
             this.ClassscheduleLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ClassscheduleLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassscheduleLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClassscheduleLbl.Location = new System.Drawing.Point(14, 501);
+            this.ClassscheduleLbl.Location = new System.Drawing.Point(9, 326);
+            this.ClassscheduleLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ClassscheduleLbl.Name = "ClassscheduleLbl";
-            this.ClassscheduleLbl.Size = new System.Drawing.Size(208, 33);
+            this.ClassscheduleLbl.Size = new System.Drawing.Size(138, 22);
             this.ClassscheduleLbl.TabIndex = 10;
             this.ClassscheduleLbl.Text = "Class Schedule";
             this.ClassscheduleLbl.Click += new System.EventHandler(this.ClassscheduleLbl_Click);
@@ -145,11 +150,12 @@
             this.HeroLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HeroLbl.AutoSize = true;
             this.HeroLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HeroLbl.Font = new System.Drawing.Font("Luckiest Guy", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeroLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HeroLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.HeroLbl.Location = new System.Drawing.Point(31, 10);
+            this.HeroLbl.Location = new System.Drawing.Point(21, 6);
+            this.HeroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeroLbl.Name = "HeroLbl";
-            this.HeroLbl.Size = new System.Drawing.Size(158, 98);
+            this.HeroLbl.Size = new System.Drawing.Size(123, 62);
             this.HeroLbl.TabIndex = 3;
             this.HeroLbl.Text = "CRMS\r\nPORTAL\r\n";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,9 +167,10 @@
             this.FacultyLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FacultyLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FacultyLbl.Location = new System.Drawing.Point(14, 447);
+            this.FacultyLbl.Location = new System.Drawing.Point(9, 291);
+            this.FacultyLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FacultyLbl.Name = "FacultyLbl";
-            this.FacultyLbl.Size = new System.Drawing.Size(111, 33);
+            this.FacultyLbl.Size = new System.Drawing.Size(74, 22);
             this.FacultyLbl.TabIndex = 9;
             this.FacultyLbl.Text = "Faculty";
             this.FacultyLbl.Click += new System.EventHandler(this.FacultyLbl_Click);
@@ -175,9 +182,10 @@
             this.PaymentsLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PaymentsLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PaymentsLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PaymentsLbl.Location = new System.Drawing.Point(14, 393);
+            this.PaymentsLbl.Location = new System.Drawing.Point(9, 255);
+            this.PaymentsLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PaymentsLbl.Name = "PaymentsLbl";
-            this.PaymentsLbl.Size = new System.Drawing.Size(144, 33);
+            this.PaymentsLbl.Size = new System.Drawing.Size(96, 22);
             this.PaymentsLbl.TabIndex = 8;
             this.PaymentsLbl.Text = "Payments";
             this.PaymentsLbl.Click += new System.EventHandler(this.PaymentsLbl_Click);
@@ -188,10 +196,11 @@
             this.RegistrationLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegistrationLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RegistrationLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistrationLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RegistrationLbl.Location = new System.Drawing.Point(14, 343);
+            this.RegistrationLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RegistrationLbl.Location = new System.Drawing.Point(9, 223);
+            this.RegistrationLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RegistrationLbl.Name = "RegistrationLbl";
-            this.RegistrationLbl.Size = new System.Drawing.Size(175, 33);
+            this.RegistrationLbl.Size = new System.Drawing.Size(115, 22);
             this.RegistrationLbl.TabIndex = 7;
             this.RegistrationLbl.Text = "Registration";
             this.RegistrationLbl.Click += new System.EventHandler(this.RegistrationLbl_Click);
@@ -203,9 +212,10 @@
             this.CoursesLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CoursesLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CoursesLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CoursesLbl.Location = new System.Drawing.Point(14, 290);
+            this.CoursesLbl.Location = new System.Drawing.Point(9, 188);
+            this.CoursesLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CoursesLbl.Name = "CoursesLbl";
-            this.CoursesLbl.Size = new System.Drawing.Size(118, 33);
+            this.CoursesLbl.Size = new System.Drawing.Size(79, 22);
             this.CoursesLbl.TabIndex = 6;
             this.CoursesLbl.Text = "Courses";
             this.CoursesLbl.Click += new System.EventHandler(this.CoursesLbl_Click);
@@ -217,9 +227,10 @@
             this.studentLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.studentLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.studentLbl.Location = new System.Drawing.Point(14, 236);
+            this.studentLbl.Location = new System.Drawing.Point(9, 153);
+            this.studentLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.studentLbl.Name = "studentLbl";
-            this.studentLbl.Size = new System.Drawing.Size(132, 33);
+            this.studentLbl.Size = new System.Drawing.Size(86, 22);
             this.studentLbl.TabIndex = 5;
             this.studentLbl.Text = "Students";
             this.studentLbl.Click += new System.EventHandler(this.studentLbl_Click);
@@ -231,9 +242,10 @@
             this.DashboardLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DashboardLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DashboardLbl.Location = new System.Drawing.Point(14, 186);
+            this.DashboardLbl.Location = new System.Drawing.Point(9, 121);
+            this.DashboardLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DashboardLbl.Name = "DashboardLbl";
-            this.DashboardLbl.Size = new System.Drawing.Size(156, 33);
+            this.DashboardLbl.Size = new System.Drawing.Size(103, 22);
             this.DashboardLbl.TabIndex = 4;
             this.DashboardLbl.Text = "Dashboard";
             this.DashboardLbl.Click += new System.EventHandler(this.DashboardLbl_Click);
@@ -245,9 +257,10 @@
             this.HomeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HomeLbl.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.HomeLbl.Location = new System.Drawing.Point(14, 135);
+            this.HomeLbl.Location = new System.Drawing.Point(9, 88);
+            this.HomeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HomeLbl.Name = "HomeLbl";
-            this.HomeLbl.Size = new System.Drawing.Size(90, 33);
+            this.HomeLbl.Size = new System.Drawing.Size(61, 22);
             this.HomeLbl.TabIndex = 2;
             this.HomeLbl.Text = "Home";
             this.HomeLbl.Click += new System.EventHandler(this.HomeLbl_Click);
@@ -256,11 +269,12 @@
             // 
             this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeptGridView.Location = new System.Drawing.Point(761, 288);
+            this.DeptGridView.Location = new System.Drawing.Point(507, 187);
+            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeptGridView.Name = "DeptGridView";
             this.DeptGridView.RowHeadersWidth = 62;
             this.DeptGridView.RowTemplate.Height = 28;
-            this.DeptGridView.Size = new System.Drawing.Size(456, 350);
+            this.DeptGridView.Size = new System.Drawing.Size(304, 227);
             this.DeptGridView.TabIndex = 22;
             // 
             // panel3
@@ -271,28 +285,29 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.SearchBtn);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(761, 77);
+            this.panel3.Location = new System.Drawing.Point(507, 50);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(456, 191);
+            this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 21;
             // 
             // txtDeleteDeptID
             // 
             this.txtDeleteDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeleteDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteDeptID.Location = new System.Drawing.Point(36, 80);
-            this.txtDeleteDeptID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeleteDeptID.Location = new System.Drawing.Point(24, 52);
             this.txtDeleteDeptID.Name = "txtDeleteDeptID";
-            this.txtDeleteDeptID.Size = new System.Drawing.Size(378, 35);
+            this.txtDeleteDeptID.Size = new System.Drawing.Size(253, 26);
             this.txtDeleteDeptID.TabIndex = 27;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 49);
+            this.label10.Location = new System.Drawing.Point(21, 32);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(164, 27);
+            this.label10.Size = new System.Drawing.Size(119, 20);
             this.label10.TabIndex = 29;
             this.label10.Text = "Department Id";
             // 
@@ -303,10 +318,9 @@
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SearchBtn.Location = new System.Drawing.Point(149, 125);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SearchBtn.Location = new System.Drawing.Point(99, 81);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(149, 53);
+            this.SearchBtn.Size = new System.Drawing.Size(99, 34);
             this.SearchBtn.TabIndex = 16;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = false;
@@ -316,9 +330,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(95, 10);
+            this.label2.Location = new System.Drawing.Point(63, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 33);
+            this.label2.Size = new System.Drawing.Size(176, 22);
             this.label2.TabIndex = 29;
             this.label2.Text = "Search Registration";
             // 
@@ -337,35 +352,39 @@
             this.panel2.Controls.Add(this.txtDeptLocation);
             this.panel2.Controls.Add(this.txtDeptid);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(261, 77);
+            this.panel2.Location = new System.Drawing.Point(174, 50);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 561);
+            this.panel2.Size = new System.Drawing.Size(305, 365);
             this.panel2.TabIndex = 20;
             // 
             // enrollmentDate
             // 
             this.enrollmentDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enrollmentDate.Location = new System.Drawing.Point(39, 201);
+            this.enrollmentDate.Location = new System.Drawing.Point(26, 131);
+            this.enrollmentDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.enrollmentDate.Name = "enrollmentDate";
-            this.enrollmentDate.Size = new System.Drawing.Size(378, 37);
+            this.enrollmentDate.Size = new System.Drawing.Size(253, 27);
             this.enrollmentDate.TabIndex = 30;
             // 
             // cbDeptHead
             // 
             this.cbDeptHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDeptHead.FormattingEnabled = true;
-            this.cbDeptHead.Location = new System.Drawing.Point(39, 396);
+            this.cbDeptHead.Location = new System.Drawing.Point(26, 257);
+            this.cbDeptHead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDeptHead.Name = "cbDeptHead";
-            this.cbDeptHead.Size = new System.Drawing.Size(377, 37);
+            this.cbDeptHead.Size = new System.Drawing.Size(253, 28);
             this.cbDeptHead.TabIndex = 20;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 265);
+            this.label7.Location = new System.Drawing.Point(23, 172);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 27);
+            this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Grade";
             // 
@@ -373,9 +392,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 361);
+            this.label6.Location = new System.Drawing.Point(23, 235);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 27);
+            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 28;
             this.label6.Text = "Class Id";
             // 
@@ -383,9 +403,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 171);
+            this.label5.Location = new System.Drawing.Point(23, 111);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 27);
+            this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 28;
             this.label5.Text = "registration Date";
             // 
@@ -393,9 +414,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 79);
+            this.label4.Location = new System.Drawing.Point(23, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 27);
+            this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 28;
             this.label4.Text = "Registration Id";
             // 
@@ -406,10 +428,9 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Location = new System.Drawing.Point(229, 470);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.updateBtn.Location = new System.Drawing.Point(153, 306);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(149, 53);
+            this.updateBtn.Size = new System.Drawing.Size(99, 34);
             this.updateBtn.TabIndex = 16;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -421,10 +442,9 @@
             this.InsertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InsertBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.InsertBtn.Location = new System.Drawing.Point(72, 470);
-            this.InsertBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.InsertBtn.Location = new System.Drawing.Point(48, 306);
             this.InsertBtn.Name = "InsertBtn";
-            this.InsertBtn.Size = new System.Drawing.Size(149, 53);
+            this.InsertBtn.Size = new System.Drawing.Size(99, 34);
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
@@ -433,20 +453,18 @@
             // 
             this.txtDeptLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeptLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptLocation.Location = new System.Drawing.Point(40, 299);
-            this.txtDeptLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptLocation.Location = new System.Drawing.Point(27, 194);
             this.txtDeptLocation.Name = "txtDeptLocation";
-            this.txtDeptLocation.Size = new System.Drawing.Size(378, 35);
+            this.txtDeptLocation.Size = new System.Drawing.Size(253, 26);
             this.txtDeptLocation.TabIndex = 27;
             // 
             // txtDeptid
             // 
             this.txtDeptid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeptid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptid.Location = new System.Drawing.Point(39, 111);
-            this.txtDeptid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptid.Location = new System.Drawing.Point(26, 72);
             this.txtDeptid.Name = "txtDeptid";
-            this.txtDeptid.Size = new System.Drawing.Size(378, 35);
+            this.txtDeptid.Size = new System.Drawing.Size(253, 26);
             this.txtDeptid.TabIndex = 27;
             // 
             // label1
@@ -454,22 +472,24 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(134, 10);
+            this.label1.Location = new System.Drawing.Point(89, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 33);
+            this.label1.Size = new System.Drawing.Size(114, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
             // 
             // Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.ClientSize = new System.Drawing.Size(839, 432);
             this.Controls.Add(this.DeptGridView);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
