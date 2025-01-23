@@ -46,22 +46,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblDepartmentCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblFacultyCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStudentCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.DeleteBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BtnshowStudents = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnShowFaculty = new System.Windows.Forms.Button();
+            this.btnShowCourses = new System.Windows.Forms.Button();
+            this.btnShowDept = new System.Windows.Forms.Button();
+            this.ShowData = new System.Windows.Forms.DataGridView();
+            this.btnViewProfile = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,7 +75,8 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -78,7 +84,7 @@
             this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackBtn.Image")));
             this.BackBtn.Location = new System.Drawing.Point(148, 1);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(43, 43);
             this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +107,7 @@
             this.panel1.Controls.Add(this.DashboardLbl);
             this.panel1.Controls.Add(this.HomeLbl);
             this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(147, 463);
             this.panel1.TabIndex = 8;
@@ -283,7 +289,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(803, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,7 +301,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(581, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 30);
             this.textBox1.TabIndex = 12;
@@ -304,24 +310,24 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.GreenYellow;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lblDepartmentCount);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(193, 153);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(193, 141);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(173, 86);
             this.panel2.TabIndex = 13;
             // 
-            // label4
+            // lblDepartmentCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 36);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 37);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "00";
+            this.lblDepartmentCount.AutoSize = true;
+            this.lblDepartmentCount.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentCount.Location = new System.Drawing.Point(56, 36);
+            this.lblDepartmentCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDepartmentCount.Name = "lblDepartmentCount";
+            this.lblDepartmentCount.Size = new System.Drawing.Size(53, 37);
+            this.lblDepartmentCount.TabIndex = 15;
+            this.lblDepartmentCount.Text = "00";
             // 
             // label1
             // 
@@ -339,25 +345,25 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblFacultyCount);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(412, 153);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(412, 141);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 86);
             this.panel3.TabIndex = 14;
             // 
-            // label5
+            // lblFacultyCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(57, 36);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 37);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "00";
+            this.lblFacultyCount.AutoSize = true;
+            this.lblFacultyCount.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFacultyCount.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFacultyCount.Location = new System.Drawing.Point(57, 36);
+            this.lblFacultyCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFacultyCount.Name = "lblFacultyCount";
+            this.lblFacultyCount.Size = new System.Drawing.Size(53, 37);
+            this.lblFacultyCount.TabIndex = 15;
+            this.lblFacultyCount.Text = "00";
             // 
             // label2
             // 
@@ -375,24 +381,24 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Crimson;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.lblStudentCount);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(629, 153);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(629, 141);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(173, 86);
             this.panel4.TabIndex = 14;
             // 
-            // label6
+            // lblStudentCount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 36);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 37);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "00";
+            this.lblStudentCount.AutoSize = true;
+            this.lblStudentCount.Font = new System.Drawing.Font("Montserrat", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentCount.Location = new System.Drawing.Point(61, 36);
+            this.lblStudentCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStudentCount.Name = "lblStudentCount";
+            this.lblStudentCount.Size = new System.Drawing.Size(53, 37);
+            this.lblStudentCount.TabIndex = 15;
+            this.lblStudentCount.Text = "00";
             // 
             // label3
             // 
@@ -410,11 +416,11 @@
             this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.lblName);
             this.panel5.Controls.Add(this.label7);
             this.panel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Location = new System.Drawing.Point(193, 52);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Location = new System.Drawing.Point(196, 41);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(609, 90);
             this.panel5.TabIndex = 15;
@@ -423,24 +429,24 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(497, -1);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(111, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             // 
-            // label8
+            // lblName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(12, 45);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 26);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Montserrat Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblName.Location = new System.Drawing.Point(12, 45);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(71, 26);
+            this.lblName.TabIndex = 17;
+            this.lblName.Text = "Name";
             // 
             // label7
             // 
@@ -454,69 +460,142 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "welcome Back,";
             // 
-            // DeleteBtn
+            // BtnshowStudents
             // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(193, 248);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(172, 34);
-            this.DeleteBtn.TabIndex = 17;
-            this.DeleteBtn.Text = "Show Departments";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.BtnshowStudents.BackColor = System.Drawing.Color.Teal;
+            this.BtnshowStudents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnshowStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnshowStudents.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnshowStudents.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnshowStudents.Location = new System.Drawing.Point(2, 3);
+            this.BtnshowStudents.Name = "BtnshowStudents";
+            this.BtnshowStudents.Size = new System.Drawing.Size(167, 31);
+            this.BtnshowStudents.TabIndex = 19;
+            this.BtnshowStudents.Text = "Show Students";
+            this.BtnshowStudents.UseVisualStyleBackColor = false;
+            this.BtnshowStudents.Click += new System.EventHandler(this.BtnshowStudents_Click);
             // 
-            // button1
+            // panel6
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(412, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 34);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Show Faculty";
-            this.button1.UseVisualStyleBackColor = false;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.btnChangePassword);
+            this.panel6.Controls.Add(this.btnShowFaculty);
+            this.panel6.Controls.Add(this.btnShowCourses);
+            this.panel6.Controls.Add(this.btnShowDept);
+            this.panel6.Controls.Add(this.BtnshowStudents);
+            this.panel6.Location = new System.Drawing.Point(193, 234);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(173, 187);
+            this.panel6.TabIndex = 20;
             // 
-            // button2
+            // btnChangePassword
             // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(629, 248);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 34);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Show Students";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnChangePassword.BackColor = System.Drawing.Color.Teal;
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnChangePassword.Location = new System.Drawing.Point(1, 148);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(167, 31);
+            this.btnChangePassword.TabIndex = 21;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
-            // dataGridView1
+            // btnShowFaculty
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(193, 290);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(609, 131);
-            this.dataGridView1.TabIndex = 20;
+            this.btnShowFaculty.BackColor = System.Drawing.Color.Teal;
+            this.btnShowFaculty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFaculty.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFaculty.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnShowFaculty.Location = new System.Drawing.Point(1, 114);
+            this.btnShowFaculty.Name = "btnShowFaculty";
+            this.btnShowFaculty.Size = new System.Drawing.Size(167, 31);
+            this.btnShowFaculty.TabIndex = 20;
+            this.btnShowFaculty.Text = "Show Faculty";
+            this.btnShowFaculty.UseVisualStyleBackColor = false;
+            this.btnShowFaculty.Click += new System.EventHandler(this.btnShowFaculty_Click);
+            // 
+            // btnShowCourses
+            // 
+            this.btnShowCourses.BackColor = System.Drawing.Color.Teal;
+            this.btnShowCourses.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowCourses.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowCourses.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnShowCourses.Location = new System.Drawing.Point(2, 77);
+            this.btnShowCourses.Name = "btnShowCourses";
+            this.btnShowCourses.Size = new System.Drawing.Size(167, 31);
+            this.btnShowCourses.TabIndex = 20;
+            this.btnShowCourses.Text = "Show Courses";
+            this.btnShowCourses.UseVisualStyleBackColor = false;
+            this.btnShowCourses.Click += new System.EventHandler(this.btnShowCourses_Click);
+            // 
+            // btnShowDept
+            // 
+            this.btnShowDept.BackColor = System.Drawing.Color.Teal;
+            this.btnShowDept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowDept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowDept.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDept.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnShowDept.Location = new System.Drawing.Point(2, 40);
+            this.btnShowDept.Name = "btnShowDept";
+            this.btnShowDept.Size = new System.Drawing.Size(167, 31);
+            this.btnShowDept.TabIndex = 20;
+            this.btnShowDept.Text = "Show Departments";
+            this.btnShowDept.UseVisualStyleBackColor = false;
+            this.btnShowDept.Click += new System.EventHandler(this.btnShowDept_Click);
+            // 
+            // ShowData
+            // 
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(412, 238);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.Size = new System.Drawing.Size(390, 172);
+            this.ShowData.TabIndex = 21;
+            // 
+            // btnViewProfile
+            // 
+            this.btnViewProfile.AutoSize = true;
+            this.btnViewProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewProfile.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewProfile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnViewProfile.Location = new System.Drawing.Point(369, 11);
+            this.btnViewProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnViewProfile.Name = "btnViewProfile";
+            this.btnViewProfile.Size = new System.Drawing.Size(98, 22);
+            this.btnViewProfile.TabIndex = 13;
+            this.btnViewProfile.Text = "My Profile";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.AutoSize = true;
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogOut.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogOut.Location = new System.Drawing.Point(488, 11);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(79, 22);
+            this.btnLogOut.TabIndex = 22;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.DeleteBtn);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnViewProfile);
+            this.Controls.Add(this.ShowData);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -525,10 +604,11 @@
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -542,7 +622,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,17 +652,22 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDepartmentCount;
+        private System.Windows.Forms.Label lblFacultyCount;
+        private System.Windows.Forms.Label lblStudentCount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button BtnshowStudents;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnShowDept;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.DataGridView ShowData;
+        private System.Windows.Forms.Button btnShowFaculty;
+        private System.Windows.Forms.Button btnShowCourses;
+        private System.Windows.Forms.Label btnViewProfile;
+        private System.Windows.Forms.Label btnLogOut;
     }
 }
