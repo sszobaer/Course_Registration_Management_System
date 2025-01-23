@@ -1,20 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRMS
 {
     public partial class Login : Form
     {
+        private Functions dbFunctions = new Functions();
+
         public Login()
         {
             InitializeComponent();
+        }
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            int adminId = Convert.ToInt32(txtID.Text);
+            string adminPassword = txtPassword.Text;
+            try
+            {
+                string query = "SELECT AdminID, AdminName FROM AdminLogin WHERE AdminID = :AdminID AND AdminPassword = :AdminPassword";
+                
+                var parameters = new Dictionary<string, object>
+                {
+                    { ":AdminID", adminId },
+                    { ":AdminPassword", adminPassword }
+                };
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    string AdminName = result.Rows[0]["AdminName"].ToString();
+                    MessageBox.Show($"Welcome, {AdminName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    SessionManager.IsLoggedIn = true;
+                    SessionManager.AdminName = AdminName;
+
+                    // Navigate to Dashboard
+                    Home.stack.Push(this);
+                    this.Hide();
+                    Dashboard dashboard = new Dashboard(AdminName);
+                    dashboard.ShowDialog();
+                }
+                else
+                {
+                    // Invalid credentials
+                    MessageBox.Show("Invalid login credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -43,7 +81,7 @@ namespace CRMS
 
         private void studentLbl_Click(object sender, EventArgs e)
         {
-            Students students = new Students(); 
+            Students students = new Students();
             Home.stack.Push(this);
             this.Hide();
             students.ShowDialog();
@@ -52,11 +90,14 @@ namespace CRMS
 
         private void DashboardLbl_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            Home.stack.Push(this);
-            this.Hide();
-            dashboard.ShowDialog(); 
-            this.Show();
+            if (SessionManager.IsLoggedIn)
+            {
+                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Home.stack.Push(this);
+                this.Hide();
+                dashboard.ShowDialog();
+                this.Show();
+            }
         }
 
         private void CoursesLbl_Click(object sender, EventArgs e)
@@ -64,7 +105,7 @@ namespace CRMS
             Courses courses = new Courses();
             Home.stack.Push(this);
             this.Hide();
-            courses.ShowDialog(); 
+            courses.ShowDialog();
             this.Show();
         }
 
@@ -106,7 +147,7 @@ namespace CRMS
 
         private void DepartmentsLbl_Click(object sender, EventArgs e)
         {
-            Departments departments = new Departments();    
+            Departments departments = new Departments();
             Home.stack.Push(this);
             this.Hide();
             departments.ShowDialog();
@@ -120,22 +161,6 @@ namespace CRMS
             this.Hide();
             assignCourse.ShowDialog();
             this.Show();
-        }
-
-        private void registerBtn_Click(object sender, EventArgs e)
-        {
-            if(txtID.Text == "22-49415-3" && txtPassword.Text == "123")
-            {
-                Dashboard dashboard = new Dashboard();
-                Home.stack.Push(this);
-                this.Hide();
-                dashboard.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Wrong username or password");
-            }
         }
     }
 }

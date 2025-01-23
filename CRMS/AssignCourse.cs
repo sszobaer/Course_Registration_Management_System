@@ -37,11 +37,18 @@ namespace CRMS
 
         private void DashboardLbl_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            Home.stack.Push(this);
-            this.Hide();
-            dashboard.ShowDialog();
-            this.Show();
+            if (SessionManager.IsLoggedIn)
+            {
+                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Home.stack.Push(this); 
+                this.Hide();           
+                dashboard.ShowDialog(); 
+                this.Show();           
+            }
+            else
+            {
+                MessageBox.Show("Please log in to access the Dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void studentLbl_Click(object sender, EventArgs e)

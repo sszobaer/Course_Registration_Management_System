@@ -109,11 +109,14 @@ namespace CRMS
         }
         private void DashboardLbl_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            Home.stack.Push(this);
-            this.Hide();
-            dashboard.ShowDialog();
-            this.Show();
+            if (SessionManager.IsLoggedIn)
+            {
+                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Home.stack.Push(this);
+                this.Hide();
+                dashboard.ShowDialog();
+                this.Show();
+            }
         }
 
         private void AssignCourseLbl_Click(object sender, EventArgs e)
