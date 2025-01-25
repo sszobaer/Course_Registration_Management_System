@@ -72,7 +72,7 @@
             this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackBtn.Image")));
             this.BackBtn.Location = new System.Drawing.Point(149, 1);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(43, 43);
             this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +95,7 @@
             this.panel1.Controls.Add(this.DashboardLbl);
             this.panel1.Controls.Add(this.HomeLbl);
             this.panel1.Location = new System.Drawing.Point(1, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(147, 463);
             this.panel1.TabIndex = 8;
@@ -150,12 +150,12 @@
             this.HeroLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HeroLbl.AutoSize = true;
             this.HeroLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HeroLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeroLbl.Font = new System.Drawing.Font("Luckiest Guy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HeroLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HeroLbl.Location = new System.Drawing.Point(21, 6);
             this.HeroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeroLbl.Name = "HeroLbl";
-            this.HeroLbl.Size = new System.Drawing.Size(123, 62);
+            this.HeroLbl.Size = new System.Drawing.Size(106, 66);
             this.HeroLbl.TabIndex = 3;
             this.HeroLbl.Text = "CRMS\r\nPORTAL\r\n";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -270,7 +270,7 @@
             this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DeptGridView.Location = new System.Drawing.Point(507, 187);
-            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2);
             this.DeptGridView.Name = "DeptGridView";
             this.DeptGridView.RowHeadersWidth = 62;
             this.DeptGridView.RowTemplate.Height = 28;
@@ -286,7 +286,7 @@
             this.panel3.Controls.Add(this.SearchBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(507, 50);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 21;
@@ -353,7 +353,7 @@
             this.panel2.Controls.Add(this.txtDeptid);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(174, 50);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(305, 365);
             this.panel2.TabIndex = 20;
@@ -362,7 +362,7 @@
             // 
             this.enrollmentDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enrollmentDate.Location = new System.Drawing.Point(26, 131);
-            this.enrollmentDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enrollmentDate.Margin = new System.Windows.Forms.Padding(2);
             this.enrollmentDate.Name = "enrollmentDate";
             this.enrollmentDate.Size = new System.Drawing.Size(253, 27);
             this.enrollmentDate.TabIndex = 30;
@@ -372,7 +372,7 @@
             this.cbDeptHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDeptHead.FormattingEnabled = true;
             this.cbDeptHead.Location = new System.Drawing.Point(26, 257);
-            this.cbDeptHead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDeptHead.Margin = new System.Windows.Forms.Padding(2);
             this.cbDeptHead.Name = "cbDeptHead";
             this.cbDeptHead.Size = new System.Drawing.Size(253, 28);
             this.cbDeptHead.TabIndex = 20;
@@ -489,7 +489,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";

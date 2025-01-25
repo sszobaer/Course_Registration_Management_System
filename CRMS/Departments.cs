@@ -279,7 +279,5 @@ namespace CRMS
             // Ensure column headers are visible
             ShowData.ColumnHeadersVisible = true;
         }
-
-        
     }
 }

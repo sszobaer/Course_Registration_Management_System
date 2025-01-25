@@ -162,12 +162,12 @@
             this.HeroLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HeroLbl.AutoSize = true;
             this.HeroLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HeroLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeroLbl.Font = new System.Drawing.Font("Luckiest Guy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HeroLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HeroLbl.Location = new System.Drawing.Point(21, 6);
             this.HeroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeroLbl.Name = "HeroLbl";
-            this.HeroLbl.Size = new System.Drawing.Size(123, 62);
+            this.HeroLbl.Size = new System.Drawing.Size(106, 66);
             this.HeroLbl.TabIndex = 3;
             this.HeroLbl.Text = "CRMS\r\nPORTAL\r\n";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

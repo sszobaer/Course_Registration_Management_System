@@ -42,7 +42,7 @@
             this.studentLbl = new System.Windows.Forms.Label();
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
-            this.DeptGridView = new System.Windows.Forms.DataGridView();
+            this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDeleteFID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackBtn.Image")));
             this.BackBtn.Location = new System.Drawing.Point(146, 2);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(43, 43);
             this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             this.panel1.Controls.Add(this.DashboardLbl);
             this.panel1.Controls.Add(this.HomeLbl);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(147, 463);
             this.panel1.TabIndex = 8;
@@ -154,12 +154,12 @@
             this.HeroLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HeroLbl.AutoSize = true;
             this.HeroLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HeroLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeroLbl.Font = new System.Drawing.Font("Luckiest Guy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HeroLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HeroLbl.Location = new System.Drawing.Point(21, 6);
             this.HeroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeroLbl.Name = "HeroLbl";
-            this.HeroLbl.Size = new System.Drawing.Size(123, 62);
+            this.HeroLbl.Size = new System.Drawing.Size(106, 66);
             this.HeroLbl.TabIndex = 3;
             this.HeroLbl.Text = "CRMS\r\nPORTAL\r\n";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,17 +269,17 @@
             this.HomeLbl.Text = "Home";
             this.HomeLbl.Click += new System.EventHandler(this.HomeLbl_Click);
             // 
-            // DeptGridView
+            // ShowData
             // 
-            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeptGridView.Location = new System.Drawing.Point(506, 186);
-            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DeptGridView.Name = "DeptGridView";
-            this.DeptGridView.RowHeadersWidth = 62;
-            this.DeptGridView.RowTemplate.Height = 28;
-            this.DeptGridView.Size = new System.Drawing.Size(304, 227);
-            this.DeptGridView.TabIndex = 22;
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(506, 186);
+            this.ShowData.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.RowHeadersWidth = 62;
+            this.ShowData.RowTemplate.Height = 28;
+            this.ShowData.Size = new System.Drawing.Size(304, 227);
+            this.ShowData.TabIndex = 22;
             // 
             // panel3
             // 
@@ -290,7 +290,7 @@
             this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(506, 49);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 21;
@@ -361,7 +361,7 @@
             this.panel2.Controls.Add(this.txtFid);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(173, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(305, 365);
             this.panel2.TabIndex = 20;
@@ -371,7 +371,7 @@
             this.cbDeptName.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDeptName.FormattingEnabled = true;
             this.cbDeptName.Location = new System.Drawing.Point(26, 196);
-            this.cbDeptName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDeptName.Margin = new System.Windows.Forms.Padding(2);
             this.cbDeptName.Name = "cbDeptName";
             this.cbDeptName.Size = new System.Drawing.Size(253, 30);
             this.cbDeptName.TabIndex = 29;
@@ -393,7 +393,7 @@
             "Research Professor",
             "Research Assistant (RA)"});
             this.cbPosition.Location = new System.Drawing.Point(27, 149);
-            this.cbPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPosition.Margin = new System.Windows.Forms.Padding(2);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(253, 30);
             this.cbPosition.TabIndex = 20;
@@ -489,7 +489,7 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Location = new System.Drawing.Point(137, 319);
+            this.updateBtn.Location = new System.Drawing.Point(157, 322);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(99, 34);
             this.updateBtn.TabIndex = 16;
@@ -503,12 +503,13 @@
             this.InsertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InsertBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.InsertBtn.Location = new System.Drawing.Point(33, 319);
+            this.InsertBtn.Location = new System.Drawing.Point(53, 322);
             this.InsertBtn.Name = "InsertBtn";
             this.InsertBtn.Size = new System.Drawing.Size(99, 34);
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // txtemail
             // 
@@ -545,19 +546,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.DeptGridView);
+            this.Controls.Add(this.ShowData);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Faculty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Faculty";
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -581,7 +582,7 @@
         private System.Windows.Forms.Label studentLbl;
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HomeLbl;
-        private System.Windows.Forms.DataGridView DeptGridView;
+        private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtDeleteFID;
         private System.Windows.Forms.Label label10;
