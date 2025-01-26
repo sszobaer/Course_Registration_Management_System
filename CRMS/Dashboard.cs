@@ -23,91 +23,9 @@ namespace CRMS
             GetTotalStudents();
             this.Name = AdminName;
         }
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            lblName.Text = Name;
-        }
-        public void GetTotalDepartments()
-        {
-            string query = "SELECT COUNT(*) AS TotalDepartmentNumber FROM Department";
-            DataTable result = dbFunctions.GetData(query);
+        /*-------------------------------------Helper Methods Start-----------------------------------------*/
 
-            if (result.Rows.Count > 0)
-            {
-                int totalDepartments = Convert.ToInt32(result.Rows[0]["TotalDepartmentNumber"]);
-                lblDepartmentCount.Text = totalDepartments.ToString();
-            }
-            else
-            {
-                lblDepartmentCount.Text = "0";
-            }
-        }
-        public void GetTotalFaculty()
-        {
-            string query = "SELECT COUNT(*) AS TotalFacultyNumber FROM Facultymember";
-            DataTable result = dbFunctions.GetData(query);
-
-            if (result.Rows.Count > 0)
-            {
-                int totalFacultyMember = Convert.ToInt32(result.Rows[0]["TotalFacultyNumber"]);
-                lblFacultyCount.Text = totalFacultyMember.ToString();
-            }
-            else
-            {
-                lblFacultyCount.Text = "0";
-            }
-        }
-        public void GetTotalStudents()
-        {
-            string query = "SELECT COUNT(*) AS TotalStudents FROM Student";
-            DataTable result = dbFunctions.GetData(query);
-
-            if (result.Rows.Count > 0)
-            {
-                int totalStudent = Convert.ToInt32(result.Rows[0]["TotalStudents"]);
-                lblStudentCount.Text = totalStudent.ToString();
-            }
-            else
-            {
-                lblFacultyCount.Text = "0";
-            }
-        }
-        private void showStudents()
-        {
-            string Query = "SELECT * FROM Student";
-            ShowData.DataSource = dbFunctions.GetData(Query);
-        }
-        private void BtnshowStudents_Click(object sender, EventArgs e)
-        {
-            showStudents();
-        }
-        private void showDepartments()
-        {
-            string Query = "SELECT * FROM Department";
-            ShowData.DataSource = dbFunctions.GetData(Query);
-        }
-        private void btnShowDept_Click(object sender, EventArgs e)
-        {
-            showDepartments();  
-        }
-        private void showCourses()
-        {
-            string Query = "SELECT * FROM Course";
-            ShowData.DataSource = dbFunctions.GetData(Query);
-        }
-        private void btnShowCourses_Click(object sender, EventArgs e)
-        {
-            showCourses();
-        }
-        private void showFaculty()
-        {
-            string Query = "SELECT * FROM Facultymember";
-            ShowData.DataSource = dbFunctions.GetData(Query);
-        }
-        private void btnShowFaculty_Click(object sender, EventArgs e)
-        {
-            showFaculty();
-        }
+        // Configure the DataGridView
         private void ConfigureDataGridView()
         {
             // Set alternating row colors for readability
@@ -153,8 +71,123 @@ namespace CRMS
             // Ensure column headers are visible
             ShowData.ColumnHeadersVisible = true;
         }
+        
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            lblName.Text = Name;
+        }
+        //Fetch total number of departments
+        public void GetTotalDepartments()
+        {
+            string query = "SELECT COUNT(*) AS TotalDepartmentNumber FROM Department";
+            DataTable result = dbFunctions.GetData(query);
 
+            if (result.Rows.Count > 0)
+            {
+                int totalDepartments = Convert.ToInt32(result.Rows[0]["TotalDepartmentNumber"]);
+                lblDepartmentCount.Text = totalDepartments.ToString();
+            }
+            else
+            {
+                lblDepartmentCount.Text = "0";
+            }
+        }
 
+        //Fetch total number of faculty members
+        public void GetTotalFaculty()
+        {
+            string query = "SELECT COUNT(*) AS TotalFacultyNumber FROM Facultymember";
+            DataTable result = dbFunctions.GetData(query);
+
+            if (result.Rows.Count > 0)
+            {
+                int totalFacultyMember = Convert.ToInt32(result.Rows[0]["TotalFacultyNumber"]);
+                lblFacultyCount.Text = totalFacultyMember.ToString();
+            }
+            else
+            {
+                lblFacultyCount.Text = "0";
+            }
+        }
+
+        //Fetch total number of students
+        public void GetTotalStudents()
+        {
+            string query = "SELECT COUNT(*) AS TotalStudents FROM Student";
+            DataTable result = dbFunctions.GetData(query);
+
+            if (result.Rows.Count > 0)
+            {
+                int totalStudent = Convert.ToInt32(result.Rows[0]["TotalStudents"]);
+                lblStudentCount.Text = totalStudent.ToString();
+            }
+            else
+            {
+                lblFacultyCount.Text = "0";
+            }
+        }
+        //Fetch all students
+        private void showStudents()
+        {
+            string Query = "SELECT * FROM Student";
+            ShowData.DataSource = dbFunctions.GetData(Query);
+        }
+
+        //Fetch all departments
+        private void showDepartments()
+        {
+            string Query = "SELECT * FROM Department";
+            ShowData.DataSource = dbFunctions.GetData(Query);
+        }
+
+        //Fetch all courses
+        private void showCourses()
+        {
+            string Query = "SELECT * FROM Course";
+            ShowData.DataSource = dbFunctions.GetData(Query);
+        }
+
+        //Fetch all faculty members
+        private void showFaculty()
+        {
+            string Query = "SELECT * FROM Facultymember";
+            ShowData.DataSource = dbFunctions.GetData(Query);
+        }
+        /*-------------------------------------Helper Methods End-----------------------------------------*/
+
+        /*-------------------------------------Event Handlers Start-----------------------------------------*/
+        //Back Button
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
+        }
+        private void BtnshowStudents_Click(object sender, EventArgs e)
+        {
+            showStudents();
+        }
+
+        private void btnShowDept_Click(object sender, EventArgs e)
+        {
+            showDepartments();
+        }
+
+        private void btnShowCourses_Click(object sender, EventArgs e)
+        {
+            showCourses();
+        }
+
+        private void btnShowFaculty_Click(object sender, EventArgs e)
+        {
+            showFaculty();
+        }
+        /*-------------------------------------Event Handlers End-----------------------------------------*/
+
+        /*-------------------------------------Navigation Start-----------------------------------------*/
         private void HomeLbl_Click(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -239,16 +272,6 @@ namespace CRMS
             this.Show();
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            if (Home.stack.Count > 0)
-            {
-                Form previousForm = Home.stack.Pop();
-                this.Hide();
-                previousForm.Show();
-            }
-        }
-
         private void AssignCourseLbl_Click(object sender, EventArgs e)
         {
             AssignCourse assignCourse = new AssignCourse();
@@ -261,6 +284,12 @@ namespace CRMS
         private void btnViewProfile_Click(object sender, EventArgs e)
         {
 
+        }
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            GetTotalDepartments();
+            GetTotalFaculty();
+            GetTotalStudents();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -277,5 +306,7 @@ namespace CRMS
             ChangePassword changePassword = new ChangePassword();
             changePassword.ShowDialog();
         }
+        /*-------------------------------------Navigation End-----------------------------------------*/
+
     }
 }

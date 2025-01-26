@@ -67,6 +67,7 @@
             this.ShowData = new System.Windows.Forms.DataGridView();
             this.btnViewProfile = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Label();
+            this.refreshBtn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -550,6 +551,7 @@
             // 
             // ShowData
             // 
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ShowData.Location = new System.Drawing.Point(412, 238);
             this.ShowData.Name = "ShowData";
@@ -587,11 +589,28 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.AutoSize = true;
+            this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.refreshBtn.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.refreshBtn.Location = new System.Drawing.Point(285, 11);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(77, 22);
+            this.refreshBtn.TabIndex = 23;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnViewProfile);
             this.Controls.Add(this.ShowData);
@@ -669,5 +688,6 @@
         private System.Windows.Forms.Button btnShowCourses;
         private System.Windows.Forms.Label btnViewProfile;
         private System.Windows.Forms.Label btnLogOut;
+        private System.Windows.Forms.Label refreshBtn;
     }
 }
