@@ -42,7 +42,7 @@
             this.studentLbl = new System.Windows.Forms.Label();
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
-            this.DeptGridView = new System.Windows.Forms.DataGridView();
+            this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,9 +60,10 @@
             this.txtDeptLocation = new System.Windows.Forms.TextBox();
             this.txtDeptid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -265,22 +266,23 @@
             this.HomeLbl.Text = "Home";
             this.HomeLbl.Click += new System.EventHandler(this.HomeLbl_Click);
             // 
-            // DeptGridView
+            // ShowData
             // 
-            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeptGridView.Location = new System.Drawing.Point(507, 187);
-            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.DeptGridView.Name = "DeptGridView";
-            this.DeptGridView.RowHeadersWidth = 62;
-            this.DeptGridView.RowTemplate.Height = 28;
-            this.DeptGridView.Size = new System.Drawing.Size(304, 227);
-            this.DeptGridView.TabIndex = 22;
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(507, 187);
+            this.ShowData.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.RowHeadersWidth = 62;
+            this.ShowData.RowTemplate.Height = 28;
+            this.ShowData.Size = new System.Drawing.Size(304, 227);
+            this.ShowData.TabIndex = 22;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Delete);
             this.panel3.Controls.Add(this.txtDeleteDeptID);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.SearchBtn);
@@ -318,12 +320,13 @@
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SearchBtn.Location = new System.Drawing.Point(99, 81);
+            this.SearchBtn.Location = new System.Drawing.Point(41, 84);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(99, 34);
             this.SearchBtn.TabIndex = 16;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // label2
             // 
@@ -434,6 +437,7 @@
             this.updateBtn.TabIndex = 16;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // InsertBtn
             // 
@@ -448,6 +452,7 @@
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // txtDeptLocation
             // 
@@ -479,12 +484,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
             // 
+            // Delete
+            // 
+            this.Delete.BackColor = System.Drawing.Color.Teal;
+            this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Delete.Location = new System.Drawing.Point(155, 84);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(99, 34);
+            this.Delete.TabIndex = 30;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.DeptGridView);
+            this.Controls.Add(this.ShowData);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -496,7 +516,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -520,7 +540,7 @@
         private System.Windows.Forms.Label studentLbl;
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HomeLbl;
-        private System.Windows.Forms.DataGridView DeptGridView;
+        private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtDeleteDeptID;
         private System.Windows.Forms.Label label10;
@@ -538,5 +558,6 @@
         private System.Windows.Forms.TextBox txtDeptid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker enrollmentDate;
+        private System.Windows.Forms.Button Delete;
     }
 }

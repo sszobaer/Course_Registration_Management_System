@@ -16,7 +16,83 @@ namespace CRMS
         {
             InitializeComponent();
         }
+        /*-------------------------------------Helper Methods Start-----------------------------------------*/
+        //UI Configuration for DataGridView
+        private void ConfigureDataGridView()
+        {
 
+            ShowData.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            ShowData.EnableHeadersVisualStyles = false;
+            ShowData.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
+            ShowData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            ShowData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            ShowData.GridColor = Color.Black;
+            ShowData.DefaultCellStyle.BackColor = Color.White;
+            ShowData.DefaultCellStyle.ForeColor = Color.Black;
+            ShowData.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            ShowData.DefaultCellStyle.SelectionBackColor = Color.SkyBlue;
+            ShowData.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            ShowData.AllowUserToResizeColumns = false;
+
+            ShowData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            ShowData.ScrollBars = ScrollBars.Both;
+
+            foreach (DataGridViewColumn column in ShowData.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells; // Adjust width to fit content
+            }
+
+
+            ShowData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ShowData.RowHeadersVisible = false;
+            ShowData.ColumnHeadersVisible = true;
+        }
+        /*-------------------------------------Helper Methods End-----------------------------------------*/
+
+        /*-------------------------------------CRUD Operations Start-----------------------------------------*/
+        //Insert Logic for Registration
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
+
+        //Update Logic for Registration
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
+
+        //Delete Logic for Registration
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
+
+        //Search Logic for Registration
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
+
+        /*-------------------------------------CRUD Operations End-----------------------------------------*/
+
+        /*-------------------------------------Event Handlers Start-----------------------------------------*/
+        //Back Button
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
+        }
+        /*-------------------------------------Event Handlers End-----------------------------------------*/
+
+        /*-------------------------------------Navigation Start-----------------------------------------*/
         private void HomeLbl_Click(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -101,16 +177,6 @@ namespace CRMS
             this.Show();
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            if (Home.stack.Count > 0)
-            {
-                Form previousForm = Home.stack.Pop();
-                this.Hide();
-                previousForm.Show();
-            }
-        }
-
         private void AssignCourseLbl_Click(object sender, EventArgs e)
         {
             AssignCourse assignCourse = new AssignCourse();
@@ -119,5 +185,6 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
+        /*-------------------------------------Navigation End-----------------------------------------*/
     }
 }
