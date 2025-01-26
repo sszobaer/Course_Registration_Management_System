@@ -19,12 +19,64 @@ namespace CRMS
             GetDeptHead();
             showDepartment();
             ConfigureDataGridView();
+            ShowData.CellClick += ShowData_CellClick;
         }
+        /*-------------------------------------Helper Methods Start-----------------------------------------*/
+        //UI Configuration for DataGridView
+        private void ConfigureDataGridView()
+        {
+            // Set alternating row colors for readability
+            ShowData.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+
+            // Set header styles
+            ShowData.EnableHeadersVisualStyles = false;
+            ShowData.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
+            ShowData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            ShowData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            // Set grid line color
+            ShowData.GridColor = Color.Black;
+
+            // Set default row styles
+            ShowData.DefaultCellStyle.BackColor = Color.White;
+            ShowData.DefaultCellStyle.ForeColor = Color.Black;
+            ShowData.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Set selection styles
+            ShowData.DefaultCellStyle.SelectionBackColor = Color.SkyBlue;
+            ShowData.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Disable column resizing by users
+            ShowData.AllowUserToResizeColumns = false;
+
+            // Enable horizontal scrolling
+            ShowData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            ShowData.ScrollBars = ScrollBars.Both;
+
+            // Adjust column width to content
+            foreach (DataGridViewColumn column in ShowData.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells; // Adjust width to fit content
+            }
+
+            // Adjust row height to fit content
+            ShowData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            // Disable row headers to remove the extra column at index 0
+            ShowData.RowHeadersVisible = false;
+
+            // Ensure column headers are visible
+            ShowData.ColumnHeadersVisible = true;
+        }
+
+        // Show all departments in the DataGridView
         private void showDepartment()
         {
             string Query = "SELECT * FROM Department";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
+
+        // Get all faculty members to populate the ComboBox
         private void GetDeptHead()
         {
             string query = "SELECT facultyName, facultyID FROM FacultyMember";
@@ -32,14 +84,15 @@ namespace CRMS
 
             if (dt.Rows.Count > 0)
             {
-                cbDeptHead.DataSource = null;         
-                cbDeptHead.Items.Clear();            
-                cbDeptHead.DisplayMember = "facultyName"; 
-                cbDeptHead.ValueMember = "facultyID";    
-                cbDeptHead.DataSource = dt;           
+                cbDeptHead.DataSource = null;
+                cbDeptHead.Items.Clear();
+                cbDeptHead.DisplayMember = "facultyName";
+                cbDeptHead.ValueMember = "facultyID";
+                cbDeptHead.DataSource = dt;
             }
         }
 
+        // Clear all input fields
         private void ClearFields()
         {
             txtDeptid.Text = "";
@@ -49,7 +102,11 @@ namespace CRMS
             txtDeptPhone2.Text = "";
             cbDeptHead.SelectedIndex = -1;
         }
-      
+
+        /*-------------------------------------Helper Methods End-----------------------------------------*/
+
+        /*-------------------------------------CRUD Operations Start-----------------------------------------*/
+        //Insert new department
         private void InsertBtn_Click(object sender, EventArgs e)
         {
             try
@@ -69,7 +126,6 @@ namespace CRMS
                     return;
                 }
 
-                // Collect input data
                 int deptId = Convert.ToInt32(txtDeptid.Text);
                 string deptHead = cbDeptHead.Text;
                 string location = txtDeptLocation.Text;
@@ -77,7 +133,7 @@ namespace CRMS
                 string deptPhone1 = txtDeptPhone1.Text;
                 string deptPhone2 = txtDeptPhone2.Text;
 
-                string Query = "INSERT INTO Department (deptId, deptName, deptHead, officeLocation, deptPhone1, deptPhone2) VALUES (:deptId, :deptName, :deptHead, :officeLocation, :deptPhone1, :deptPhone2)";
+                string Query = "INSERT INTO Department (deptId, deptName, deptHead, officeLocation, c, deptPhone2) VALUES (:deptId, :deptName, :deptHead, :officeLocation, :deptPhone1, :deptPhone2)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
@@ -93,19 +149,26 @@ namespace CRMS
                 dbFunctions.setData(Query, parameters);
 
                 // Success message
-                MessageBox.Show("New department added successfully! \n\n Great work! Your entry has been saved into the database.","Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("New department added successfully! \n\n Great work! Your entry has been saved into the database.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 showDepartment();
                 ClearFields();
             }
             catch (FormatException)
             {
-                MessageBox.Show("Invalid data format. Please check your inputs and try again.","❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid data format. Please check your inputs and try again.", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An unexpected error occurred: {ex.Message}","❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Update department
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
+
+        //Delete department
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             try
@@ -131,7 +194,52 @@ namespace CRMS
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Search department
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            //pass
+        }
 
+        /*-------------------------------------CRUD Operations End-----------------------------------------*/
+
+        /*-------------------------------------Event Handlers Start-----------------------------------------*/
+        //Handle cell click event
+        private void ShowData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the clicked row is valid
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = ShowData.Rows[e.RowIndex];
+
+                // Populate textboxes with the selected row's data
+                txtDeptid.Text = selectedRow.Cells["deptId"].Value?.ToString();
+                txtDeptname.Text = selectedRow.Cells["deptName"].Value?.ToString();
+                txtDeptLocation.Text = selectedRow.Cells["officeLocation"].Value?.ToString();
+                txtDeptPhone1.Text = selectedRow.Cells["deptPhone1"].Value?.ToString();
+                txtDeptPhone2.Text = selectedRow.Cells["deptPhone2"].Value?.ToString();
+
+                // Set the selected department in the ComboBox
+                if (selectedRow.Cells["deptId"].Value != null)
+                {
+                    cbDeptHead.SelectedValue = Convert.ToInt32(selectedRow.Cells["deptId"].Value);
+                }
+
+            }
+        }
+
+        //Back button click event
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
+        }
+        /*-------------------------------------Event Handlers End-----------------------------------------*/
+
+        /*-------------------------------------Navigation Start-----------------------------------------*/
         private void HomeLbl_Click(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -216,16 +324,6 @@ namespace CRMS
             this.Show();
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            if (Home.stack.Count > 0)
-            {
-                Form previousForm = Home.stack.Pop();
-                this.Hide();
-                previousForm.Show();
-            }
-        }
-
         private void AssignCourseLbl_Click(object sender, EventArgs e)
         {
             AssignCourse assignCourse = new AssignCourse();
@@ -234,50 +332,6 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
-        private void ConfigureDataGridView()
-        {
-            // Set alternating row colors for readability
-            ShowData.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-
-            // Set header styles
-            ShowData.EnableHeadersVisualStyles = false;
-            ShowData.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
-            ShowData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            ShowData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            // Set grid line color
-            ShowData.GridColor = Color.Black;
-
-            // Set default row styles
-            ShowData.DefaultCellStyle.BackColor = Color.White;
-            ShowData.DefaultCellStyle.ForeColor = Color.Black;
-            ShowData.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-
-            // Set selection styles
-            ShowData.DefaultCellStyle.SelectionBackColor = Color.SkyBlue;
-            ShowData.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            // Disable column resizing by users
-            ShowData.AllowUserToResizeColumns = false;
-
-            // Enable horizontal scrolling
-            ShowData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            ShowData.ScrollBars = ScrollBars.Both;
-
-            // Adjust column width to content
-            foreach (DataGridViewColumn column in ShowData.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells; // Adjust width to fit content
-            }
-
-            // Adjust row height to fit content
-            ShowData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-            // Disable row headers to remove the extra column at index 0
-            ShowData.RowHeadersVisible = false;
-
-            // Ensure column headers are visible
-            ShowData.ColumnHeadersVisible = true;
-        }
+        /*-------------------------------------Navigation End-----------------------------------------*/
     }
 }

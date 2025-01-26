@@ -46,6 +46,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -280,6 +281,7 @@
             this.ShowData.RowTemplate.Height = 28;
             this.ShowData.Size = new System.Drawing.Size(304, 227);
             this.ShowData.TabIndex = 19;
+            this.ShowData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowData_CellClick);
             // 
             // panel3
             // 
@@ -287,6 +289,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txtDeleteDeptID);
             this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.searchBtn);
             this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(501, 53);
@@ -315,6 +318,21 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "Department Id";
             // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.Teal;
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(50, 81);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(99, 34);
+            this.searchBtn.TabIndex = 16;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
@@ -322,7 +340,7 @@
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(99, 81);
+            this.DeleteBtn.Location = new System.Drawing.Point(155, 81);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
             this.DeleteBtn.TabIndex = 16;
@@ -474,6 +492,7 @@
             this.updateBtn.TabIndex = 16;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // InsertBtn
             // 
@@ -592,5 +611,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.ComboBox cbDeptHead;
+        private System.Windows.Forms.Button searchBtn;
     }
 }
