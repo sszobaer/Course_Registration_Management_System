@@ -43,11 +43,6 @@
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
             this.ShowData = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDeleteFID = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.DeleteBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbDeptName = new System.Windows.Forms.ComboBox();
             this.cbPosition = new System.Windows.Forms.ComboBox();
@@ -64,11 +59,17 @@
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtFid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDeleteFID = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.searchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -281,66 +282,6 @@
             this.ShowData.Size = new System.Drawing.Size(304, 227);
             this.ShowData.TabIndex = 22;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtDeleteFID);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.DeleteBtn);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(506, 49);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(305, 125);
-            this.panel3.TabIndex = 21;
-            // 
-            // txtDeleteFID
-            // 
-            this.txtDeleteFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeleteFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteFID.Location = new System.Drawing.Point(24, 52);
-            this.txtDeleteFID.Name = "txtDeleteFID";
-            this.txtDeleteFID.Size = new System.Drawing.Size(253, 26);
-            this.txtDeleteFID.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 32);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 20);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Faculty Id";
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(99, 81);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
-            this.DeleteBtn.TabIndex = 16;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(63, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 22);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Delete Faculty";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -495,6 +436,7 @@
             this.updateBtn.TabIndex = 16;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // InsertBtn
             // 
@@ -541,6 +483,83 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add New Member";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(38, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(217, 22);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Search or Delete Faculty";
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteBtn.Location = new System.Drawing.Point(157, 81);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
+            this.DeleteBtn.TabIndex = 16;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 32);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 20);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Faculty Id";
+            // 
+            // txtDeleteFID
+            // 
+            this.txtDeleteFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeleteFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeleteFID.Location = new System.Drawing.Point(24, 52);
+            this.txtDeleteFID.Name = "txtDeleteFID";
+            this.txtDeleteFID.Size = new System.Drawing.Size(253, 26);
+            this.txtDeleteFID.TabIndex = 27;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.searchBtn);
+            this.panel3.Controls.Add(this.txtDeleteFID);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(506, 49);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(305, 125);
+            this.panel3.TabIndex = 21;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.Teal;
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(45, 81);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(99, 34);
+            this.searchBtn.TabIndex = 30;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // Faculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,10 +578,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -583,11 +602,6 @@
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HomeLbl;
         private System.Windows.Forms.DataGridView ShowData;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtDeleteFID;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.TextBox txtPhone;
@@ -604,5 +618,11 @@
         private System.Windows.Forms.TextBox txtFid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbDeptName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDeleteFID;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button searchBtn;
     }
 }
