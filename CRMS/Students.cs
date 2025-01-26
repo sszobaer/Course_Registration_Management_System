@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,20 @@ namespace CRMS
 {
     public partial class Students : Form
     {
+        private Functions dbFunctions = new Functions();
         public Students()
         {
             InitializeComponent();
-            // Add students
+            ConfigureTextBoxes();
+            ConfigureDataGridView();
+            GetDept();
+            showStudents();
+            ShowData.CellClick += ShowData_CellClick;
+        }
+        /*-------------------------------------Helper Methods Start-----------------------------------------*/
+        //UI Configurartion for textBoxes
+        private void ConfigureTextBoxes()
+        {
             txtSid.Text = "ID";
             txtSid.ForeColor = Color.Teal;
             txtSname.Text = "Name";
@@ -30,53 +41,67 @@ namespace CRMS
             txtPhoneNo.ForeColor = Color.Teal;
             txtProgram.Text = "Program";
             txtProgram.ForeColor = Color.Teal;
-            cbDept.Text = "Department";
-            cbDept.ForeColor = Color.Teal;
+            cbDeptName.Text = "Department";
+            cbDeptName.ForeColor = Color.Teal;
 
-            //Delete Students
             txtDeleteID.Text = "ID";
             txtDeleteID.ForeColor = Color.Teal;
-
-            //Search Students
-            txtSearchID.Text = "ID";
-            txtSearchID.ForeColor = Color.Teal;
         }
+
+        //Fetch Department Names
+        private void GetDept()
+        {
+            string query = "SELECT deptName, deptID FROM  Department";
+            DataTable dt = dbFunctions.GetData(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                cbDeptName.DataSource = null;
+                cbDeptName.Items.Clear();
+                cbDeptName.DisplayMember = "deptID";
+                cbDeptName.ValueMember = "deptID";
+                cbDeptName.DataSource = dt;
+            }
+        }
+        //Fetch Students
+        private void showStudents()
+        {
+            string Query = "SELECT * FROM Student";
+            ShowData.DataSource = dbFunctions.GetData(Query);
+        }
+
+        //UI Configuration for DataGridView
         private void ConfigureDataGridView()
         {
-            // Set alternating row colors for readability
-            StudentsGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
 
-            // Set header styles
-            StudentsGridView.EnableHeadersVisualStyles = false;
-            StudentsGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal
-;
-            StudentsGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            StudentsGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            ShowData.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            ShowData.EnableHeadersVisualStyles = false;
+            ShowData.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
+            ShowData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            ShowData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
-            // Set grid line color
-            StudentsGridView.GridColor = Color.Black;
+            ShowData.GridColor = Color.Black;
+            ShowData.DefaultCellStyle.BackColor = Color.White;
+            ShowData.DefaultCellStyle.ForeColor = Color.Black;
+            ShowData.DefaultCellStyle.Font = new Font("Segoe UI", 10);
 
-            // Set default row styles
-            StudentsGridView.DefaultCellStyle.BackColor = Color.White;
-            StudentsGridView.DefaultCellStyle.ForeColor = Color.Black;
-            StudentsGridView.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            ShowData.DefaultCellStyle.SelectionBackColor = Color.SkyBlue;
+            ShowData.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            // Set selection styles
-            StudentsGridView.DefaultCellStyle.SelectionBackColor = Color.DarkOrange;
-            StudentsGridView.DefaultCellStyle.SelectionForeColor = Color.White;
+            ShowData.AllowUserToResizeColumns = false;
 
-            // Fit columns to the DataGridView
-            StudentsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ShowData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            ShowData.ScrollBars = ScrollBars.Both;
 
-            // Adjust row height to fit content
-            StudentsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            foreach (DataGridViewColumn column in ShowData.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells; // Adjust width to fit content
+            }
 
-            // Disable column resize by the user for a consistent layout
-            StudentsGridView.AllowUserToResizeColumns = false;
 
-            // Set row and column headers visibility if needed
-            StudentsGridView.RowHeadersVisible = false;
-            StudentsGridView.ColumnHeadersVisible = true;
+            ShowData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ShowData.RowHeadersVisible = false;
+            ShowData.ColumnHeadersVisible = true;
         }
         private void txtSid_Enter(object sender, EventArgs e)
         {
@@ -100,10 +125,10 @@ namespace CRMS
 
         private void txtSname_Leave(object sender, EventArgs e)
         {
-            if(txtSname.Text == string.Empty)
+            if (txtSname.Text == string.Empty)
             {
                 txtSname.Text = "Name";
-                txtSname.ForeColor= Color.Teal;
+                txtSname.ForeColor = Color.Teal;
             }
         }
 
@@ -115,7 +140,7 @@ namespace CRMS
 
         private void txtProgram_Leave(object sender, EventArgs e)
         {
-            if(txtProgram.Text == string.Empty)
+            if (txtProgram.Text == string.Empty)
             {
                 txtProgram.Text = "Program";
                 txtProgram.ForeColor = Color.Teal;
@@ -132,8 +157,8 @@ namespace CRMS
         {
             if (txtStatus.Text == string.Empty)
             {
-                txtStatus.Text= "Status";
-                txtStatus.ForeColor= Color.Teal;
+                txtStatus.Text = "Status";
+                txtStatus.ForeColor = Color.Teal;
             }
         }
 
@@ -145,7 +170,7 @@ namespace CRMS
 
         private void txtAddress_Leave(object sender, EventArgs e)
         {
-            if(txtAddress.Text == string.Empty)
+            if (txtAddress.Text == string.Empty)
             {
                 txtAddress.Text = "Address";
                 txtAddress.ForeColor = Color.Teal;
@@ -160,10 +185,10 @@ namespace CRMS
 
         private void txtPhoneNo_Leave(object sender, EventArgs e)
         {
-            if( txtPhoneNo.Text == string.Empty)
+            if (txtPhoneNo.Text == string.Empty)
             {
                 txtPhoneNo.Text = "Phone Number";
-                txtPhoneNo.ForeColor= Color.Teal;
+                txtPhoneNo.ForeColor = Color.Teal;
             }
         }
 
@@ -175,7 +200,7 @@ namespace CRMS
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            if(txtEmail.Text == string.Empty)
+            if (txtEmail.Text == string.Empty)
             {
                 txtEmail.Text = "Email";
                 txtEmail.ForeColor = Color.Teal;
@@ -184,16 +209,16 @@ namespace CRMS
 
         private void cbDept_Enter(object sender, EventArgs e)
         {
-            cbDept.Text = string.Empty;
-            cbDept.ForeColor = Color.Black;
+            cbDeptName.Text = string.Empty;
+            cbDeptName.ForeColor = Color.Black;
         }
 
         private void cbDept_Leave(object sender, EventArgs e)
         {
-            if( cbDept.Text == string.Empty)
+            if (cbDeptName.Text == string.Empty)
             {
-                cbDept.Text = "Department";
-                cbDept.ForeColor = Color.Teal;
+                cbDeptName.Text = "Department";
+                cbDeptName.ForeColor = Color.Teal;
             }
         }
 
@@ -205,28 +230,145 @@ namespace CRMS
 
         private void txtDeleteID_Leave(object sender, EventArgs e)
         {
-            if( txtDeleteID.Text == string.Empty)
+            if (txtDeleteID.Text == string.Empty)
             {
                 txtDeleteID.Text = "ID";
                 txtDeleteID.ForeColor = Color.Teal;
             }
         }
-
-        private void txtSearchID_Enter(object sender, EventArgs e)
+        //Clear Fields
+        private void ClearFields()
         {
-            txtSearchID.Text = string.Empty;
-            txtSearchID.ForeColor = Color.Black;
+            txtSid.Text = "ID";
+            txtSid.ForeColor = Color.Teal;
+            txtSname.Text = "Name";
+            txtSname.ForeColor = Color.Teal;
+            txtStatus.Text = "Status";
+            txtStatus.ForeColor = Color.Teal;
+            txtAddress.Text = "Address";
+            txtAddress.ForeColor = Color.Teal;
+            txtEmail.Text = "Email";
+            txtEmail.ForeColor = Color.Teal;
+            txtPhoneNo.Text = "Phone Number";
+            txtPhoneNo.ForeColor = Color.Teal;
+            txtProgram.Text = "Program";
+            txtProgram.ForeColor = Color.Teal;
+            cbDeptName.Text = "Department";
+            cbDeptName.ForeColor = Color.Teal;
         }
+        /*-------------------------------------Helper Methods End-----------------------------------------*/
 
-        private void txtSearchID_Leave(object sender, EventArgs e)
+        /*-------------------------------------CRUD Operations Start-----------------------------------------*/
+
+        //Insert Logic for Students
+        private void InsertBtn_Click(object sender, EventArgs e)
         {
-            if(txtSearchID.Text == string.Empty)
+            try
             {
-                txtSearchID.Text = "ID";
-                txtSearchID.ForeColor = Color.Teal;
+                if (txtSid.Text == "ID" || txtSname.Text == "Name" || txtStatus.Text == "Status" ||
+                    txtAddress.Text == "Address" || txtEmail.Text == "Email" || txtPhoneNo.Text == "Phone Number" ||
+                    txtProgram.Text == "Program" || cbDeptName.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please fill out all fields before inserting.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string studentId = txtSid.Text;
+                string studentName = txtSname.Text;
+                string studentStatus = txtStatus.Text;
+                string studentAddress = txtAddress.Text;
+                string studentEmail = txtEmail.Text;
+                string studentPhoneNo = txtPhoneNo.Text;
+                string studentProgram = txtProgram.Text;
+                int deptId = Convert.ToInt32(cbDeptName.SelectedValue);
+                DateTime EnrollmentDate = enrollmentDate.Value;
+                
+
+                string query = @"INSERT INTO Student (studentId, studentName, program, enrollmentDate, status, address, deptId, student_phone1, student_phone2, student_email1, student_email2) 
+                                VALUES (:studentId, :studentName, :studentProgram, TO_DATE(:enrollmentDate, 'YYYY-MM-DD'), :studentStatus, :studentAddress, :deptId, :student_phone1, :student_phone2, :student_email1, :student_email2)";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "studentId", studentId },
+                    { "studentName", studentName },
+                    { "studentProgram", studentProgram },
+                    { "enrollmentDate", EnrollmentDate.ToString("yyyy-MM-dd")},
+                    { "studentStatus", studentStatus },
+                    { "studentAddress", studentAddress },
+                    { "deptId", deptId },
+                    { "student_phone1", studentPhoneNo },
+                    { "student_phone2", DBNull.Value },
+                    { "student_email1", studentEmail },
+                    { "student_email2", DBNull.Value }
+                };
+
+                dbFunctions.setData(query, parameters);
+                MessageBox.Show("New student added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                showStudents();
+                ClearFields();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid data format. Please check your inputs and try again.", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+        //Update Logic for Students
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Delete Logic for Students
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Search Logic for Students
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /*-------------------------------------CRUD Operations End-----------------------------------------*/
+
+        /*-------------------------------------Event Handlers Start-----------------------------------------*/
+        //Cell Click Event
+        //Cell Click Event
+        private void ShowData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the clicked row is valid
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = ShowData.Rows[e.RowIndex];
+
+                // Populate the textboxes with the selected row's data
+                txtSid.Text = selectedRow.Cells["studentId"].Value.ToString();
+                txtSname.Text = selectedRow.Cells["studentName"].Value.ToString();
+                txtStatus.Text = selectedRow.Cells["status"].Value.ToString();
+                txtAddress.Text = selectedRow.Cells["address"].Value.ToString();
+                txtEmail.Text = selectedRow.Cells["student_email1"].Value.ToString();
+                txtPhoneNo.Text = selectedRow.Cells["student_phone1"].Value.ToString();
+                txtProgram.Text = selectedRow.Cells["program"].Value.ToString();
+
+                // Set the department
+                cbDeptName.SelectedValue = selectedRow.Cells["deptId"].Value;
+
+                // Set the enrollment date
+                DateTime EnrollmentDate = Convert.ToDateTime(selectedRow.Cells["enrollmentDate"].Value);
+                enrollmentDate.Value = EnrollmentDate; 
+            }
+        }
+
+        //BAck Button
         private void BackBtn_Click(object sender, EventArgs e)
         {
             if (Home.stack.Count > 0)
@@ -236,7 +378,9 @@ namespace CRMS
                 previousForm.Show();
             }
         }
+        /*-------------------------------------Event Handlers End-----------------------------------------*/
 
+        /*-------------------------------------Navigation Start-----------------------------------------*/
         private void HomeLbl_Click(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -248,7 +392,14 @@ namespace CRMS
 
         private void DashboardLbl_Click(object sender, EventArgs e)
         {
-            
+            if (SessionManager.IsLoggedIn)
+            {
+                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Home.stack.Push(this);
+                this.Hide();
+                dashboard.ShowDialog();
+                this.Show();
+            }
         }
 
         private void studentLbl_Click(object sender, EventArgs e)
@@ -322,5 +473,6 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
+        /*-------------------------------------Navigation End-----------------------------------------*/  
     }
 }

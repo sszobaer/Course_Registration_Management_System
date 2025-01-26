@@ -50,7 +50,7 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.cbDept = new System.Windows.Forms.ComboBox();
+            this.cbDeptName = new System.Windows.Forms.ComboBox();
             this.InsertBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.enrollmentDate = new System.Windows.Forms.DateTimePicker();
@@ -59,17 +59,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.StudentsGridView = new System.Windows.Forms.DataGridView();
-            this.txtSearchID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ShowData = new System.Windows.Forms.DataGridView();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentsGridView)).BeginInit();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -359,17 +355,17 @@
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
-            // cbDept
+            // cbDeptName
             // 
-            this.cbDept.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDept.FormattingEnabled = true;
-            this.cbDept.Location = new System.Drawing.Point(26, 277);
-            this.cbDept.Margin = new System.Windows.Forms.Padding(2);
-            this.cbDept.Name = "cbDept";
-            this.cbDept.Size = new System.Drawing.Size(253, 29);
-            this.cbDept.TabIndex = 28;
-            this.cbDept.Enter += new System.EventHandler(this.cbDept_Enter);
-            this.cbDept.Leave += new System.EventHandler(this.cbDept_Leave);
+            this.cbDeptName.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDeptName.FormattingEnabled = true;
+            this.cbDeptName.Location = new System.Drawing.Point(26, 277);
+            this.cbDeptName.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDeptName.Name = "cbDeptName";
+            this.cbDeptName.Size = new System.Drawing.Size(253, 29);
+            this.cbDeptName.TabIndex = 28;
+            this.cbDeptName.Enter += new System.EventHandler(this.cbDept_Enter);
+            this.cbDeptName.Leave += new System.EventHandler(this.cbDept_Leave);
             // 
             // InsertBtn
             // 
@@ -384,6 +380,7 @@
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // updateBtn
             // 
@@ -398,6 +395,7 @@
             this.updateBtn.TabIndex = 16;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // enrollmentDate
             // 
@@ -414,7 +412,7 @@
             this.panel2.Controls.Add(this.enrollmentDate);
             this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.InsertBtn);
-            this.panel2.Controls.Add(this.cbDept);
+            this.panel2.Controls.Add(this.cbDeptName);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtPhoneNo);
             this.panel2.Controls.Add(this.txtAddress);
@@ -459,16 +457,18 @@
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(99, 66);
+            this.DeleteBtn.Location = new System.Drawing.Point(155, 67);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
             this.DeleteBtn.TabIndex = 16;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.SearchBtn);
             this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtDeleteID);
@@ -478,40 +478,17 @@
             this.panel3.Size = new System.Drawing.Size(305, 111);
             this.panel3.TabIndex = 11;
             // 
-            // StudentsGridView
+            // ShowData
             // 
-            this.StudentsGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.StudentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StudentsGridView.Location = new System.Drawing.Point(506, 290);
-            this.StudentsGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.StudentsGridView.Name = "StudentsGridView";
-            this.StudentsGridView.RowHeadersWidth = 62;
-            this.StudentsGridView.RowTemplate.Height = 28;
-            this.StudentsGridView.Size = new System.Drawing.Size(304, 123);
-            this.StudentsGridView.TabIndex = 13;
-            // 
-            // txtSearchID
-            // 
-            this.txtSearchID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearchID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchID.Location = new System.Drawing.Point(24, 37);
-            this.txtSearchID.Name = "txtSearchID";
-            this.txtSearchID.Size = new System.Drawing.Size(253, 26);
-            this.txtSearchID.TabIndex = 27;
-            this.txtSearchID.Enter += new System.EventHandler(this.txtSearchID_Enter);
-            this.txtSearchID.Leave += new System.EventHandler(this.txtSearchID_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(87, 6);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 22);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Search Student";
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(506, 164);
+            this.ShowData.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.RowHeadersWidth = 62;
+            this.ShowData.RowTemplate.Height = 28;
+            this.ShowData.Size = new System.Drawing.Size(304, 249);
+            this.ShowData.TabIndex = 13;
             // 
             // SearchBtn
             // 
@@ -520,34 +497,22 @@
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SearchBtn.Location = new System.Drawing.Point(99, 66);
+            this.SearchBtn.Location = new System.Drawing.Point(50, 67);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(99, 34);
             this.SearchBtn.TabIndex = 16;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.SearchBtn);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txtSearchID);
-            this.panel4.Location = new System.Drawing.Point(506, 166);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(305, 111);
-            this.panel4.TabIndex = 16;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.StudentsGridView);
+            this.Controls.Add(this.ShowData);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -561,9 +526,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentsGridView)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,7 +553,7 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.ComboBox cbDept;
+        private System.Windows.Forms.ComboBox cbDeptName;
         private System.Windows.Forms.Button InsertBtn;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.DateTimePicker enrollmentDate;
@@ -599,10 +562,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView StudentsGridView;
-        private System.Windows.Forms.TextBox txtSearchID;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.Panel panel4;
     }
 }
