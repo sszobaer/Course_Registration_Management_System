@@ -47,7 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.DeptGridView = new System.Windows.Forms.DataGridView();
+            this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtPDate = new System.Windows.Forms.DateTimePicker();
             this.cbStudentId = new System.Windows.Forms.ComboBox();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -329,17 +329,17 @@
             this.label11.TabIndex = 29;
             this.label11.Text = "Search Payment";
             // 
-            // DeptGridView
+            // ShowData
             // 
-            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeptGridView.Location = new System.Drawing.Point(505, 188);
-            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.DeptGridView.Name = "DeptGridView";
-            this.DeptGridView.RowHeadersWidth = 62;
-            this.DeptGridView.RowTemplate.Height = 28;
-            this.DeptGridView.Size = new System.Drawing.Size(304, 231);
-            this.DeptGridView.TabIndex = 33;
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(505, 188);
+            this.ShowData.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.RowHeadersWidth = 62;
+            this.ShowData.RowTemplate.Height = 28;
+            this.ShowData.Size = new System.Drawing.Size(304, 231);
+            this.ShowData.TabIndex = 33;
             // 
             // panel2
             // 
@@ -492,6 +492,7 @@
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // txtAmount
             // 
@@ -538,7 +539,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.DeptGridView);
+            this.Controls.Add(this.ShowData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
@@ -551,7 +552,7 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -578,7 +579,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView DeptGridView;
+        private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbStudentId;
         private System.Windows.Forms.Label label6;
