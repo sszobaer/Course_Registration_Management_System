@@ -15,44 +15,92 @@ namespace CRMS
         }
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            int adminId = Convert.ToInt32(txtID.Text);
-            string adminPassword = txtPassword.Text;
-            try
+            int userId = Convert.ToInt32(txtID.Text);
+            string userPassword = txtPassword.Text;
+            //Verify that this is for Admin
+            if (cbCredentialType.SelectedIndex == 0)
             {
-                string query = "SELECT AdminID, AdminName FROM AdminLogin WHERE AdminID = :AdminID AND AdminPassword = :AdminPassword";
-                
-                var parameters = new Dictionary<string, object>
+                try
                 {
-                    { ":AdminID", adminId },
-                    { ":AdminPassword", adminPassword }
-                };
-                DataTable result = dbFunctions.GetData(query, parameters);
+                    string query = "SELECT AdminID, AdminName FROM AdminLogin WHERE AdminID = :AdminID AND AdminPassword = :AdminPassword";
 
-                if (result.Rows.Count > 0)
-                {
-                    string AdminName = result.Rows[0]["AdminName"].ToString();
-                    MessageBox.Show($"Welcome, {AdminName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { ":AdminID", userId },
+                        { ":AdminPassword", userPassword }
+                    };
+                    DataTable result = dbFunctions.GetData(query, parameters);
 
-                    SessionManager.IsLoggedIn = true;
-                    SessionManager.AdminName = AdminName;
+                    if (result.Rows.Count > 0)
+                    {
+                        string userName = result.Rows[0]["AdminName"].ToString();
+                        MessageBox.Show($"Welcome, {userName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Navigate to Dashboard
-                    Home.stack.Push(this);
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard(AdminName);
-                    dashboard.ShowDialog();
+                        SessionManager.IsLoggedIn = true;
+                        SessionManager.userName = userName;
+                        SessionManager.UserId = userId;
+
+                        // Navigate to Dashboard
+                        Home.stack.Push(this);
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard(userName);
+                        dashboard.ShowDialog();
+                    }
+                    else
+                    {
+                        // Invalid credentials
+                        MessageBox.Show("Invalid login credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Invalid credentials
-                    MessageBox.Show("Invalid login credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handle any errors
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            //Verify this is for Student
+            else if (cbCredentialType.SelectedIndex == 1)
             {
-                // Handle any errors
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    string query = "SELECT studentID, studentName FROM StudentLogin WHERE studentID = :studentID AND studentPassword = :studentPassword";
+
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { ":studentID", userId },
+                        { ":studentPassword", userPassword }
+                    };
+                    DataTable result = dbFunctions.GetData(query, parameters);
+
+                    if (result.Rows.Count > 0)
+                    {
+                        string userName = result.Rows[0]["studentName"].ToString();
+                        MessageBox.Show($"Welcome, {userName}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        SessionManager.IsLoggedIn = true;
+                        SessionManager.userName = userName;
+                        SessionManager.UserId = userId;
+
+                        // Navigate to Dashboard
+                        Home.stack.Push(this);
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard(userName);
+                        dashboard.ShowDialog();
+                    }
+                    else
+                    {
+                        // Invalid credentials
+                        MessageBox.Show("Invalid login credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
+            
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -92,7 +140,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();
