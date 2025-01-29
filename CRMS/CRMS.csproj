@@ -166,11 +166,23 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentDashboard.Designer.cs">
+      <DependentUpon>studentDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Students.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProfile.Designer.cs">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AssignCourse.resx">
       <DependentUpon>AssignCourse.cs</DependentUpon>
@@ -221,8 +233,14 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="studentDashboard.resx">
+      <DependentUpon>studentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Students.resx">
       <DependentUpon>Students.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProfile.resx">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
