@@ -39,7 +39,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this); 
                 this.Hide();           
                 dashboard.ShowDialog(); 
