@@ -45,7 +45,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearchPId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,7 +58,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.InsertBtn = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtPMethod = new System.Windows.Forms.TextBox();
@@ -275,7 +274,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.txtSearchPId);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.searchBtn);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(505, 47);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
@@ -303,19 +302,20 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Payment Id";
             // 
-            // button1
+            // searchBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(99, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchBtn.BackColor = System.Drawing.Color.Teal;
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(99, 81);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(99, 34);
+            this.searchBtn.TabIndex = 16;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // label11
             // 
@@ -354,7 +354,6 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.InsertBtn);
             this.panel2.Controls.Add(this.txtAmount);
             this.panel2.Controls.Add(this.txtPMethod);
@@ -465,20 +464,6 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Payment Id";
             // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.Teal;
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Location = new System.Drawing.Point(155, 329);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(99, 34);
-            this.updateBtn.TabIndex = 16;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            // 
             // InsertBtn
             // 
             this.InsertBtn.BackColor = System.Drawing.Color.Teal;
@@ -486,7 +471,7 @@
             this.InsertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InsertBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.InsertBtn.Location = new System.Drawing.Point(51, 329);
+            this.InsertBtn.Location = new System.Drawing.Point(96, 331);
             this.InsertBtn.Name = "InsertBtn";
             this.InsertBtn.Size = new System.Drawing.Size(99, 34);
             this.InsertBtn.TabIndex = 16;
@@ -577,7 +562,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtSearchPId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel2;
@@ -589,7 +574,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button InsertBtn;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtPMethod;

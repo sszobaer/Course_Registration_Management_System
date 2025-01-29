@@ -44,10 +44,9 @@
             this.HomeLbl = new System.Windows.Forms.Label();
             this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
+            this.txtSDDeptID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbDeptHead = new System.Windows.Forms.ComboBox();
@@ -287,10 +286,9 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtDeleteDeptID);
+            this.panel3.Controls.Add(this.txtSDDeptID);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.searchBtn);
-            this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(501, 53);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -298,14 +296,14 @@
             this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 18;
             // 
-            // txtDeleteDeptID
+            // txtSDDeptID
             // 
-            this.txtDeleteDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeleteDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteDeptID.Location = new System.Drawing.Point(24, 52);
-            this.txtDeleteDeptID.Name = "txtDeleteDeptID";
-            this.txtDeleteDeptID.Size = new System.Drawing.Size(253, 26);
-            this.txtDeleteDeptID.TabIndex = 27;
+            this.txtSDDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDDeptID.Location = new System.Drawing.Point(24, 52);
+            this.txtSDDeptID.Name = "txtSDDeptID";
+            this.txtSDDeptID.Size = new System.Drawing.Size(253, 26);
+            this.txtSDDeptID.TabIndex = 27;
             // 
             // label10
             // 
@@ -325,28 +323,13 @@
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.searchBtn.Location = new System.Drawing.Point(50, 81);
+            this.searchBtn.Location = new System.Drawing.Point(104, 84);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(99, 34);
             this.searchBtn.TabIndex = 16;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(155, 81);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
-            this.DeleteBtn.TabIndex = 16;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label2
             // 
@@ -356,9 +339,9 @@
             this.label2.Location = new System.Drawing.Point(63, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 22);
+            this.label2.Size = new System.Drawing.Size(175, 22);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Delete Department";
+            this.label2.Text = "Search Department";
             // 
             // panel2
             // 
@@ -591,9 +574,8 @@
         private System.Windows.Forms.Label HomeLbl;
         private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDeleteDeptID;
+        private System.Windows.Forms.TextBox txtSDDeptID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button InsertBtn;
         private System.Windows.Forms.TextBox txtDeptPhone2;

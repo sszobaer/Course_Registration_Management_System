@@ -165,39 +165,107 @@ namespace CRMS
         //Update department
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            //pass
-        }
-
-        //Delete department
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
             try
             {
-                if (txtDeleteDeptID.Text == "")
+                int deptId = Convert.ToInt32(txtDeptid.Text);
+                string deptHead = cbDeptHead.Text;
+                string location = txtDeptLocation.Text;
+                string deptName = txtDeptname.Text;
+                string deptPhone1 = txtDeptPhone1.Text;
+                string deptPhone2 = txtDeptPhone2.Text;
+                // Validate fields
+                if (string.IsNullOrWhiteSpace(txtDeptid.Text) ||
+                    string.IsNullOrWhiteSpace(txtDeptLocation.Text) ||
+                    cbDeptHead.SelectedIndex == -1 ||
+                    string.IsNullOrWhiteSpace(txtDeptname.Text) ||
+                    string.IsNullOrWhiteSpace(txtDeptPhone1.Text) ||
+                    string.IsNullOrWhiteSpace(txtDeptPhone2.Text))
                 {
-                    MessageBox.Show("No Department selected!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please fill out all the fields before proceeding.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
                     return;
                 }
-                string deptId = txtDeleteDeptID.Text;
-                string Query = "DELETE FROM Department WHERE deptId = :deptID";
-                Dictionary<string, object> Params = new Dictionary<string, object>
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this department?",
+                                                            "Confirm Update",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
                 {
-                    { ":deptID", deptId}
-                };
-                dbFunctions.setData(Query, Params);
-                MessageBox.Show("Department deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                showDepartment();
-                ClearFields();
+                    string Query = "UPDATE Department SET deptId=:deptId, deptName = :deptName, deptHead = :deptHead, officeLocation = :officeLocation, deptPhone1 = :deptPhone1, deptPhone2 = :deptPhone2 WHERE deptId = :deptId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":deptId", deptId },
+                        { ":deptName", deptName },
+                        { ":deptHead", deptHead },
+                        { ":officeLocation", location },
+                        { ":deptPhone1", deptPhone1 },
+                        { ":deptPhone2", deptPhone2 }
+                    };
+
+                    dbFunctions.setData(Query, parameters);
+
+
+                    MessageBox.Show("Department updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showDepartment();
+                    ClearFields();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid data format. Please check your inputs and try again.", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //Search department
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string deptId = txtSDDeptID.Text.Trim(); // Assume you have a TextBox named txtSearchDeptId for searching the department ID
+            try
+            {
+                if (string.IsNullOrWhiteSpace(deptId))
+                {
+                    MessageBox.Show("Please provide a valid Department ID to search.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = "SELECT * FROM Department WHERE deptId = :deptId";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":deptId", deptId }
+                };
+
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    txtDeptid.Text = result.Rows[0]["deptId"].ToString();
+                    txtDeptname.Text = result.Rows[0]["deptName"].ToString();
+                    cbDeptHead.Text = result.Rows[0]["deptHead"].ToString();
+                    txtDeptLocation.Text = result.Rows[0]["officeLocation"].ToString();
+                    txtDeptPhone1.Text = result.Rows[0]["deptPhone1"].ToString();
+                    txtDeptPhone2.Text = result.Rows[0]["deptPhone2"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No department found with the provided Department ID.", "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /*-------------------------------------CRUD Operations End-----------------------------------------*/
@@ -253,7 +321,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();

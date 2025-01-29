@@ -20,6 +20,7 @@ namespace CRMS
             ConfigureDataGridView();
             GetStudent();
             GetPayments();
+            ShowData.CellClick += ShowData_CellClick;
         }
         /*-------------------------------------Helper Methods Start-----------------------------------------*/
         //UI Configuration for DataGridView
@@ -129,11 +130,71 @@ namespace CRMS
             {
                 MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        //Search logic for Payments
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string paymentId = txtSearchPId.Text;
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(paymentId))
+                {
+                    MessageBox.Show("Please provide a valid Payment ID to search.", "🔍 Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = "SELECT * FROM Payment WHERE paymentId = :paymentId";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":paymentId", paymentId }
+                };
+
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    txtPid.Text = result.Rows[0]["paymentId"].ToString();
+                    dtPDate.Value = Convert.ToDateTime(result.Rows[0]["paymentDate"]);
+                    txtPMethod.Text = result.Rows[0]["paymentMethod"].ToString();
+                    txtStatus.Text = result.Rows[0]["status"].ToString();
+                    txtAmount.Text = result.Rows[0]["amount"].ToString();
+                    cbStudentId.SelectedValue = result.Rows[0]["studentId"];
+                }
+                else
+                {
+                    MessageBox.Show("No payment found with the provided ID.", "❌ No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while searching for the payment: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         /*-------------------------------------CRUD Operations End-----------------------------------------*/
 
         /*-------------------------------------Event Handlers Start-----------------------------------------*/
+        //Show Data Click event
+        private void ShowData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = ShowData.Rows[e.RowIndex];
+
+                txtPid.Text = selectedRow.Cells["paymentId"].Value?.ToString();
+                txtPMethod.Text = selectedRow.Cells["paymentMethod"].Value?.ToString();
+                txtAmount.Text = selectedRow.Cells["amount"].Value?.ToString();
+                txtStatus.Text = selectedRow.Cells["status"].Value?.ToString();
+
+                if (selectedRow.Cells["studentId"].Value != null)
+                {
+                    cbStudentId.SelectedValue = Convert.ToInt32(selectedRow.Cells["studentId"].Value);
+                }
+
+                dtPDate.Value = Convert.ToDateTime(selectedRow.Cells["paymentDate"].Value);
+            }
+        }
         //Back Button
         private void BackBtn_Click(object sender, EventArgs e)
         {
@@ -160,7 +221,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();
@@ -239,8 +300,6 @@ namespace CRMS
             assignCourse.ShowDialog();
             this.Show();
         }
-
-        
         /*-------------------------------------Navigation End-----------------------------------------*/
 
 

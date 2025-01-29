@@ -58,7 +58,7 @@ namespace CRMS
             {
                 cbDeptName.DataSource = null;
                 cbDeptName.Items.Clear();
-                cbDeptName.DisplayMember = "deptID";
+                cbDeptName.DisplayMember = "deptName";
                 cbDeptName.ValueMember = "deptID";
                 cbDeptName.DataSource = dt;
             }
@@ -320,20 +320,144 @@ namespace CRMS
         //Update Logic for Students
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            string studentId = txtSid.Text;
+            string studentName = txtSname.Text;
+            string studentStatus = txtStatus.Text;
+            string studentAddress = txtAddress.Text;
+            string studentEmail = txtEmail.Text;
+            string studentPhoneNo = txtPhoneNo.Text;
+            string studentProgram = txtProgram.Text;
+            int deptId = Convert.ToInt32(cbDeptName.SelectedValue);
+            DateTime EnrollmentDate = enrollmentDate.Value;
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(studentId) || string.IsNullOrWhiteSpace(studentName) ||
+                    string.IsNullOrWhiteSpace(studentStatus) || string.IsNullOrWhiteSpace(studentAddress) ||
+                    string.IsNullOrWhiteSpace(studentEmail) || string.IsNullOrWhiteSpace(studentPhoneNo) ||
+                    string.IsNullOrWhiteSpace(studentProgram) || cbDeptName.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please fill out all fields before updating.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this Student's information?",
+                                                            "Confirm Update",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes) 
+                { 
+                    string query = @"UPDATE Student SET studentId = :studentId, studentName = :studentName, program = :studentProgram, enrollmentDate = TO_DATE(:enrollmentDate, 'YYYY-MM-DD'), 
+                             status = :studentStatus, address = :studentAddress, deptId = :deptId, student_phone1 = :student_phone1, 
+                             student_phone2 = :student_phone2, student_email1 = :student_email1, student_email2 = :student_email2 
+                             WHERE studentId = :studentId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":studentId", studentId },
+                        { ":studentName", studentName },
+                        { ":studentProgram", studentProgram },
+                        { ":enrollmentDate", EnrollmentDate.ToString("yyyy-MM-dd") },
+                        { ":studentStatus", studentStatus },
+                        { ":studentAddress", studentAddress },
+                        { ":deptId", deptId },
+                        { ":student_phone1", studentPhoneNo },
+                        { ":student_phone2", DBNull.Value },
+                        { ":student_email1", studentEmail },
+                        { ":student_email2", DBNull.Value }
+                    };
+
+                    dbFunctions.setData(query, parameters);
+                    MessageBox.Show("Student updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showStudents();
+                    ClearFields();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Delete Logic for Students
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            string studentId = txtDeleteID.Text;
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(studentId))
+                {
+                    MessageBox.Show("Please provide a valid Student ID to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this student?", 
+                                                            "Confirm Deletion", 
+                                                            MessageBoxButtons.YesNo, 
+                                                            MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string query = "DELETE FROM Student WHERE studentId = :studentId";
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":studentId", studentId }
+                    };
+
+                    dbFunctions.setData(query, parameters);
+                    MessageBox.Show("Student deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showStudents();
+                    ClearFields();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the student: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Search Logic for Students
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            string studentId = txtDeleteID.Text;
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(studentId))
+                {
+                    MessageBox.Show("Please provide a Student ID to search.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = "SELECT * FROM Student WHERE studentId = :studentId";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":studentId", studentId }
+                };
+
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    txtSid.Text = result.Rows[0]["studentId"].ToString();
+                    txtSname.Text = result.Rows[0]["studentName"].ToString();
+                    txtStatus.Text = result.Rows[0]["status"].ToString();
+                    txtAddress.Text = result.Rows[0]["address"].ToString();
+                    txtEmail.Text = result.Rows[0]["student_email1"].ToString();
+                    txtPhoneNo.Text = result.Rows[0]["student_phone1"].ToString();
+                    txtProgram.Text = result.Rows[0]["program"].ToString();
+                    cbDeptName.SelectedValue = result.Rows[0]["deptId"];
+                }
+                else
+                {
+                    MessageBox.Show("No student found with the provided ID.", "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while searching for the student: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -394,7 +518,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();

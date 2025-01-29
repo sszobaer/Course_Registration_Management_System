@@ -44,23 +44,23 @@
             this.HomeLbl = new System.Windows.Forms.Label();
             this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDeleteDeptID = new System.Windows.Forms.TextBox();
+            this.Delete = new System.Windows.Forms.Button();
+            this.txtDropRegistrationID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.enrollmentDate = new System.Windows.Forms.DateTimePicker();
-            this.cbDeptHead = new System.Windows.Forms.ComboBox();
+            this.cbStudentId = new System.Windows.Forms.ComboBox();
+            this.registrationDate = new System.Windows.Forms.DateTimePicker();
+            this.cbClassId = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.updateBtn = new System.Windows.Forms.Button();
             this.InsertBtn = new System.Windows.Forms.Button();
-            this.txtDeptLocation = new System.Windows.Forms.TextBox();
-            this.txtDeptid = new System.Windows.Forms.TextBox();
+            this.txtRegId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
@@ -283,7 +283,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.Delete);
-            this.panel3.Controls.Add(this.txtDeleteDeptID);
+            this.panel3.Controls.Add(this.txtDropRegistrationID);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.SearchBtn);
             this.panel3.Controls.Add(this.label2);
@@ -293,14 +293,29 @@
             this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 21;
             // 
-            // txtDeleteDeptID
+            // Delete
             // 
-            this.txtDeleteDeptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeleteDeptID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteDeptID.Location = new System.Drawing.Point(24, 52);
-            this.txtDeleteDeptID.Name = "txtDeleteDeptID";
-            this.txtDeleteDeptID.Size = new System.Drawing.Size(253, 26);
-            this.txtDeleteDeptID.TabIndex = 27;
+            this.Delete.BackColor = System.Drawing.Color.Teal;
+            this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Delete.Location = new System.Drawing.Point(155, 84);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(99, 34);
+            this.Delete.TabIndex = 30;
+            this.Delete.Text = "Drop";
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // txtDropRegistrationID
+            // 
+            this.txtDropRegistrationID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDropRegistrationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDropRegistrationID.Location = new System.Drawing.Point(24, 52);
+            this.txtDropRegistrationID.Name = "txtDropRegistrationID";
+            this.txtDropRegistrationID.Size = new System.Drawing.Size(253, 26);
+            this.txtDropRegistrationID.TabIndex = 27;
             // 
             // label10
             // 
@@ -309,9 +324,9 @@
             this.label10.Location = new System.Drawing.Point(21, 32);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 20);
+            this.label10.Size = new System.Drawing.Size(117, 20);
             this.label10.TabIndex = 29;
-            this.label10.Text = "Department Id";
+            this.label10.Text = "Registration Id";
             // 
             // SearchBtn
             // 
@@ -344,16 +359,16 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.enrollmentDate);
-            this.panel2.Controls.Add(this.cbDeptHead);
+            this.panel2.Controls.Add(this.cbStudentId);
+            this.panel2.Controls.Add(this.registrationDate);
+            this.panel2.Controls.Add(this.cbClassId);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.InsertBtn);
-            this.panel2.Controls.Add(this.txtDeptLocation);
-            this.panel2.Controls.Add(this.txtDeptid);
+            this.panel2.Controls.Add(this.txtRegId);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(174, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -361,24 +376,34 @@
             this.panel2.Size = new System.Drawing.Size(305, 365);
             this.panel2.TabIndex = 20;
             // 
-            // enrollmentDate
+            // cbStudentId
             // 
-            this.enrollmentDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enrollmentDate.Location = new System.Drawing.Point(26, 131);
-            this.enrollmentDate.Margin = new System.Windows.Forms.Padding(2);
-            this.enrollmentDate.Name = "enrollmentDate";
-            this.enrollmentDate.Size = new System.Drawing.Size(253, 27);
-            this.enrollmentDate.TabIndex = 30;
+            this.cbStudentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStudentId.FormattingEnabled = true;
+            this.cbStudentId.Location = new System.Drawing.Point(26, 197);
+            this.cbStudentId.Margin = new System.Windows.Forms.Padding(2);
+            this.cbStudentId.Name = "cbStudentId";
+            this.cbStudentId.Size = new System.Drawing.Size(253, 28);
+            this.cbStudentId.TabIndex = 31;
             // 
-            // cbDeptHead
+            // registrationDate
             // 
-            this.cbDeptHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDeptHead.FormattingEnabled = true;
-            this.cbDeptHead.Location = new System.Drawing.Point(26, 257);
-            this.cbDeptHead.Margin = new System.Windows.Forms.Padding(2);
-            this.cbDeptHead.Name = "cbDeptHead";
-            this.cbDeptHead.Size = new System.Drawing.Size(253, 28);
-            this.cbDeptHead.TabIndex = 20;
+            this.registrationDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrationDate.Location = new System.Drawing.Point(26, 131);
+            this.registrationDate.Margin = new System.Windows.Forms.Padding(2);
+            this.registrationDate.Name = "registrationDate";
+            this.registrationDate.Size = new System.Drawing.Size(253, 27);
+            this.registrationDate.TabIndex = 30;
+            // 
+            // cbClassId
+            // 
+            this.cbClassId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClassId.FormattingEnabled = true;
+            this.cbClassId.Location = new System.Drawing.Point(26, 257);
+            this.cbClassId.Margin = new System.Windows.Forms.Padding(2);
+            this.cbClassId.Name = "cbClassId";
+            this.cbClassId.Size = new System.Drawing.Size(253, 28);
+            this.cbClassId.TabIndex = 20;
             // 
             // label7
             // 
@@ -387,9 +412,9 @@
             this.label7.Location = new System.Drawing.Point(23, 172);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Grade";
+            this.label7.Text = "Student ID";
             // 
             // label6
             // 
@@ -454,23 +479,14 @@
             this.InsertBtn.UseVisualStyleBackColor = false;
             this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
-            // txtDeptLocation
+            // txtRegId
             // 
-            this.txtDeptLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeptLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptLocation.Location = new System.Drawing.Point(27, 194);
-            this.txtDeptLocation.Name = "txtDeptLocation";
-            this.txtDeptLocation.Size = new System.Drawing.Size(253, 26);
-            this.txtDeptLocation.TabIndex = 27;
-            // 
-            // txtDeptid
-            // 
-            this.txtDeptid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeptid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeptid.Location = new System.Drawing.Point(26, 72);
-            this.txtDeptid.Name = "txtDeptid";
-            this.txtDeptid.Size = new System.Drawing.Size(253, 26);
-            this.txtDeptid.TabIndex = 27;
+            this.txtRegId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegId.Location = new System.Drawing.Point(26, 72);
+            this.txtRegId.Name = "txtRegId";
+            this.txtRegId.Size = new System.Drawing.Size(253, 26);
+            this.txtRegId.TabIndex = 27;
             // 
             // label1
             // 
@@ -483,21 +499,6 @@
             this.label1.Size = new System.Drawing.Size(114, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
-            // 
-            // Delete
-            // 
-            this.Delete.BackColor = System.Drawing.Color.Teal;
-            this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Delete.Location = new System.Drawing.Point(155, 84);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(99, 34);
-            this.Delete.TabIndex = 30;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = false;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Registration
             // 
@@ -542,22 +543,22 @@
         private System.Windows.Forms.Label HomeLbl;
         private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtDeleteDeptID;
+        private System.Windows.Forms.TextBox txtDropRegistrationID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbDeptHead;
+        private System.Windows.Forms.ComboBox cbClassId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button InsertBtn;
-        private System.Windows.Forms.TextBox txtDeptLocation;
-        private System.Windows.Forms.TextBox txtDeptid;
+        private System.Windows.Forms.TextBox txtRegId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker enrollmentDate;
+        private System.Windows.Forms.DateTimePicker registrationDate;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.ComboBox cbStudentId;
     }
 }
