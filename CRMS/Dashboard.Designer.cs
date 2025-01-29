@@ -60,7 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.BtnshowStudents = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnShowFaculty = new System.Windows.Forms.Button();
             this.btnShowCourses = new System.Windows.Forms.Button();
             this.btnShowDept = new System.Windows.Forms.Button();
@@ -479,30 +478,14 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.btnChangePassword);
             this.panel6.Controls.Add(this.btnShowFaculty);
             this.panel6.Controls.Add(this.btnShowCourses);
             this.panel6.Controls.Add(this.btnShowDept);
             this.panel6.Controls.Add(this.BtnshowStudents);
-            this.panel6.Location = new System.Drawing.Point(193, 234);
+            this.panel6.Location = new System.Drawing.Point(193, 246);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(173, 187);
+            this.panel6.Size = new System.Drawing.Size(173, 150);
             this.panel6.TabIndex = 20;
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.Teal;
-            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnChangePassword.Location = new System.Drawing.Point(1, 148);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(167, 31);
-            this.btnChangePassword.TabIndex = 21;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = false;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnShowFaculty
             // 
@@ -572,6 +555,7 @@
             this.btnViewProfile.Size = new System.Drawing.Size(98, 22);
             this.btnViewProfile.TabIndex = 13;
             this.btnViewProfile.Text = "My Profile";
+            this.btnViewProfile.Click += new System.EventHandler(this.btnViewProfile_Click);
             // 
             // btnLogOut
             // 
@@ -682,7 +666,6 @@
         private System.Windows.Forms.Button BtnshowStudents;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnShowDept;
-        private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Button btnShowFaculty;
         private System.Windows.Forms.Button btnShowCourses;

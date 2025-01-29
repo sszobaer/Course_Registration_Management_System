@@ -201,7 +201,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();
@@ -283,7 +283,11 @@ namespace CRMS
 
         private void btnViewProfile_Click(object sender, EventArgs e)
         {
-
+            ViewProfile viewProfile = new ViewProfile(SessionManager.UserId);
+            Home.stack.Push(this);
+            this.Hide();
+            viewProfile.ShowDialog();
+            this.Show();
         }
         private void refreshBtn_Click(object sender, EventArgs e)
         {
@@ -299,12 +303,6 @@ namespace CRMS
             this.Hide();
             Login login = new Login();
             login.ShowDialog();
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            ChangePassword changePassword = new ChangePassword();
-            changePassword.ShowDialog();
         }
         /*-------------------------------------Navigation End-----------------------------------------*/
 
