@@ -151,20 +151,144 @@ namespace CRMS
         //Update logic for faculty members
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string facultyId = txtFid.Text;
+            string facultyName = txtFname.Text;
+            string facultyEmail = txtemail.Text;
+            string facultyPhone = txtPhone.Text;
+            int facultyDept = Convert.ToInt32(cbDeptName.SelectedValue.ToString());
+            string facultyPosition = cbPosition.Text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(facultyId) || string.IsNullOrWhiteSpace(facultyName) || cbDeptName.SelectedIndex == -1 ||
+                    string.IsNullOrWhiteSpace(facultyEmail) || string.IsNullOrWhiteSpace(facultyPhone) || cbPosition.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please fill out all the fields before proceeding.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = @"UPDATE Facultymember 
+                                SET facultyId = :facultyId, facultyName = :facultyName, position = :position, deptId = :deptId, faculty_phone1 = :faculty_phone1, faculty_phone2 = :faculty_phone2, faculty_email1 = :faculty_email1, faculty_email2 = :faculty_email2 WHERE facultyId = :facultyId";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":facultyId", facultyId },
+                    { ":facultyName", facultyName },
+                    { ":position", facultyPosition },
+                    { ":deptId", facultyDept },
+                    { ":faculty_phone1", facultyPhone },
+                    { ":faculty_phone2", DBNull.Value },
+                    { ":faculty_email1", facultyEmail },
+                    { ":faculty_email2", DBNull.Value }
+                };
+
+                dbFunctions.setData(query, parameters);
+
+                MessageBox.Show("Faculty member updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GetFacultyMembers(); 
+                ResetFields();  
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid data format. Please check your inputs and try again.", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Delete logic for faculty members
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string facultyId = txtDeleteFID.Text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(facultyId))
+                {
+                    MessageBox.Show("Please provide a valid Faculty ID to delete.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this faculty member?",
+                                                            "Confirm Deletion",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string query = "DELETE FROM Facultymember WHERE facultyId = :facultyId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":facultyId", facultyId }
+                    };
+
+                    dbFunctions.setData(query, parameters);
+
+                    MessageBox.Show("Faculty member deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GetFacultyMembers();  
+                    ResetFields();  
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the faculty member: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Search logic for faculty members
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string facultyId = txtDeleteFID.Text;
+
+            try
+            {
+                // Validate that the faculty ID is provided
+                if (string.IsNullOrWhiteSpace(facultyId))
+                {
+                    MessageBox.Show("Please provide a Faculty ID to search.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = "SELECT * FROM Facultymember WHERE facultyId = :facultyId";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":facultyId", facultyId }
+                };
+
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    txtFid.Text = result.Rows[0]["facultyId"].ToString();
+                    txtFname.Text = result.Rows[0]["facultyName"].ToString();
+                    txtemail.Text = result.Rows[0]["faculty_email1"].ToString();
+                    txtPhone.Text = result.Rows[0]["faculty_phone1"].ToString();
+                    cbDeptName.SelectedValue = result.Rows[0]["deptId"];
+                    cbPosition.SelectedItem = result.Rows[0]["position"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No faculty member found with the provided Faculty ID.", "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while searching: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /*-------------------------------------CRUD Operations End-----------------------------------------*/
@@ -221,7 +345,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();
