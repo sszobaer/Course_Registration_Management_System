@@ -42,10 +42,11 @@
             this.studentLbl = new System.Windows.Forms.Label();
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
-            this.DeptGridView = new System.Windows.Forms.DataGridView();
+            this.ShowData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDeleteCLId = new System.Windows.Forms.TextBox();
+            this.txtSDCLId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,17 +65,11 @@
             this.txtCLTime = new System.Windows.Forms.TextBox();
             this.txtCLid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtSearchCLId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -275,24 +270,25 @@
             this.HomeLbl.Text = "Home";
             this.HomeLbl.Click += new System.EventHandler(this.HomeLbl_Click);
             // 
-            // DeptGridView
+            // ShowData
             // 
-            this.DeptGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.DeptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeptGridView.Location = new System.Drawing.Point(504, 326);
-            this.DeptGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.DeptGridView.Name = "DeptGridView";
-            this.DeptGridView.RowHeadersWidth = 62;
-            this.DeptGridView.RowTemplate.Height = 28;
-            this.DeptGridView.Size = new System.Drawing.Size(304, 96);
-            this.DeptGridView.TabIndex = 22;
+            this.ShowData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowData.Location = new System.Drawing.Point(504, 189);
+            this.ShowData.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowData.Name = "ShowData";
+            this.ShowData.RowHeadersWidth = 62;
+            this.ShowData.RowTemplate.Height = 28;
+            this.ShowData.Size = new System.Drawing.Size(304, 233);
+            this.ShowData.TabIndex = 22;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtDeleteCLId);
+            this.panel3.Controls.Add(this.txtSDCLId);
             this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.searchBtn);
             this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(504, 49);
@@ -301,14 +297,14 @@
             this.panel3.Size = new System.Drawing.Size(305, 125);
             this.panel3.TabIndex = 21;
             // 
-            // txtDeleteCLId
+            // txtSDCLId
             // 
-            this.txtDeleteCLId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeleteCLId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeleteCLId.Location = new System.Drawing.Point(24, 52);
-            this.txtDeleteCLId.Name = "txtDeleteCLId";
-            this.txtDeleteCLId.Size = new System.Drawing.Size(253, 26);
-            this.txtDeleteCLId.TabIndex = 27;
+            this.txtSDCLId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDCLId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDCLId.Location = new System.Drawing.Point(24, 52);
+            this.txtSDCLId.Name = "txtSDCLId";
+            this.txtSDCLId.Size = new System.Drawing.Size(253, 26);
+            this.txtSDCLId.TabIndex = 27;
             // 
             // label10
             // 
@@ -321,6 +317,21 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "Class Id";
             // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.Teal;
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(40, 84);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(99, 34);
+            this.searchBtn.TabIndex = 16;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
@@ -328,12 +339,13 @@
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(99, 81);
+            this.DeleteBtn.Location = new System.Drawing.Point(155, 84);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
             this.DeleteBtn.TabIndex = 16;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label2
             // 
@@ -376,11 +388,6 @@
             // 
             this.cbCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCourseName.FormattingEnabled = true;
-            this.cbCourseName.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.cbCourseName.Location = new System.Drawing.Point(27, 298);
             this.cbCourseName.Margin = new System.Windows.Forms.Padding(2);
             this.cbCourseName.Name = "cbCourseName";
@@ -499,6 +506,7 @@
             this.InsertBtn.TabIndex = 16;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = false;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // txtCLSemster
             // 
@@ -539,73 +547,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add New Schedule";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.txtSearchCLId);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Location = new System.Drawing.Point(504, 188);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(305, 125);
-            this.panel4.TabIndex = 30;
-            // 
-            // txtSearchCLId
-            // 
-            this.txtSearchCLId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearchCLId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCLId.Location = new System.Drawing.Point(24, 52);
-            this.txtSearchCLId.Name = "txtSearchCLId";
-            this.txtSearchCLId.Size = new System.Drawing.Size(253, 26);
-            this.txtSearchCLId.TabIndex = 27;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Class Id";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(99, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Teal;
-            this.label11.Location = new System.Drawing.Point(63, 6);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 22);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Search Schedule";
-            // 
             // ClassSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.DeptGridView);
+            this.Controls.Add(this.ShowData);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
@@ -617,13 +564,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeptGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowData)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -643,9 +588,9 @@
         private System.Windows.Forms.Label studentLbl;
         private System.Windows.Forms.Label DashboardLbl;
         private System.Windows.Forms.Label HomeLbl;
-        private System.Windows.Forms.DataGridView DeptGridView;
+        private System.Windows.Forms.DataGridView ShowData;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtDeleteCLId;
+        private System.Windows.Forms.TextBox txtSDCLId;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label2;
@@ -665,10 +610,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCourseName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtSearchCLId;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button searchBtn;
     }
 }

@@ -69,7 +69,7 @@ namespace CRMS
             ShowData.ColumnHeadersVisible = true;
         }
 
-        // Get department names from the database into the comboBox
+        // Fetch department names from the database into the comboBox
         private void GetDept()
         {
             string query = "SELECT deptName, deptID FROM  Department";
@@ -102,13 +102,12 @@ namespace CRMS
             string courseName = txtCname.Text;
             string courseDept = cbDeptName.Text;
             string courseCredit = cbCredits.Text;
-            string courseSemester = txtSemester.Text;
+            
 
             try
             {
-                // Validate fields
                 if (string.IsNullOrWhiteSpace(courseID) || string.IsNullOrWhiteSpace(courseName) || cbDeptName.SelectedIndex == -1 ||
-                    string.IsNullOrWhiteSpace(courseSemester) || cbCredits.SelectedIndex == -1)
+                    cbCredits.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill out all the fields before proceeding.",
                                     "Data Missing",
@@ -117,22 +116,19 @@ namespace CRMS
                     return;
                 }
 
-                string Query = "INSERT INTO Course (courseId, courseName, semesterOffered, credits, deptName) VALUES (:courseId, :courseName, :semesterOffered, :credits, :deptName)";
+                string Query = "INSERT INTO Course (courseId, courseName, credits, deptName) VALUES (:courseId, :courseName, :credits, :deptName)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
                     { ":courseId", courseID },
                     { ":courseName", courseName },
-                    { ":semesterOffered", courseSemester },
                     { ":credits", courseCredit },
                     { ":deptName", courseDept }
 
                 };
 
-                // Execute query
                 dbFunctions.setData(Query, parameters);
 
-                // Success message
                 MessageBox.Show("New Course added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 showCourse();
             }
@@ -149,19 +145,135 @@ namespace CRMS
         //Update logic for updating an existing course
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string courseID = txtCid.Text;
+            string courseName = txtCname.Text;
+            string courseDept = cbDeptName.Text;
+            string courseCredit = cbCredits.Text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(courseID) || string.IsNullOrWhiteSpace(courseName) || cbDeptName.SelectedIndex == -1 ||
+                    cbCredits.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please fill out all the fields before proceeding.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+                // Confirm updatation
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this class schedule?",
+                                                            "Confirm Upadation",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string Query = "UPDATE Course SET courseId = :courseId, courseName = :courseName, credits = :credits, deptName = :deptName WHERE courseId = :courseId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":courseId", courseID },
+                        { ":courseName", courseName },
+                        { ":credits", courseCredit },
+                        { ":deptName", courseDept }
+                    };
+
+                    dbFunctions.setData(Query, parameters);
+
+                    MessageBox.Show("Course updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showCourse();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Delete logic for deleting a course
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string courseID = txtCid.Text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(courseID))
+                {
+                    MessageBox.Show("Please provide a valid Course ID to delete.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+                // Confirm deletion
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this class schedule?",
+                                                            "Confirm Deletion",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Question);
+
+                if (dialogResult != DialogResult.Yes)
+                {
+                    string Query = "DELETE FROM Course WHERE courseId = :courseId";
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>
+                    {
+                        { ":courseId", courseID }
+                    };
+
+                    dbFunctions.setData(Query, parameters);
+
+                    MessageBox.Show("Course deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showCourse();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Search logic for searching a course
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            //pass
+            string courseID = txtSearchCourseId.Text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(courseID))
+                {
+                    MessageBox.Show("Please provide a valid Course ID to search.",
+                                    "Data Missing",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string Query = "SELECT * FROM Course WHERE courseId = :courseId";
+
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { ":courseId", courseID }
+                };
+
+                DataTable result = dbFunctions.GetData(Query, parameters);
+
+                if (result.Rows.Count > 0)
+                {
+                    txtCid.Text = result.Rows[0]["courseId"].ToString();
+                    txtCname.Text = result.Rows[0]["courseName"].ToString();
+                    cbDeptName.Text = result.Rows[0]["deptName"].ToString();
+                    cbCredits.Text = result.Rows[0]["credits"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No course found with the provided Course ID.", "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "❌ Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         /*-------------------------------------CRUD Operations End-----------------------------------------*/
 
@@ -177,7 +289,6 @@ namespace CRMS
                 // Populate textboxes with the selected row's data
                 txtCid.Text = selectedRow.Cells["courseId"].Value?.ToString();
                 txtCname.Text = selectedRow.Cells["courseName"].Value?.ToString();
-                txtSemester.Text = selectedRow.Cells["semesterOffered"].Value?.ToString();
 
 
                 // Set the selected department in the ComboBox
@@ -227,7 +338,7 @@ namespace CRMS
         {
             if (SessionManager.IsLoggedIn)
             {
-                Dashboard dashboard = new Dashboard(SessionManager.AdminName);
+                Dashboard dashboard = new Dashboard(SessionManager.userName);
                 Home.stack.Push(this);
                 this.Hide();
                 dashboard.ShowDialog();
