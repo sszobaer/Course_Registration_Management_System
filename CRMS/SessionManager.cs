@@ -9,6 +9,7 @@ namespace CRMS
     public static class SessionManager
     {
         public static bool IsLoggedIn { get; set; }
-        public static string AdminName { get; set; }
+        public static string userName { get; set; }
+        public static int UserId { get; set; }
     }
 }
