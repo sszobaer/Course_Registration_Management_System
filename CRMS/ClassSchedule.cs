@@ -98,6 +98,7 @@ namespace CRMS
             string classRoom = txtCLRoomNo.Text;
             string semester = txtCLSemster.Text;
             string courseId = cbCourseName.SelectedValue.ToString();
+            int capacity = Convert.ToInt32(cbCapacity.SelectedItem.ToString());
             try
             {
                 if (String.IsNullOrEmpty(classId) || String.IsNullOrEmpty(classDay)||
@@ -110,8 +111,8 @@ namespace CRMS
                 
 
 
-                string query = @"INSERT INTO classSchedule (classId, classDay, classTime, roomNo, semester, courseId) 
-                                VALUES (:classId, :classDay, :classTime, :roomNo, :semester, :courseId)";
+                string query = @"INSERT INTO classSchedule (classId, classDay, classTime, roomNo, semester, courseId, capacity) 
+                                VALUES (:classId, :classDay, :classTime, :roomNo, :semester, :courseId, :capacity)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
@@ -120,7 +121,8 @@ namespace CRMS
                     { "classTime", classTime },
                     { "roomNo", classRoom },
                     { "semester", semester },
-                    { "courseId", courseId }
+                    { "courseId", courseId },
+                    { "capacity", capacity }
                 };
 
                 dbFunctions.setData(query, parameters);
@@ -159,7 +161,7 @@ namespace CRMS
 
 
                 string query = @"UPDATE classSchedule 
-                                SET classId = :classId, classDay = :classDay, classTime = :classTime, roomNo = :roomNo, semester = :semester, courseId = :courseId 
+                                SET classId = :classId, classDay = :classDay, classTime = :classTime, roomNo = :roomNo, semester = :semester, courseId = :courseId, capacity =: capacity 
                                 WHERE classId = :classId";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -170,6 +172,7 @@ namespace CRMS
                     { "roomNo", classRoom },
                     { "semester", semester },
                     { "courseId", courseId }
+
                 };
 
                 dbFunctions.setData(query, parameters);
@@ -217,7 +220,8 @@ namespace CRMS
                     txtCLTime.Text = result.Rows[0]["classTime"].ToString();
                     txtCLRoomNo.Text = result.Rows[0]["roomNo"].ToString();
                     txtCLSemster.Text = result.Rows[0]["semester"].ToString();
-                    cbCourseName.Text = result.Rows[0]["courseId"].ToString();  
+                    cbCourseName.Text = result.Rows[0]["courseId"].ToString();
+                    cbCapacity.Text = result.Rows[0]["capacity"].ToString();
                 }
                 else
                 {
@@ -287,6 +291,7 @@ namespace CRMS
                 txtCLRoomNo.Text = row.Cells[3].Value.ToString();
                 txtCLSemster.Text = row.Cells[4].Value.ToString();
                 cbCourseName.Text = row.Cells[5].Value.ToString();
+                cbCapacity.Text = row.Cells[6].Value.ToString();
             }
         }
         //Back Button

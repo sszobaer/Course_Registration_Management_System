@@ -65,6 +65,8 @@
             this.txtCLTime = new System.Windows.Forms.TextBox();
             this.txtCLid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbCapacity = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowData)).BeginInit();
@@ -363,32 +365,33 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cbCapacity);
             this.panel2.Controls.Add(this.cbCourseName);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtCLRoomNo);
+            this.panel2.Controls.Add(this.InsertBtn);
+            this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.txtCLDay);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.updateBtn);
-            this.panel2.Controls.Add(this.InsertBtn);
             this.panel2.Controls.Add(this.txtCLSemster);
             this.panel2.Controls.Add(this.txtCLTime);
             this.panel2.Controls.Add(this.txtCLid);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(171, 49);
+            this.panel2.Location = new System.Drawing.Point(171, 43);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(305, 375);
+            this.panel2.Size = new System.Drawing.Size(305, 381);
             this.panel2.TabIndex = 20;
             // 
             // cbCourseName
             // 
             this.cbCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCourseName.FormattingEnabled = true;
-            this.cbCourseName.Location = new System.Drawing.Point(27, 298);
+            this.cbCourseName.Location = new System.Drawing.Point(27, 263);
             this.cbCourseName.Margin = new System.Windows.Forms.Padding(2);
             this.cbCourseName.Name = "cbCourseName";
             this.cbCourseName.Size = new System.Drawing.Size(253, 28);
@@ -398,7 +401,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 275);
+            this.label6.Location = new System.Drawing.Point(24, 240);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 20);
@@ -409,7 +412,7 @@
             // 
             this.txtCLRoomNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCLRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLRoomNo.Location = new System.Drawing.Point(26, 203);
+            this.txtCLRoomNo.Location = new System.Drawing.Point(26, 168);
             this.txtCLRoomNo.Name = "txtCLRoomNo";
             this.txtCLRoomNo.Size = new System.Drawing.Size(253, 26);
             this.txtCLRoomNo.TabIndex = 27;
@@ -418,7 +421,7 @@
             // 
             this.txtCLDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCLDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLDay.Location = new System.Drawing.Point(26, 101);
+            this.txtCLDay.Location = new System.Drawing.Point(26, 66);
             this.txtCLDay.Name = "txtCLDay";
             this.txtCLDay.Size = new System.Drawing.Size(253, 26);
             this.txtCLDay.TabIndex = 27;
@@ -427,7 +430,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(23, 227);
+            this.label9.Location = new System.Drawing.Point(23, 192);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 20);
@@ -438,7 +441,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 181);
+            this.label8.Location = new System.Drawing.Point(23, 146);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 20);
@@ -449,7 +452,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 133);
+            this.label7.Location = new System.Drawing.Point(23, 98);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
@@ -460,7 +463,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 79);
+            this.label5.Location = new System.Drawing.Point(23, 44);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
@@ -471,7 +474,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 32);
+            this.label4.Location = new System.Drawing.Point(23, -3);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 20);
@@ -485,7 +488,7 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Location = new System.Drawing.Point(155, 329);
+            this.updateBtn.Location = new System.Drawing.Point(152, 343);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(99, 34);
             this.updateBtn.TabIndex = 16;
@@ -500,7 +503,7 @@
             this.InsertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InsertBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.InsertBtn.Location = new System.Drawing.Point(51, 329);
+            this.InsertBtn.Location = new System.Drawing.Point(47, 343);
             this.InsertBtn.Name = "InsertBtn";
             this.InsertBtn.Size = new System.Drawing.Size(99, 34);
             this.InsertBtn.TabIndex = 16;
@@ -512,7 +515,7 @@
             // 
             this.txtCLSemster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCLSemster.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLSemster.Location = new System.Drawing.Point(26, 248);
+            this.txtCLSemster.Location = new System.Drawing.Point(26, 213);
             this.txtCLSemster.Name = "txtCLSemster";
             this.txtCLSemster.Size = new System.Drawing.Size(253, 26);
             this.txtCLSemster.TabIndex = 27;
@@ -521,7 +524,7 @@
             // 
             this.txtCLTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCLTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLTime.Location = new System.Drawing.Point(27, 155);
+            this.txtCLTime.Location = new System.Drawing.Point(27, 120);
             this.txtCLTime.Name = "txtCLTime";
             this.txtCLTime.Size = new System.Drawing.Size(253, 26);
             this.txtCLTime.TabIndex = 27;
@@ -530,7 +533,7 @@
             // 
             this.txtCLid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCLid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLid.Location = new System.Drawing.Point(26, 53);
+            this.txtCLid.Location = new System.Drawing.Point(26, 18);
             this.txtCLid.Name = "txtCLid";
             this.txtCLid.Size = new System.Drawing.Size(253, 26);
             this.txtCLid.TabIndex = 27;
@@ -540,12 +543,40 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(59, 6);
+            this.label1.Location = new System.Drawing.Point(235, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add New Schedule";
+            // 
+            // cbCapacity
+            // 
+            this.cbCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCapacity.FormattingEnabled = true;
+            this.cbCapacity.Items.AddRange(new object[] {
+            "30",
+            "35",
+            "40",
+            "42",
+            "45",
+            "50"});
+            this.cbCapacity.Location = new System.Drawing.Point(26, 314);
+            this.cbCapacity.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCapacity.Name = "cbCapacity";
+            this.cbCapacity.Size = new System.Drawing.Size(253, 28);
+            this.cbCapacity.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 293);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Capacity";
             // 
             // ClassSchedule
             // 
@@ -557,6 +588,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ClassSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -570,6 +602,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -611,5 +644,7 @@
         private System.Windows.Forms.ComboBox cbCourseName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbCapacity;
     }
 }
