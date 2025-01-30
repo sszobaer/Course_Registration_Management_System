@@ -22,7 +22,8 @@ namespace CRMS
             {
                 try
                 {
-                    string query = "SELECT AdminID, AdminName FROM AdminLogin WHERE AdminID = :AdminID AND AdminPassword = :AdminPassword";
+                    string query = @"SELECT AdminID, AdminName FROM AdminLogin 
+                                     WHERE AdminID = :AdminID AND AdminPassword = :AdminPassword";
 
                     var parameters = new Dictionary<string, object>
                     {
@@ -84,8 +85,8 @@ namespace CRMS
                         // Navigate to Dashboard
                         Home.stack.Push(this);
                         this.Hide();
-                        Dashboard dashboard = new Dashboard(userName);
-                        dashboard.ShowDialog();
+                        studentDashboard studentDashboard = new studentDashboard(userId);
+                        studentDashboard.ShowDialog();
                     }
                     else
                     {

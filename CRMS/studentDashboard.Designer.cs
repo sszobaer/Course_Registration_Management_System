@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentDashboard));
-            this.uploadBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registrationBtn = new System.Windows.Forms.Button();
+            this.offeredCoursesBtn = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.PictureBox();
@@ -42,10 +42,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDept = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtRole = new System.Windows.Forms.TextBox();
+            this.txtProgram = new System.Windows.Forms.TextBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,9 +54,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.changePasswordBtn = new System.Windows.Forms.Button();
+            this.AiAdvisorBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -64,33 +64,35 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uploadBtn
+            // registrationBtn
             // 
-            this.uploadBtn.BackColor = System.Drawing.Color.Teal;
-            this.uploadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uploadBtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uploadBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.uploadBtn.Location = new System.Drawing.Point(8, 6);
-            this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(178, 31);
-            this.uploadBtn.TabIndex = 23;
-            this.uploadBtn.Text = "Registration";
-            this.uploadBtn.UseVisualStyleBackColor = false;
+            this.registrationBtn.BackColor = System.Drawing.Color.Teal;
+            this.registrationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registrationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registrationBtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrationBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.registrationBtn.Location = new System.Drawing.Point(8, 6);
+            this.registrationBtn.Name = "registrationBtn";
+            this.registrationBtn.Size = new System.Drawing.Size(178, 31);
+            this.registrationBtn.TabIndex = 23;
+            this.registrationBtn.Text = "Registration";
+            this.registrationBtn.UseVisualStyleBackColor = false;
+            this.registrationBtn.Click += new System.EventHandler(this.registrationBtn_Click);
             // 
-            // button1
+            // offeredCoursesBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(8, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 31);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "See Courses";
-            this.button1.UseVisualStyleBackColor = false;
+            this.offeredCoursesBtn.BackColor = System.Drawing.Color.Teal;
+            this.offeredCoursesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.offeredCoursesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offeredCoursesBtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offeredCoursesBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.offeredCoursesBtn.Location = new System.Drawing.Point(8, 43);
+            this.offeredCoursesBtn.Name = "offeredCoursesBtn";
+            this.offeredCoursesBtn.Size = new System.Drawing.Size(178, 31);
+            this.offeredCoursesBtn.TabIndex = 23;
+            this.offeredCoursesBtn.Text = "Offered Courses";
+            this.offeredCoursesBtn.UseVisualStyleBackColor = false;
+            this.offeredCoursesBtn.Click += new System.EventHandler(this.offeredCoursesBtn_Click);
             // 
             // openFileDialog
             // 
@@ -117,6 +119,7 @@
             this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackBtn.TabIndex = 27;
             this.BackBtn.TabStop = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // updateBtn
             // 
@@ -131,6 +134,7 @@
             this.updateBtn.TabIndex = 36;
             this.updateBtn.Text = "Update Profile";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // label8
             // 
@@ -138,9 +142,9 @@
             this.label8.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(274, 247);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 26);
+            this.label8.Size = new System.Drawing.Size(75, 26);
             this.label8.TabIndex = 35;
-            this.label8.Text = "Department";
+            this.label8.Text = "Status";
             // 
             // label6
             // 
@@ -168,9 +172,9 @@
             this.label7.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(20, 247);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 26);
+            this.label7.Size = new System.Drawing.Size(99, 26);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Role";
+            this.label7.Text = "Program";
             // 
             // label5
             // 
@@ -204,15 +208,15 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "Personal Details";
             // 
-            // txtDept
+            // txtStatus
             // 
-            this.txtDept.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDept.Location = new System.Drawing.Point(279, 276);
-            this.txtDept.Name = "txtDept";
-            this.txtDept.ReadOnly = true;
-            this.txtDept.Size = new System.Drawing.Size(233, 26);
-            this.txtDept.TabIndex = 33;
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(279, 276);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(233, 26);
+            this.txtStatus.TabIndex = 33;
             // 
             // txtEmail
             // 
@@ -232,15 +236,15 @@
             this.txtName.Size = new System.Drawing.Size(233, 26);
             this.txtName.TabIndex = 33;
             // 
-            // txtRole
+            // txtProgram
             // 
-            this.txtRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.Location = new System.Drawing.Point(25, 276);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.ReadOnly = true;
-            this.txtRole.Size = new System.Drawing.Size(233, 26);
-            this.txtRole.TabIndex = 33;
+            this.txtProgram.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgram.Location = new System.Drawing.Point(25, 276);
+            this.txtProgram.Name = "txtProgram";
+            this.txtProgram.ReadOnly = true;
+            this.txtProgram.Size = new System.Drawing.Size(233, 26);
+            this.txtProgram.TabIndex = 33;
             // 
             // txtPhoneNo
             // 
@@ -274,10 +278,10 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtDept);
+            this.panel2.Controls.Add(this.txtStatus);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtName);
-            this.panel2.Controls.Add(this.txtRole);
+            this.panel2.Controls.Add(this.txtProgram);
             this.panel2.Controls.Add(this.txtPhoneNo);
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Location = new System.Drawing.Point(243, 65);
@@ -329,14 +333,44 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.uploadBtn);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.registrationBtn);
+            this.panel3.Controls.Add(this.changePasswordBtn);
+            this.panel3.Controls.Add(this.AiAdvisorBtn);
+            this.panel3.Controls.Add(this.offeredCoursesBtn);
             this.panel3.Location = new System.Drawing.Point(17, 285);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(198, 153);
             this.panel3.TabIndex = 28;
+            // 
+            // changePasswordBtn
+            // 
+            this.changePasswordBtn.BackColor = System.Drawing.Color.Teal;
+            this.changePasswordBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changePasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changePasswordBtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePasswordBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.changePasswordBtn.Location = new System.Drawing.Point(8, 115);
+            this.changePasswordBtn.Name = "changePasswordBtn";
+            this.changePasswordBtn.Size = new System.Drawing.Size(178, 31);
+            this.changePasswordBtn.TabIndex = 23;
+            this.changePasswordBtn.Text = "Change Password";
+            this.changePasswordBtn.UseVisualStyleBackColor = false;
+            this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
+            // 
+            // AiAdvisorBtn
+            // 
+            this.AiAdvisorBtn.BackColor = System.Drawing.Color.Teal;
+            this.AiAdvisorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AiAdvisorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AiAdvisorBtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AiAdvisorBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AiAdvisorBtn.Location = new System.Drawing.Point(8, 80);
+            this.AiAdvisorBtn.Name = "AiAdvisorBtn";
+            this.AiAdvisorBtn.Size = new System.Drawing.Size(178, 31);
+            this.AiAdvisorBtn.TabIndex = 23;
+            this.AiAdvisorBtn.Text = "Artificial Advisor";
+            this.AiAdvisorBtn.UseVisualStyleBackColor = false;
+            this.AiAdvisorBtn.Click += new System.EventHandler(this.AiAdvisorBtn_Click);
             // 
             // panel1
             // 
@@ -351,34 +385,6 @@
             this.panel1.Size = new System.Drawing.Size(199, 214);
             this.panel1.TabIndex = 25;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(8, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 31);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Registartion Assistant";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(8, 115);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 31);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Change Password";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // studentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,6 +397,7 @@
             this.Name = "studentDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "studentDashboard";
+            this.Load += new System.EventHandler(this.studentDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -404,8 +411,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button uploadBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registrationBtn;
+        private System.Windows.Forms.Button offeredCoursesBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox BackBtn;
@@ -417,10 +424,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDept;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtRole;
+        private System.Windows.Forms.TextBox txtProgram;
         private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel panel2;
@@ -430,7 +437,7 @@
         private System.Windows.Forms.PictureBox profilePic;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button changePasswordBtn;
+        private System.Windows.Forms.Button AiAdvisorBtn;
     }
 }

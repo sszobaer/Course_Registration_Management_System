@@ -132,7 +132,7 @@
             this.showPassword.TabIndex = 52;
             this.showPassword.Text = "Show Password";
             this.showPassword.UseVisualStyleBackColor = true;
-            this.showPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
             // 
             // label1
             // 

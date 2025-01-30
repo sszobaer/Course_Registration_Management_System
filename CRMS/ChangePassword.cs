@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace CRMS
 {
@@ -14,8 +17,7 @@ namespace CRMS
         {
             InitializeComponent();
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = !showPassword.Checked;
             txtConfirmPassword.UseSystemPasswordChar = !showPassword.Checked;
@@ -24,65 +26,99 @@ namespace CRMS
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string currentPassword = txtPassword.Text;
-            string newPassword = txtNewPassword.Text;
-            string confirmNewPassword = txtConfirmPassword.Text;
+            string currentPassword = txtPassword.Text.Trim();
+            string newPassword = txtNewPassword.Text.Trim();
+            string confirmNewPassword = txtConfirmPassword.Text.Trim();
 
-            if (newPassword != confirmNewPassword)
+            if (string.IsNullOrWhiteSpace(currentPassword) || string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmNewPassword))
             {
-                MessageBox.Show("New Password and Confirm New Password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("All fields are required!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Assuming you have a method to get the current password of the logged-in user
-            string query = "SELECT password FROM AdminLogin WHERE AdminName = :adminName";
-            var parameters = new Dictionary<string, object>
+            if (newPassword.Length < 6)
             {
-                { ":adminName", SessionManager.AdminName }
-            };
+                MessageBox.Show("New password must be at least 6 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            // Fetch the current password from the database
-            DataTable result = dbFunctions.GetData(query, parameters);
-
-            if (result.Rows.Count > 0)
+            if (newPassword != confirmNewPassword)
             {
-                string storedPassword = result.Rows[0]["password"].ToString();
+                MessageBox.Show("New Password and Confirm Password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                if (storedPassword == currentPassword)
+            if (string.IsNullOrEmpty(SessionManager.userName))
+            {
+                MessageBox.Show("User session expired. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string query = "SELECT password FROM AdminLogin WHERE AdminName = :adminName";
+                var parameters = new Dictionary<string, object> { { ":adminName", SessionManager.userName } };
+
+                DataTable result = dbFunctions.GetData(query, parameters);
+
+                if (result.Rows.Count > 0)
                 {
-                    // Update the password
-                    string updateQuery = "UPDATE AdminLogin SET password = :newPassword WHERE AdminName = :AdminName";
-                    var updateParams = new Dictionary<string, object>
-                    {
-                        { ":newPassword", newPassword },
-                        { ":AdminName", SessionManager.AdminName }
-                    };
+                    string storedPassword = result.Rows[0]["password"].ToString();
 
-                    int updateSuccess = dbFunctions.setData(updateQuery, updateParams);
-                    if (updateSuccess > 0) 
+                    if (HashPassword(currentPassword) == storedPassword)
                     {
-                        MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close(); 
+                        string updateQuery = "UPDATE AdminLogin SET password = :newPassword WHERE AdminName = :AdminName";
+                        var updateParams = new Dictionary<string, object>
+                        {
+                            { ":newPassword", HashPassword(newPassword) },
+                            { ":AdminName", SessionManager. userName }
+                        };
+
+                        int rowsAffected = dbFunctions.setData(updateQuery, updateParams);
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update password. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Failed to update the password. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("The current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("The current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Admin not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Admin not found. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Hashing function for passwords
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }
