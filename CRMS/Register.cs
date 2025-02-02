@@ -13,6 +13,7 @@ namespace CRMS
 {
     public partial class Register : Form
     {
+        private Functions dbFunctions = new Functions();
         public Register()
         {
             InitializeComponent();
@@ -41,6 +42,75 @@ namespace CRMS
         {
             txtPassword.UseSystemPasswordChar = !showPassword.Checked;
             txtConfirmPassword.UseSystemPasswordChar = !showPassword.Checked;
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            int userId = Convert.ToInt32(txtID.Text);
+            string userName = txtName.Text;
+            string userPassword = txtPassword.Text;
+            //Verify that this is for Admin
+            if (cbCredentialType.SelectedIndex == 0)
+            {
+                try
+                {
+                    string query = @"INSERT INTO AdminLogin (AdminID, AdminName, AdminPassword) 
+                                    VALUES (:AdminID, :AdminName, :AdminPassword)";
+
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { ":AdminID", userId },
+                        { ":AdminName", userName },
+                        { ":AdminPassword", userPassword }
+                    };
+                    DataTable result = dbFunctions.GetData(query, parameters);
+                    MessageBox.Show("Sign Up Successful!" , 
+                                    "Success", 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
+                    Home home = new Home();
+                    Home.stack.Push(this);
+                    this.Hide();
+                    home.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            //Verify this is for Student
+            else if (cbCredentialType.SelectedIndex == 1)
+            {
+                try
+                {
+                    string query = @"INSERT INTO studentLogin (studentID, studentName, studentPassword)
+                                     VALUES (:studentID, :studentName, :studentPassword)";
+
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { ":studentID", userId },
+                        { ":studentName", userName },
+                        { ":studentPassword", userPassword }
+                    };
+                    DataTable result = dbFunctions.GetData(query, parameters);
+                    MessageBox.Show("Sign Up Successful!",
+                                    "Success",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    Home home = new Home();
+                    Home.stack.Push(this);
+                    this.Hide();
+                    home.ShowDialog();
+
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }
