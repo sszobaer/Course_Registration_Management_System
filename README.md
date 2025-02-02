@@ -1,4 +1,3 @@
-I will write the whole readme after completing the whole project. Till then stay tuned......
 # Course Registration Management System
 
 ## Background of the Problem
