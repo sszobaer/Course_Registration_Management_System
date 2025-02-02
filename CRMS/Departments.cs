@@ -133,7 +133,7 @@ namespace CRMS
                 string deptPhone1 = txtDeptPhone1.Text;
                 string deptPhone2 = txtDeptPhone2.Text;
 
-                string Query = "INSERT INTO Department (deptId, deptName, deptHead, officeLocation, c, deptPhone2) VALUES (:deptId, :deptName, :deptHead, :officeLocation, :deptPhone1, :deptPhone2)";
+                string Query = "INSERT INTO Department (deptId, deptName, deptHead, officeLocation, deptPhone1, deptPhone2) VALUES (:deptId, :deptName, :deptHead, :officeLocation, :deptPhone1, :deptPhone2)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
