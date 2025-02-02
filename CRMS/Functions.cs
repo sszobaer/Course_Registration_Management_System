@@ -124,5 +124,57 @@ namespace CRMS
                 return 0; // Return 0 if there was an error
             }
         }
+        public object GetScalarData(string query, Dictionary<string, object> parameters = null)
+        {
+            object result = null;
+            using (OracleConnection connection = new OracleConnection(conStr))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand(query, connection))
+                    {
+                        // Add parameters if provided
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                cmd.Parameters.Add(new OracleParameter(param.Key, param.Value));
+                            }
+                        }
+
+                        result = cmd.ExecuteScalar();  // Executes the query and returns the first column of the first row
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return result;
+        }
+        public int ExecuteQuery(string query)
+        {
+            int affectedRows = 0;
+            using (OracleConnection conn = new OracleConnection(conStr))
+            {
+                try
+                {
+                    conn.Open();
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        affectedRows = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return affectedRows;
+        }
+
+
+
     }
 }

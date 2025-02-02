@@ -111,8 +111,8 @@ namespace CRMS
                 
 
 
-                string query = @"INSERT INTO classSchedule (classId, classDay, classTime, roomNo, semester, courseId, capacity) 
-                                VALUES (:classId, :classDay, :classTime, :roomNo, :semester, :courseId, :capacity)";
+                string query = @"INSERT INTO classSchedule (classId, classDay, classTime, roomNo, semester, courseId, capacity, section) 
+                                VALUES (:classId, :classDay, :classTime, :roomNo, :semester, :courseId, :capacity, :section)";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
@@ -122,7 +122,8 @@ namespace CRMS
                     { "roomNo", classRoom },
                     { "semester", semester },
                     { "courseId", courseId },
-                    { "capacity", capacity }
+                    { "capacity", capacity },
+                    { "section", txtSection.Text }
                 };
 
                 dbFunctions.setData(query, parameters);
@@ -161,7 +162,7 @@ namespace CRMS
 
 
                 string query = @"UPDATE classSchedule 
-                                SET classId = :classId, classDay = :classDay, classTime = :classTime, roomNo = :roomNo, semester = :semester, courseId = :courseId, capacity =: capacity 
+                                SET classId = :classId, classDay = :classDay, classTime = :classTime, roomNo = :roomNo, semester = :semester, courseId = :courseId, capacity =: capacity, section = :section 
                                 WHERE classId = :classId";
 
                 Dictionary<string, object> parameters = new Dictionary<string, object>
@@ -171,7 +172,9 @@ namespace CRMS
                     { "classTime", classTime },
                     { "roomNo", classRoom },
                     { "semester", semester },
-                    { "courseId", courseId }
+                    { "courseId", courseId },
+                    { "capacity", Convert.ToInt32(cbCapacity.SelectedItem.ToString()) },
+                    { "section", txtSection.Text }
 
                 };
 
@@ -222,6 +225,7 @@ namespace CRMS
                     txtCLSemster.Text = result.Rows[0]["semester"].ToString();
                     cbCourseName.Text = result.Rows[0]["courseId"].ToString();
                     cbCapacity.Text = result.Rows[0]["capacity"].ToString();
+                    txtSection.Text = result.Rows[0]["section"].ToString();
                 }
                 else
                 {

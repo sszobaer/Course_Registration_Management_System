@@ -138,7 +138,7 @@ namespace CRMS
         /*-----------------------------Navigation Start-----------------------------------*/
         private void registrationBtn_Click(object sender, EventArgs e)
         {
-            CourseRegistration courseRegistration = new CourseRegistration();
+            CourseRegistration courseRegistration = new CourseRegistration(SessionManager.UserId);
             Home.stack.Push(this);
             this.Hide();
             courseRegistration.ShowDialog();
@@ -162,7 +162,7 @@ namespace CRMS
 
         private void AiAdvisorBtn_Click(object sender, EventArgs e)
         {
-            AIAdvisor aiAdvisor = new AIAdvisor();
+            AIAdvisor aiAdvisor = new AIAdvisor(SessionManager.UserId);
             Home.stack.Push(this);
             this.Hide();
             aiAdvisor.ShowDialog();
