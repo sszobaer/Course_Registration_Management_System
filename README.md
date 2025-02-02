@@ -237,16 +237,14 @@ Your **Course Registration Management System** should now be up and running! ðŸš
 ![Class](https://github.com/user-attachments/assets/92a32d14-b787-4ff9-aee2-d637ae639d34) 
 
 ---
-
 ## **Color Reference**  
 
-| Color       | Hex                                                                |
-|------------|--------------------------------------------------------------------|
-| Black      | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` |
-| White      | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) `#f8f8f8` |
-| Teal       | ![#008080](https://via.placeholder.com/10/008080?text=+) `#008080` |
-| Smoke White | ![#f5f5f5](https://via.placeholder.com/10/f5f5f5?text=+) `#f5f5f5` |
-
+| Color       | Hex Code   | Preview |
+|------------|------------|---------|
+| **Black**      | `#0a192f` | ![#0a192f](https://via.placeholder.com/15/0a192f/000000?text=+) |
+| **White**      | `#f8f8f8` | ![#f8f8f8](https://via.placeholder.com/15/f8f8f8/000000?text=+) |
+| **Teal**       | `#008080` | ![#008080](https://via.placeholder.com/15/008080/000000?text=+) |
+| **Smoke White** | `#f5f5f5` | ![#f5f5f5](https://via.placeholder.com/15/f5f5f5/000000?text=+) |
 ---
 
 
