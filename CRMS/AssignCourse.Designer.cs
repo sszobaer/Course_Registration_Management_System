@@ -43,27 +43,27 @@
             this.DashboardLbl = new System.Windows.Forms.Label();
             this.HomeLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCourseID1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbFacultyID = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.confirmfcBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbCourseID2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbStudentId = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.confirmscBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.facultyCourseAssnData = new System.Windows.Forms.DataGridView();
+            this.studentCourseAssnData = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyCourseAssnData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentCourseAssnData)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -268,11 +268,11 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.cbCourseID1);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbFacultyID);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Controls.Add(this.confirmfcBtn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(167, 50);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -280,15 +280,15 @@
             this.panel3.Size = new System.Drawing.Size(305, 202);
             this.panel3.TabIndex = 21;
             // 
-            // comboBox2
+            // cbCourseID1
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(24, 120);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(253, 30);
-            this.comboBox2.TabIndex = 32;
+            this.cbCourseID1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCourseID1.FormattingEnabled = true;
+            this.cbCourseID1.Location = new System.Drawing.Point(24, 120);
+            this.cbCourseID1.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCourseID1.Name = "cbCourseID1";
+            this.cbCourseID1.Size = new System.Drawing.Size(253, 30);
+            this.cbCourseID1.TabIndex = 32;
             // 
             // label1
             // 
@@ -301,15 +301,15 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Course Id";
             // 
-            // comboBox1
+            // cbFacultyID
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 62);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 30);
-            this.comboBox1.TabIndex = 30;
+            this.cbFacultyID.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFacultyID.FormattingEnabled = true;
+            this.cbFacultyID.Location = new System.Drawing.Point(24, 62);
+            this.cbFacultyID.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFacultyID.Name = "cbFacultyID";
+            this.cbFacultyID.Size = new System.Drawing.Size(253, 30);
+            this.cbFacultyID.TabIndex = 30;
             // 
             // label10
             // 
@@ -322,19 +322,20 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "Faculty Id";
             // 
-            // DeleteBtn
+            // confirmfcBtn
             // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.Teal;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteBtn.Location = new System.Drawing.Point(93, 156);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(99, 34);
-            this.DeleteBtn.TabIndex = 16;
-            this.DeleteBtn.Text = "Confirm";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.confirmfcBtn.BackColor = System.Drawing.Color.Teal;
+            this.confirmfcBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmfcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmfcBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmfcBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.confirmfcBtn.Location = new System.Drawing.Point(93, 156);
+            this.confirmfcBtn.Name = "confirmfcBtn";
+            this.confirmfcBtn.Size = new System.Drawing.Size(99, 34);
+            this.confirmfcBtn.TabIndex = 16;
+            this.confirmfcBtn.Text = "Confirm";
+            this.confirmfcBtn.UseVisualStyleBackColor = false;
+            this.confirmfcBtn.Click += new System.EventHandler(this.confirmfcBtn_Click);
             // 
             // label2
             // 
@@ -352,11 +353,11 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.cbCourseID2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.cbStudentId);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.confirmscBtn);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(507, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -364,15 +365,15 @@
             this.panel2.Size = new System.Drawing.Size(305, 202);
             this.panel2.TabIndex = 33;
             // 
-            // comboBox3
+            // cbCourseID2
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(24, 120);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(253, 30);
-            this.comboBox3.TabIndex = 32;
+            this.cbCourseID2.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCourseID2.FormattingEnabled = true;
+            this.cbCourseID2.Location = new System.Drawing.Point(24, 120);
+            this.cbCourseID2.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCourseID2.Name = "cbCourseID2";
+            this.cbCourseID2.Size = new System.Drawing.Size(253, 30);
+            this.cbCourseID2.TabIndex = 32;
             // 
             // label3
             // 
@@ -385,15 +386,15 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Course Id";
             // 
-            // comboBox4
+            // cbStudentId
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(24, 61);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(253, 30);
-            this.comboBox4.TabIndex = 30;
+            this.cbStudentId.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStudentId.FormattingEnabled = true;
+            this.cbStudentId.Location = new System.Drawing.Point(24, 61);
+            this.cbStudentId.Margin = new System.Windows.Forms.Padding(2);
+            this.cbStudentId.Name = "cbStudentId";
+            this.cbStudentId.Size = new System.Drawing.Size(253, 30);
+            this.cbStudentId.TabIndex = 30;
             // 
             // label4
             // 
@@ -406,19 +407,20 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Student Id";
             // 
-            // button1
+            // confirmscBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(93, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.confirmscBtn.BackColor = System.Drawing.Color.Teal;
+            this.confirmscBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmscBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmscBtn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmscBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.confirmscBtn.Location = new System.Drawing.Point(93, 156);
+            this.confirmscBtn.Name = "confirmscBtn";
+            this.confirmscBtn.Size = new System.Drawing.Size(99, 34);
+            this.confirmscBtn.TabIndex = 16;
+            this.confirmscBtn.Text = "Confirm";
+            this.confirmscBtn.UseVisualStyleBackColor = false;
+            this.confirmscBtn.Click += new System.EventHandler(this.confirmscBtn_Click);
             // 
             // label5
             // 
@@ -432,37 +434,37 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Student Course Assignment";
             // 
-            // dataGridView1
+            // facultyCourseAssnData
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(167, 275);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(304, 146);
-            this.dataGridView1.TabIndex = 34;
+            this.facultyCourseAssnData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.facultyCourseAssnData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.facultyCourseAssnData.Location = new System.Drawing.Point(167, 275);
+            this.facultyCourseAssnData.Margin = new System.Windows.Forms.Padding(2);
+            this.facultyCourseAssnData.Name = "facultyCourseAssnData";
+            this.facultyCourseAssnData.RowHeadersWidth = 62;
+            this.facultyCourseAssnData.RowTemplate.Height = 28;
+            this.facultyCourseAssnData.Size = new System.Drawing.Size(304, 146);
+            this.facultyCourseAssnData.TabIndex = 34;
             // 
-            // dataGridView2
+            // studentCourseAssnData
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(507, 275);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(304, 146);
-            this.dataGridView2.TabIndex = 34;
+            this.studentCourseAssnData.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.studentCourseAssnData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentCourseAssnData.Location = new System.Drawing.Point(507, 275);
+            this.studentCourseAssnData.Margin = new System.Windows.Forms.Padding(2);
+            this.studentCourseAssnData.Name = "studentCourseAssnData";
+            this.studentCourseAssnData.RowHeadersWidth = 62;
+            this.studentCourseAssnData.RowTemplate.Height = 28;
+            this.studentCourseAssnData.Size = new System.Drawing.Size(304, 146);
+            this.studentCourseAssnData.TabIndex = 34;
             // 
             // AssignCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 432);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.studentCourseAssnData);
+            this.Controls.Add(this.facultyCourseAssnData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.BackBtn);
@@ -478,8 +480,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyCourseAssnData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentCourseAssnData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,19 +503,19 @@
         private System.Windows.Forms.Label HomeLbl;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button confirmfcBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCourseID1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbFacultyID;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbCourseID2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbStudentId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button confirmscBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView facultyCourseAssnData;
+        private System.Windows.Forms.DataGridView studentCourseAssnData;
     }
 }
