@@ -88,7 +88,7 @@ namespace CRMS
         // Show all courses in the DataGridView
         private void showCourse()
         {
-            string Query = "SELECT * FROM Course";
+            string Query = "SELECT * FROM Course ORDER BY CourseId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         /*-------------------------------------Helper Methods End-----------------------------------------*/
