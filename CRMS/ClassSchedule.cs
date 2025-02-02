@@ -58,7 +58,7 @@ namespace CRMS
         //Fetch ClassSchedule info
         private void GetClassSchedule()
         {
-            string Query = "select * from ClassSchedule";
+            string Query = "select * from ClassSchedule ORDER BY ClassId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         //Fetch Courses info
