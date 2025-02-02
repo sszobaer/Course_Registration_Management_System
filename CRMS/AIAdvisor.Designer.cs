@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AIAdvisor));
             this.HeroLbl = new System.Windows.Forms.Label();
             this.txtUserInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sendBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.rtbChat = new System.Windows.Forms.RichTextBox();
+            this.BackBtn = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // HeroLbl
@@ -46,9 +49,9 @@
             this.HeroLbl.Location = new System.Drawing.Point(220, 9);
             this.HeroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeroLbl.Name = "HeroLbl";
-            this.HeroLbl.Size = new System.Drawing.Size(345, 33);
+            this.HeroLbl.Size = new System.Drawing.Size(344, 33);
             this.HeroLbl.TabIndex = 4;
-            this.HeroLbl.Text = "Artifitial Smart Advisor";
+            this.HeroLbl.Text = "Artificial Smart Advisor";
             this.HeroLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUserInput
@@ -104,12 +107,26 @@
             this.rtbChat.TabIndex = 13;
             this.rtbChat.Text = "";
             // 
+            // BackBtn
+            // 
+            this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BackBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackBtn.Image")));
+            this.BackBtn.Location = new System.Drawing.Point(11, 9);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(43, 43);
+            this.BackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BackBtn.TabIndex = 39;
+            this.BackBtn.TabStop = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
             // AIAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.rtbChat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sendBtn);
@@ -119,6 +136,7 @@
             this.Name = "AIAdvisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AIAdvisor";
+            ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +150,6 @@
         private System.Windows.Forms.Button sendBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rtbChat;
+        private System.Windows.Forms.PictureBox BackBtn;
     }
 }

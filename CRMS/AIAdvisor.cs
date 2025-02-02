@@ -11,10 +11,11 @@ namespace CRMS
     public partial class AIAdvisor : Form
     {
         private static readonly HttpClient client = new HttpClient();
-
-        public AIAdvisor()
+        int studentId;
+        public AIAdvisor(int studentId)
         {
             InitializeComponent();
+            this.studentId = studentId;
         }
 
         private async void sendBtn_Click(object sender, EventArgs e)
@@ -26,6 +27,9 @@ namespace CRMS
                 MessageBox.Show("Please enter a message.");
                 return;
             }
+
+            // Disable the send button temporarily
+            sendBtn.Enabled = false;
 
             // Append user's message to the RichTextBox
             AppendToRichTextBox($"You: {userMessage}", Color.Black, FontStyle.Bold);
@@ -42,13 +46,17 @@ namespace CRMS
 
             // Clear input field
             txtUserInput.Clear();
+
+            // Re-enable the send button
+            sendBtn.Enabled = true;
         }
 
         private async Task<string> GetChatbotResponse(string message)
         {
             try
             {
-                var requestBody = new { message = message };
+                // Create request body with user message and student ID
+                var requestBody = new { message = message, student_id = studentId };
                 string json = JsonConvert.SerializeObject(requestBody);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -58,17 +66,29 @@ namespace CRMS
 
                 // Read and return response from API
                 string responseBody = await response.Content.ReadAsStringAsync();
+
+                // Debugging: Print out the raw response to check its structure
+                Console.WriteLine("API Response: " + responseBody);
+
+                // Assuming the response from Flask is in the format: { "response": "Bot's reply" }
                 dynamic result = JsonConvert.DeserializeObject(responseBody);
 
-                return result.response.ToString();
+                if (result?.response != null)
+                {
+                    return result.response.ToString();
+                }
+                else
+                {
+                    return "No response found in API response.";
+                }
             }
             catch (Exception ex)
             {
-                return "Error: " + ex.Message;
+                MessageBox.Show($"Error communicating with the chatbot service: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "Error: Unable to get a response from the server.";
             }
         }
 
-        // Helper Method: Append Text to RichTextBox with Formatting
         private void AppendToRichTextBox(string text, Color color, FontStyle fontStyle)
         {
             rtbChat.SelectionStart = rtbChat.TextLength;
@@ -78,23 +98,31 @@ namespace CRMS
             rtbChat.SelectionFont = new Font("Arial", 10, fontStyle);
 
             rtbChat.AppendText(text + Environment.NewLine);
-
-            rtbChat.ScrollToCaret();
+            rtbChat.ScrollToCaret();  
         }
 
-        // Helper Method: Format the Response
         private string FormatResponse(string response)
         {
-            // Replace escaped newlines with actual newlines
             string formatted = response.Replace("\\n", Environment.NewLine);
 
-            // Optionally wrap code blocks with markers for better visual separation
             if (response.Contains("{") && response.Contains("}"))
             {
                 formatted = $"Code Snippet:{Environment.NewLine}{formatted}{Environment.NewLine}";
             }
 
+            formatted = $"--- ---{Environment.NewLine}{formatted}{Environment.NewLine}---  ---";
+
             return formatted;
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (Home.stack.Count > 0)
+            {
+                Form previousForm = Home.stack.Pop();
+                this.Hide();
+                previousForm.Show();
+            }
         }
     }
 }
