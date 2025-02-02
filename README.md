@@ -224,6 +224,33 @@ This will ensure your **Course Registration Management System** connects properl
 Your **Course Registration Management System** should now be up and running! 🚀  
 
 ### Architecture/Technology Sections
+### Entity Relationship Diagram
+![Untitled design (42)](https://github.com/user-attachments/assets/3645bc3e-77f1-41f8-a7a1-baaf5fafb85a)
+
+### Schema Diagram
+![Scema Diagram](https://github.com/user-attachments/assets/e5c8a7cb-afc8-40ae-bc05-36289e95246e)
+
+### Activity Diagram
+![Activity](https://github.com/user-attachments/assets/3e395e7a-ccd9-496f-9234-776ba69f4668)
+
+### Class Diagram
+![Class](https://github.com/user-attachments/assets/92a32d14-b787-4ff9-aee2-d637ae639d34) 
+
+---
+
+## **Color Reference**  
+
+| Color       | Hex                                                                |
+|------------|--------------------------------------------------------------------|
+| Black      | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` |
+| White      | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) `#f8f8f8` |
+| Teal       | ![#008080](https://via.placeholder.com/10/008080?text=+) `#008080` |
+| Smoke White | ![#f5f5f5](https://via.placeholder.com/10/f5f5f5?text=+) `#f5f5f5` |
+
+---
+
+
+
 
 ## Background of the Problem
 
