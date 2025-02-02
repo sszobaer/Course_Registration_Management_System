@@ -14,22 +14,21 @@ Welcome to the Course Registration Management System! This application is meticu
 4. [Proposed Solution: Virtual Advisor Chatbot Powered by AI](#proposed-solution-virtual-advisor-chatbot-powered-by-ai)
    1. [How the Virtual Advisor Chatbot Will Help](#how-the-virtual-advisor-chatbot-will-help)
 5. [Benefits of This Solution](#benefits-of-this-solution)
-6. [Conclusion](#conclusion)
-7. [Prerequisites](#prerequisites)
+6. [Prerequisites](#prerequisites)
    1. [Required Software](#required-software)
-8. [Get Started](#get-started)
+7. [Get Started](#get-started)
    1. [Python Dependencies](#python-dependencies)
    2. [NuGet Packages](#nuget-packages)
-9. [Installation Procedure](#installation-procedure)
+8. [Installation Procedure](#installation-procedure)
    1. [Step 1: Clone the Repository](#step-1-clone-the-repository)
    2. [Step 2: Set Up the Database](#step-2-set-up-the-database)
    3. [Step 3: Configure the Connection String](#step-3-configure-the-connection-string)
    4. [Step 4: Build and Run the Project](#step-4-build-and-run-the-project)
-10. [Special Instruction](#special-instruction)
+9. [Special Instruction](#special-instruction)
     1. [Configuring the Oracle Database Connection String](#configuring-the-oracle-database-connection-string)
     2. [Testing the Connection](#testing-the-connection)
     3. [Configuring the Oracle Database Connection in Python using PyODBC](#configuring-the-oracle-database-connection-in-python-using-pyodbc)
-11. [Architecture/Technology Sections](#architecturetechnology-sections)
+10. [Architecture/Technology Sections](#architecturetechnology-sections)
     1. [Entity Relationship Diagram](#entity-relationship-diagram)
     2. [Schema Diagram](#schema-diagram)
     3. [Activity Diagram](#activity-diagram)
@@ -40,8 +39,8 @@ Welcome to the Course Registration Management System! This application is meticu
        3. [Take Courses or Register for a Course](#take-courses-or-register-for-a-course)
        4. [Smart Advisor](#smart-advisor)
        5. [Add New Course](#add-new-course)
-12. [Color Reference](#color-reference)  
-13. [Lessons Learned](#lessons-learned)  
+11. [Color Reference](#color-reference)  
+12. [Lessons Learned](#lessons-learned)  
    - 13.1 [Importance of Database Design](#1-importance-of-database-design)  
    - 13.2 [AI-Powered Virtual Advisor Implementation](#2-ai-powered-virtual-advisor-implementation)  
    - 13.3 [Optimizing Queries for Performance](#3-optimizing-queries-for-performance)  
@@ -50,13 +49,13 @@ Welcome to the Course Registration Management System! This application is meticu
    - 13.6 [Role-Based Access Control (RBAC)](#6-role-based-access-control-rbac)  
    - 13.7 [Importance of Payment Integration](#7-importance-of-payment-integration)  
    - 13.8 [Deployment & Compatibility Considerations](#8-deployment--compatibility-considerations)  
-14. [Feedback & Issues](#feedback--issues)  
+13. [Feedback & Issues](#feedback--issues)  
    - 14.1 [How to Provide Feedback](#how-to-provide-feedback)  
    - 14.2 [Reporting Issues](#reporting-issues)  
    - 14.3 [Contributing to the Project](#contributing-to-the-project)  
    - 14.4 [Using the GitHub Issue Tracker](#using-the-github-issue-tracker)  
-15. [Acknowledgements](#acknowledgements)  
-16. [Contact](#contact)
+14. [Acknowledgements](#acknowledgements)  
+15. [Contact](#contact)
 
 ---
 
@@ -111,8 +110,6 @@ To solve these challenges, we introduce the **Virtual Advisor Chatbot**—an AI-
 - **Faster Decision-Making**: Students won’t waste time searching for courses, enabling faster registration.
 - **Better Student Experience**: A smoother, stress-free registration process will enhance student satisfaction.
 - **Smarter Course Planning**: Universities will have insights into which courses require more seats, ensuring better resource management.
-
-## Conclusion
 
 Integrating the AI-powered **Virtual Advisor Chatbot** into the course registration system will significantly improve the experience for both students and universities. By offering quick recommendations, solving scheduling conflicts, and ensuring fair access to courses, this solution will reduce stress, save time, and enhance the overall academic experience.
 
