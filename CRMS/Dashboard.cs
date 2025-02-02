@@ -129,28 +129,28 @@ namespace CRMS
         //Fetch all students
         private void showStudents()
         {
-            string Query = "SELECT * FROM Student";
+            string Query = "SELECT * FROM Student ORDER BY StudentId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
 
         //Fetch all departments
         private void showDepartments()
         {
-            string Query = "SELECT * FROM Department";
+            string Query = "SELECT * FROM Department ORDER BY deptId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
 
         //Fetch all courses
         private void showCourses()
         {
-            string Query = "SELECT * FROM Course";
+            string Query = "SELECT * FROM Course ORDER BY CourseId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
 
         //Fetch all faculty members
         private void showFaculty()
         {
-            string Query = "SELECT * FROM Facultymember";
+            string Query = "SELECT * FROM Facultymember ORDER BY facultyId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         /*-------------------------------------Helper Methods End-----------------------------------------*/
