@@ -59,7 +59,7 @@ namespace CRMS
         //Feetch Registration info
         private void GetRegistration()
         {
-            string Query = "select * from Registration";
+            string Query = "select * from Registration ORDER BY regId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         //Fetch classId from ClassSchedule

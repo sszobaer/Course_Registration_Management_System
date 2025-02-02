@@ -174,5 +174,12 @@ namespace CRMS
                 string imagePath = savePath;
             }
         }
+
+        private void BtnChangePassword_Click_1(object sender, EventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword();
+            Home.stack.Push(this);
+            changePassword.ShowDialog();
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace CRMS
         //Fetch Offered Courses
         private void getOfferedCourses()
         {
-            string query = "SELECT * FROM COURSE";
+            string query = "SELECT * FROM COURSE ORDER BY COURSEID";
             ShowData.DataSource = dbFunctions.GetData(query);
         }
 

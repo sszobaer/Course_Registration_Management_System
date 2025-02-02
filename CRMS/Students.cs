@@ -66,7 +66,7 @@ namespace CRMS
         //Fetch Students
         private void showStudents()
         {
-            string Query = "SELECT * FROM Student";
+            string Query = "SELECT * FROM Student ORDER BY StudentId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
 

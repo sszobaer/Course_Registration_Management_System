@@ -148,7 +148,6 @@ namespace CRMS
         {
             ChangePassword changePassword = new ChangePassword();
             Home.stack.Push(this);
-            this.Hide();
             changePassword.ShowDialog();
         }
 

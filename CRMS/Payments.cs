@@ -74,7 +74,7 @@ namespace CRMS
         //Fetch Payments info
         private void GetPayments()
         {
-            string Query = "SELECT * FROM Payment";
+            string Query = "SELECT * FROM Payment ORDER BY PaymentId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         //Clear Fields

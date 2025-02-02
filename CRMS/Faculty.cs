@@ -74,7 +74,7 @@ namespace CRMS
         //Fetch faculty members from database
         private void GetFacultyMembers()
         {
-            string Query = "SELECT * FROM Facultymember";
+            string Query = "SELECT * FROM Facultymember ORDER BY facultyId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
         //Reset fields after insert
