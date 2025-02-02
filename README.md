@@ -60,10 +60,6 @@ Welcome to the Course Registration Management System! This application is meticu
 
 ---
 
-Now the index starts at section 12, as requested!
-
----
-
 ## Authors
 
 - [S S Zobaer Ahmed](https://www.github.com/sszobaer)
