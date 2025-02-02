@@ -72,7 +72,7 @@ namespace CRMS
         // Show all departments in the DataGridView
         private void showDepartment()
         {
-            string Query = "SELECT * FROM Department";
+            string Query = "SELECT * FROM Department ORDER BY deptId";
             ShowData.DataSource = dbFunctions.GetData(Query);
         }
 
